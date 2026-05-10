@@ -403,3 +403,12 @@ section.cuts, section.crew, section.book { max-width: var(--maxw); margin: 0 aut
   .foot-loc, .foot-tag { text-align: left; }
   body.mono-edge { cursor: default; }
 }
+
+/* === Hero background image (Unsplash) === */
+.hero {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%), url('https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=2000&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

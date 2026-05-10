@@ -313,3 +313,12 @@ section { padding: var(--gap-xl) 0; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
   .footer-meta { margin-left: 0; }
 }
+
+/* === Hero background image (Unsplash) === */
+.hero {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%), url('https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=2000&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

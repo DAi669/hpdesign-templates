@@ -436,3 +436,12 @@ section.menu, section.sake, section.access {
   .sake-grid { grid-template-columns: 1fr; }
   .poster-dl { grid-template-columns: 64px 1fr; gap: 0.6rem 1rem; font-size: 0.88rem; }
 }
+
+/* === Hero background image (Unsplash) === */
+.hero {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%), url('https://images.unsplash.com/photo-1542931287-023b922fa89b?w=2000&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

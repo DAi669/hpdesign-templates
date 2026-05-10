@@ -1,0 +1,135 @@
+:root{
+  --ink:#1F2A3D;
+  --paper:#FBFCFE;
+  --soft:#F1F6FB;
+  --primary:#3DA9D8;
+  --primary-dk:#1F7AA8;
+  --accent:#7DC4A0;
+  --line:rgba(31,42,61,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:"Plus Jakarta Sans","Inter","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1}
+body{overflow-x:hidden;line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.cont{max-width:1240px;margin:0 auto;padding:0 32px}
+@media (max-width:720px){.cont{padding:0 18px}}
+
+.eb{font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:.32em;color:var(--primary-dk);text-transform:uppercase;display:block;margin-bottom:14px}
+h2{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px;color:var(--ink)}
+h2 em{font-style:normal;color:var(--primary)}
+.sec-lead{font-family:"Noto Sans JP",sans-serif;font-size:15px;line-height:1.85;color:rgba(31,42,61,.7);margin-bottom:40px}
+
+/* HEADER */
+.hd{position:sticky;top:0;z-index:50;background:rgba(251,252,254,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd-in{max-width:1240px;margin:0 auto;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{display:flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--soft);color:var(--primary);border-radius:12px}
+.brand-mark svg{width:22px;height:22px}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:17px;color:var(--ink);letter-spacing:-.01em}
+.brand-jp{font-family:"Noto Sans JP",sans-serif;font-size:11px;color:var(--primary-dk)}
+.hd nav{display:flex;gap:24px}
+.hd nav a{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:14px;color:var(--ink);transition:color .2s}
+.hd nav a:hover{color:var(--primary)}
+.reserve-btn{padding:10px 20px;background:var(--primary);color:#fff;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:13px;border-radius:999px;transition:background .25s}
+.reserve-btn:hover{background:var(--primary-dk)}
+@media (max-width:720px){.hd nav{display:none}}
+
+/* HERO */
+.hero{padding:64px 0 96px;background:linear-gradient(180deg,var(--soft) 0%,var(--paper) 80%);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-200px;right:-200px;width:560px;height:560px;background:radial-gradient(circle,rgba(61,169,216,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;position:relative}
+.hero-text h1{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:clamp(40px,6.5vw,80px);line-height:1.1;letter-spacing:-.02em;margin-bottom:24px}
+.hero-text h1 em{font-style:normal;color:var(--primary)}
+.hero-lead{font-family:"Noto Sans JP",sans-serif;font-size:16px;line-height:1.85;color:rgba(31,42,61,.75);margin-bottom:32px}
+.hero-row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:32px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--primary);color:#fff;font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:14px;border-radius:999px;transition:background .25s,gap .25s}
+.btn-primary:hover{background:var(--primary-dk);gap:12px}
+.btn-tel{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;background:#fff;color:var(--ink);font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:15px;border-radius:999px;border:1.5px solid var(--line);transition:border-color .25s}
+.btn-tel:hover{border-color:var(--primary)}
+.btn-tel svg{width:14px;height:14px;color:var(--primary)}
+.hero-features{display:flex;flex-wrap:wrap;gap:14px;font-family:"Noto Sans JP",sans-serif;font-size:13px;color:rgba(31,42,61,.7)}
+.hero-features span{display:inline-flex;align-items:center;gap:6px}
+.hero-features svg{width:14px;height:14px;color:var(--accent)}
+.hero-img{aspect-ratio:1/1;background-image:url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;border-radius:24px;box-shadow:0 24px 48px -16px rgba(31,42,61,0.2)}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:32px;padding:0 18px}
+  .hero-img{aspect-ratio:4/3}
+}
+
+/* ABOUT */
+.about{padding:120px 0;background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-bottom:64px}
+.about-text p{font-family:"Noto Sans JP",sans-serif;font-size:15px;line-height:2;color:rgba(31,42,61,.85);margin-bottom:18px}
+@media (max-width:720px){.about-grid{grid-template-columns:1fr;gap:24px}}
+
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.feat-grid{grid-template-columns:1fr}}
+.feat-tile{background:var(--soft);padding:32px 24px;border-radius:16px;display:flex;flex-direction:column;gap:12px;transition:transform .35s ease,box-shadow .35s ease}
+.feat-tile:hover{transform:translateY(-4px);box-shadow:0 12px 28px -16px rgba(31,42,61,0.18)}
+.ft-icon{width:48px;height:48px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary)}
+.ft-icon svg{width:24px;height:24px}
+.feat-tile h3{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:17px;color:var(--ink)}
+.feat-tile p{font-family:"Noto Sans JP",sans-serif;font-size:13px;line-height:1.85;color:rgba(31,42,61,.7)}
+
+/* SERVICES */
+.serv{padding:120px 0;background:var(--soft)}
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:32px}
+@media (max-width:720px){.serv-grid{grid-template-columns:1fr}}
+.srv{position:relative;background:#fff;padding:36px 32px 32px;border-radius:18px;border:1.5px solid var(--line);transition:border-color .3s,transform .3s}
+.srv:hover{border-color:var(--primary);transform:translateY(-3px)}
+.srv-feat{background:linear-gradient(180deg,#fff 0%,#F4FAFD 100%);border-color:var(--primary)}
+.srv-no{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--primary);background:var(--soft);padding:5px 12px;border-radius:999px;display:inline-block;margin-bottom:14px}
+.srv-feat .srv-no{background:var(--primary);color:#fff}
+.srv h3{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:24px;color:var(--ink);margin-bottom:14px}
+.srv p{font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.85;color:rgba(31,42,61,.75);margin-bottom:18px}
+.srv-list{list-style:none;display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px dashed var(--line)}
+.srv-list li{font-family:"Noto Sans JP",sans-serif;font-size:13px;color:rgba(31,42,61,.7);padding-left:22px;position:relative}
+.srv-list li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:1.5px;background:var(--accent)}
+
+/* FIRST VISIT */
+.first{padding:120px 0;background:var(--paper)}
+.step-list{list-style:none;display:flex;flex-direction:column;gap:0;max-width:720px;margin:0 auto;position:relative}
+.step-list::before{content:"";position:absolute;left:30px;top:30px;bottom:30px;width:2px;background:var(--soft)}
+.step-list li{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:24px 0;align-items:start;position:relative}
+.st-no{width:60px;height:60px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:18px;position:relative;z-index:2;box-shadow:0 0 0 6px var(--paper)}
+.step-list li > div{padding-top:6px;display:flex;flex-direction:column;gap:8px;position:relative}
+.step-list h3{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:18px;color:var(--ink)}
+.step-list p{font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.85;color:rgba(31,42,61,.7)}
+.st-time{align-self:flex-start;font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:.18em;color:var(--accent);background:var(--soft);padding:4px 10px;border-radius:999px}
+
+/* RESERVE */
+.reserve{padding:120px 0;background:var(--soft)}
+.reserve-card{background:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;box-shadow:0 14px 36px -20px rgba(31,42,61,0.18);align-items:center}
+.reserve-l h2{margin-top:0}
+.reserve-l p{font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.85;color:rgba(31,42,61,.7);margin-bottom:24px}
+.reserve-r h4{font-family:"Plus Jakarta Sans","Noto Sans JP",sans-serif;font-weight:700;font-size:16px;color:var(--ink);margin-bottom:14px}
+.reserve-r table{width:100%;border-collapse:collapse;font-family:"Plus Jakarta Sans",sans-serif;font-size:12px}
+.reserve-r th,.reserve-r td{padding:10px 6px;text-align:center;border-bottom:1px solid var(--line)}
+.reserve-r th{color:var(--primary-dk);font-weight:600;background:var(--soft)}
+.reserve-r tr:first-child th{border-radius:0}
+.reserve-r tr td:first-child,.reserve-r tr th:first-child{text-align:left;padding-left:14px;font-size:11px;letter-spacing:.06em;color:rgba(31,42,61,.7)}
+.t-note{font-family:"Noto Sans JP",sans-serif;font-size:12px;color:rgba(31,42,61,.55);margin-top:14px}
+@media (max-width:900px){.reserve-card{grid-template-columns:1fr;padding:36px 28px;gap:32px}}
+
+/* INFO */
+.info{padding:120px 0;background:var(--paper)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.info-grid dl{display:grid;grid-template-columns:80px 1fr;row-gap:14px;margin-top:14px}
+.info-grid dt{font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--primary-dk);text-transform:uppercase;padding-top:4px}
+.info-grid dd{font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.7;border-bottom:1px solid var(--line);padding-bottom:14px}
+.info-grid dd b{color:var(--primary-dk)}
+.map-mock{aspect-ratio:4/3;background:linear-gradient(135deg,var(--soft) 0%,#fff 100%);border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.85;color:var(--ink);border:1.5px solid var(--line);background-image:repeating-linear-gradient(45deg,transparent 0,transparent 10px,rgba(61,169,216,0.04) 10px,rgba(61,169,216,0.04) 20px)}
+.map-mock b{color:var(--primary)}
+@media (max-width:720px){.info-grid{grid-template-columns:1fr;gap:32px}}
+
+/* FOOTER */
+.ft{background:var(--ink);color:#fff;padding:32px 0}
+.ft-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:"Plus Jakarta Sans",sans-serif;font-size:13px}
+.ft-in span:last-child{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.18em}
+
+.in-view{animation:rise .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.in-view{animation:none}}

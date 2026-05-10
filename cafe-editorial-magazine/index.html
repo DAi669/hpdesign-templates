@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>{店名} | Editorial Cafe — テンプレデモ</title>
+  <meta name="description" content="{店舗紹介文のダミー}。雑誌風エディトリアルレイアウトのカフェHPテンプレ。">
+  <meta property="og:title" content="{店名} | Editorial Cafe">
+  <meta property="og:type" content="restaurant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Noto+Serif+JP:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-issue">VOL.054</span>
+      <span class="brand-name">{店名}</span>
+      <span class="brand-divider">—</span>
+      <span class="brand-tag">Editorial Cafe</span>
+    </a>
+    <nav class="primary-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="メニュー">
+        <span></span><span></span>
+      </button>
+      <ul id="navList" class="nav-list">
+        <li><a href="#feature">Feature</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#access">Access</a></li>
+        <li><a href="#press">Press</a></li>
+      </ul>
+    </nav>
+    <a class="phone-cta" href="tel:0000000000">RESERVE →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero: split editorial -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="hero-issue-line">Issue 054 · 2026 Spring · {地名}</p>
+        <h1 class="hero-title">
+          <span class="hero-line-1">A QUIET</span>
+          <span class="hero-line-2"><em>essay</em></span>
+          <span class="hero-line-3">on coffee.</span>
+        </h1>
+        <p class="hero-lead">
+          <span class="dropcap">創</span>業から続く、一杯のため<br>だけに磨かれた所作と空間。<br>{店名} の物語を、ここから。
+        </p>
+        <div class="hero-meta">
+          <span><b>EST.</b> {創業年}</span>
+          <span class="bar">|</span>
+          <span><b>HOURS</b> 8:00–20:00</span>
+          <span class="bar">|</span>
+          <span><b>CLOSED</b> Tuesday</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary">READ THE MENU →</a>
+          <a href="#access" class="btn btn-text">find us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <div class="placeholder-img placeholder-hero" data-placeholder="店内・看板メニュー画像">
+            <span class="placeholder-text">Cover Photo</span>
+            <span class="placeholder-sub">Hero · Editorial</span>
+          </div>
+          <div class="hero-img-caption">
+            <span class="caption-num">01</span>
+            <span class="caption-text">The morning light, captured in dust.</span>
+          </div>
+        </div>
+        <div class="hero-side-col">
+          <div class="placeholder-img placeholder-side">
+            <span class="placeholder-text">Detail</span>
+          </div>
+          <div class="placeholder-img placeholder-side">
+            <span class="placeholder-text">Detail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee: editorial style -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Issue 054</span><span class="dot">◆</span>
+      <span>Slow Coffee</span><span class="dot">◆</span>
+      <span>Editorial</span><span class="dot">◆</span>
+      <span>Since {創業年}</span><span class="dot">◆</span>
+      <span>{地名}</span><span class="dot">◆</span>
+      <span>Issue 054</span><span class="dot">◆</span>
+      <span>Slow Coffee</span><span class="dot">◆</span>
+      <span>Editorial</span><span class="dot">◆</span>
+      <span>Since {創業年}</span><span class="dot">◆</span>
+      <span>{地名}</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- Feature: pull quote -->
+  <section class="feature" id="feature">
+    <div class="container feature-grid">
+      <div class="feature-num">FEATURE / 01</div>
+      <blockquote class="feature-quote">
+        <span class="quote-mark">“</span>
+        珈琲は、その日の天気と<br>客の表情で味が変わる。<br>同じ一杯は、二度と淹れられない。
+        <span class="quote-mark close">”</span>
+        <cite>— {店主名}, founder</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Story: editorial multi-column -->
+  <section class="story" id="story">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-num">02 — STORY</span>
+        <h2 class="section-title">三つの章で語る、店の構造。</h2>
+      </header>
+      <div class="story-columns">
+        <article class="story-col">
+          <span class="col-cap">Chapter 01</span>
+          <h3>豆の選定</h3>
+          <p>世界5カ国の生産者から直接買い付ける豆。シーズンごとに変わる構成は、その時期にしか飲めない一期一会の味を作る。</p>
+        </article>
+        <article class="story-col">
+          <span class="col-cap">Chapter 02</span>
+          <h3>店の空気</h3>
+          <p>{創業年}年の創業以来、変わらないカウンターの木目。{店主名}の手による焙煎機が今も現役で動き、店全体に低い音を響かせている。</p>
+        </article>
+        <article class="story-col">
+          <span class="col-cap">Chapter 03</span>
+          <h3>客との距離</h3>
+          <p>無口でいてくれていい、話したくなったら話せばいい。常連も初めての客も、同じ深さで迎えるのがこの店のスタイル。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu: large typography editorial -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-num">03 — MENU</span>
+        <h2 class="section-title">A short list,<br>read top to bottom.</h2>
+      </header>
+      <div class="menu-list">
+        <article class="menu-row">
+          <div class="menu-row-left">
+            <span class="menu-num">M.01</span>
+            <h3 class="menu-name">Pour Over Coffee</h3>
+            <p class="menu-desc">日替わりシングルオリジン。豆は店頭でも販売。</p>
+          </div>
+          <div class="menu-row-right">
+            <span class="menu-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="menu-row">
+          <div class="menu-row-left">
+            <span class="menu-num">M.02</span>
+            <h3 class="menu-name">Caffè Latte</h3>
+            <p class="menu-desc">{産地}の豆をベースに。バリスタの一杯抽出。</p>
+          </div>
+          <div class="menu-row-right">
+            <span class="menu-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="menu-row">
+          <div class="menu-row-left">
+            <span class="menu-num">M.03</span>
+            <h3 class="menu-name">Morning Plate</h3>
+            <p class="menu-desc">パン・卵・季節野菜・スープ。8:00–11:00 限定。</p>
+          </div>
+          <div class="menu-row-right">
+            <span class="menu-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="menu-row">
+          <div class="menu-row-left">
+            <span class="menu-num">M.04</span>
+            <h3 class="menu-name">Lunch Set</h3>
+            <p class="menu-desc">日替わり主菜・サラダ・パン or ライス・ドリンク付。</p>
+          </div>
+          <div class="menu-row-right">
+            <span class="menu-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="menu-row">
+          <div class="menu-row-left">
+            <span class="menu-num">M.05</span>
+            <h3 class="menu-name">House Cheesecake</h3>
+            <p class="menu-desc">店主のレシピ。リコッタとサワークリームの二層仕立て。</p>
+          </div>
+          <div class="menu-row-right">
+            <span class="menu-price">¥{価格}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access: editorial lookbook -->
+  <section class="access" id="access">
+    <div class="container access-grid">
+      <div class="access-text">
+        <span class="section-num">04 — ACCESS</span>
+        <h2 class="section-title">Find us.</h2>
+        <dl class="access-info">
+          <dt>Address</dt><dd>{住所}</dd>
+          <dt>Phone</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>Hours</dt><dd>8:00 – 20:00 / Tuesday closed</dd>
+          <dt>Nearest</dt><dd>{最寄駅}より徒歩{N}分</dd>
+        </dl>
+      </div>
+      <div class="access-map">
+        <iframe loading="lazy" title="{店名} の地図"
+          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press: editorial coverage list -->
+  <section class="press" id="press">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-num">05 — PRESS</span>
+        <h2 class="section-title">Mentioned in.</h2>
+      </header>
+      <ul class="press-list">
+        <li>
+          <span class="press-date">2026.04</span>
+          <span class="press-source">Coffee Magazine</span>
+          <span class="press-title">「街に残る、最後の珈琲屋」</span>
+        </li>
+        <li>
+          <span class="press-date">2025.11</span>
+          <span class="press-source">Casa Brutus</span>
+          <span class="press-title">{創業年}年からの空間 — 失われた静けさ</span>
+        </li>
+        <li>
+          <span class="press-date">2025.07</span>
+          <span class="press-source">{地域メディア}</span>
+          <span class="press-title">{店名}の朝、客が一冊の本を持って通う理由</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <p class="cta-issue">END · ISSUE 054</p>
+      <h2 class="cta-title">A cup,<br>before tomorrow begins.</h2>
+      <a href="tel:{電話}" class="btn btn-primary btn-large">RESERVE BY PHONE →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-issue">VOL.054</span>
+      <span class="brand-name">{店名}</span>
+      <p class="footer-tagline">An editorial coffee house since {創業年}.</p>
+    </div>
+    <div class="footer-meta">
+      <p>© {店名} · Designed in editorial style.</p>
+      <p class="footer-disclaimer">本ページはテンプレデモです。実案件適用時は producer の `02_pattern_decision.md` 参照。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

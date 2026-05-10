@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{店名} | 整骨院 — Mint Trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="seitai-mint">
+
+<header class="st-head">
+  <div class="st-head-inner">
+    <a href="#top" class="st-logo">
+      <span class="st-logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="20" cy="20" r="16"/>
+          <path d="M14 20h12M20 14v12" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="st-logo-text">
+        <span class="st-name">{店名}</span>
+        <span class="st-tag">— since {創業年} —</span>
+      </span>
+    </a>
+    <nav class="st-nav">
+      <a href="#about">院について</a>
+      <a href="#symptoms">こんな症状に</a>
+      <a href="#flow">施術の流れ</a>
+      <a href="#reserve">ご予約</a>
+    </nav>
+    <a class="st-rsv" href="tel:{電話}">
+      <span class="rsv-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 5a2 2 0 012-2h2.5a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.55 1.2L7.6 10.2a12 12 0 006.2 6.2l.82-1.8a1 1 0 011.2-.55l4.5 1.5A1 1 0 0121 16.5V19a2 2 0 01-2 2 16 16 0 01-16-16z"/>
+        </svg>
+      </span>
+      <span>ご予約・お問合せ</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="st-hero">
+    <div class="st-hero-grid">
+      <div class="st-hero-text">
+        <p class="st-eyebrow">{地名}・{最寄駅}徒歩{N}分／{創業年}年開院</p>
+        <h1 class="st-h1">
+          <span>痛みの<em class="st-em">根本</em>を、</span>
+          <span>からだ全体で診る。</span>
+        </h1>
+        <p class="st-lede">
+          {店名} は、{創業年}年から{地名}で続く整骨院です。<br>
+          局所だけでなく、姿勢・動作・生活習慣まで含めて見立てる、根本改善の整体を提供しています。
+        </p>
+
+        <ul class="st-creds">
+          <li>
+            <span class="cred-num">{N}</span>
+            <span class="cred-lab">年の臨床経験</span>
+          </li>
+          <li>
+            <span class="cred-num">{N}<sup>+</sup></span>
+            <span class="cred-lab">月平均の来院数</span>
+          </li>
+          <li>
+            <span class="cred-num">★4.9</span>
+            <span class="cred-lab">Google口コミ平均</span>
+          </li>
+        </ul>
+
+        <div class="st-cta-row">
+          <a href="tel:{電話}" class="st-btn primary">
+            <span>初診のご予約</span>
+            <span class="btn-tel">{電話}</span>
+          </a>
+          <a href="#symptoms" class="st-btn ghost">症状から探す →</a>
+        </div>
+      </div>
+
+      <aside class="st-hero-card">
+        <div class="card-stripe"></div>
+        <p class="card-eye">FIRST VISIT GUIDE</p>
+        <h3 class="card-h">初めての方へ</h3>
+        <ol class="card-list">
+          <li><span>1</span>カウンセリング（20〜30分・無料）</li>
+          <li><span>2</span>姿勢・動作・関節の検査</li>
+          <li><span>3</span>原因のご説明と、施術プランのご提案</li>
+          <li><span>4</span>初回施術（30〜45分）</li>
+        </ol>
+        <p class="card-note">— 国家資格保持の柔道整復師が一貫して担当いたします。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="st-trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <span class="trust-num">01</span>
+        <h3>国家資格保持者が担当</h3>
+        <p>柔道整復師（厚生労働大臣免許）が、初診から最終回まで一貫してお身体を診ます。</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">02</span>
+        <h3>{N}回で改善が目安</h3>
+        <p>症状の段階に応じて、平均{N}回の通院で改善傾向を確認できる施術プランをご提案します。</p>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">03</span>
+        <h3>保険適用の症例も対応</h3>
+        <p>急性のケガ・骨折・脱臼・捻挫・打撲などは健康保険が適用される場合があります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="st-sym" id="symptoms">
+    <div class="sec-head">
+      <p class="sec-eyebrow">02 / SYMPTOMS</p>
+      <h2 class="sec-title">こんな症状で<br><em>お困りではありませんか</em>。</h2>
+    </div>
+    <div class="sym-grid">
+      <article class="sym-card">
+        <div class="sym-num">A</div>
+        <h3>慢性的な肩こり・頭痛</h3>
+        <p>デスクワーク・スマホ姿勢からの首・肩・背中の張り、それに伴う緊張型頭痛。</p>
+        <ul class="sym-tags">
+          <li>姿勢矯正</li><li>骨格整体</li><li>頸椎調整</li>
+        </ul>
+      </article>
+      <article class="sym-card featured">
+        <div class="sym-num">B</div>
+        <span class="sym-flag">— 当院の得意分野 —</span>
+        <h3>長引く腰痛・坐骨神経痛</h3>
+        <p>急性〜慢性の腰痛、お尻〜太ももにかけての痺れ。座る・立ち上がるのがつらい方へ。</p>
+        <ul class="sym-tags">
+          <li>骨盤矯正</li><li>姿勢分析</li><li>運動療法</li>
+        </ul>
+      </article>
+      <article class="sym-card">
+        <div class="sym-num">C</div>
+        <h3>スポーツ後のケガ・捻挫</h3>
+        <p>ランニング・テニス・ゴルフなどスポーツ後の急性痛、再発防止までサポート。</p>
+        <ul class="sym-tags">
+          <li>急性ケア</li><li>テーピング</li><li>復帰計画</li>
+        </ul>
+      </article>
+      <article class="sym-card">
+        <div class="sym-num">D</div>
+        <h3>産後の骨盤・体型変化</h3>
+        <p>産後2ヶ月〜1年が目安。骨盤の歪みからくる腰痛・体型変化のリセットに。</p>
+        <ul class="sym-tags">
+          <li>産後骨盤矯正</li><li>育児姿勢指導</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="st-flow" id="flow">
+    <div class="sec-head">
+      <p class="sec-eyebrow">03 / FLOW</p>
+      <h2 class="sec-title">施術の流れ。</h2>
+    </div>
+    <ol class="flow-steps">
+      <li>
+        <span class="fs-num">01</span>
+        <h3>ご予約・初診票</h3>
+        <p>お電話・LINE・WEBから。初診の方は問診票（5分程度）をご記入いただきます。</p>
+      </li>
+      <li>
+        <span class="fs-num">02</span>
+        <h3>カウンセリング・検査</h3>
+        <p>お悩みのヒアリング → 姿勢・関節可動域・筋緊張のチェック（合計20〜30分）。</p>
+      </li>
+      <li>
+        <span class="fs-num">03</span>
+        <h3>原因のご説明</h3>
+        <p>図やお身体の写真を用いて、原因と施術プランをわかりやすくご説明します。</p>
+      </li>
+      <li>
+        <span class="fs-num">04</span>
+        <h3>施術</h3>
+        <p>一人ひとりに合わせた手技療法 + 物理療法（電気・温熱）を組み合わせて30〜45分。</p>
+      </li>
+      <li>
+        <span class="fs-num">05</span>
+        <h3>セルフケア指導</h3>
+        <p>ご自宅でできるストレッチ・姿勢のコツを最後にお伝えして終了です。</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Pricing strip -->
+  <section class="st-price">
+    <div class="sec-head">
+      <p class="sec-eyebrow">04 / PRICE</p>
+      <h2 class="sec-title">料金。</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="pc-eye">FIRST</p>
+        <p class="pc-name">初診（カウンセリング・検査込）</p>
+        <p class="pc-yen">¥{価格1}<small>／60分</small></p>
+        <ul class="pc-list">
+          <li>問診・カウンセリング</li>
+          <li>姿勢・関節検査</li>
+          <li>初回施術 + セルフケア指導</li>
+        </ul>
+      </div>
+      <div class="price-card highlight">
+        <p class="pc-eye">FOLLOW UP</p>
+        <p class="pc-name">2回目以降の施術</p>
+        <p class="pc-yen">¥{価格2}<small>／40分</small></p>
+        <ul class="pc-list">
+          <li>手技療法 + 物理療法</li>
+          <li>状態に応じた調整</li>
+          <li>家でできるストレッチ更新</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="pc-eye">SPECIAL</p>
+        <p class="pc-name">産後骨盤・スポーツコンディショニング</p>
+        <p class="pc-yen">¥{価格3}<small>／60分</small></p>
+        <ul class="pc-list">
+          <li>骨盤矯正・体型調整</li>
+          <li>テーピング・圧着サポート</li>
+          <li>復帰計画 / 育児姿勢指導</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-note">
+      ※ 急性のケガ（骨折・脱臼・捻挫・打撲）は健康保険適用の場合あり。窓口でご相談ください。
+    </p>
+  </section>
+
+  <!-- Reserve -->
+  <section class="st-reserve" id="reserve">
+    <div class="rsv-grid">
+      <div class="rsv-text">
+        <p class="sec-eyebrow">05 / RESERVE</p>
+        <h2 class="sec-title">ご予約・お問合せ。</h2>
+        <p class="rsv-lede">
+          ご予約は、お電話・LINE・WEB の3チャネルでお受けしています。<br>
+          初診の方も、{N}年通われている方も、同じ窓口です。
+        </p>
+        <ul class="rsv-list">
+          <li>
+            <span class="rsv-key">電話</span>
+            <a href="tel:{電話}" class="rsv-val">{電話}</a>
+            <span class="rsv-time">受付 平日 9:00 — 20:00</span>
+          </li>
+          <li>
+            <span class="rsv-key">LINE</span>
+            <a href="{LINE URL}" class="rsv-val">@{LINE ID}</a>
+            <span class="rsv-time">24時間受付・返信は営業時間内</span>
+          </li>
+          <li>
+            <span class="rsv-key">WEB</span>
+            <a href="{予約URL}" class="rsv-val">予約フォームを開く</a>
+            <span class="rsv-time">24時間受付</span>
+          </li>
+        </ul>
+      </div>
+      <div class="rsv-info">
+        <h3>院の情報</h3>
+        <dl>
+          <dt>住所</dt><dd>{住所}</dd>
+          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>診療時間</dt><dd>平日 9:00 — 20:00 / 土 9:00 — 18:00</dd>
+          <dt>休診日</dt><dd>日曜・祝日</dd>
+          <dt>アクセス</dt><dd>{最寄駅}より徒歩{N}分</dd>
+          <dt>駐車場</dt><dd>近隣コインパーキング（一部補助あり）</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="st-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <span class="foot-mark">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="20" cy="20" r="16"/>
+          <path d="M14 20h12M20 14v12" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>
+        <p class="foot-name">{店名}</p>
+        <p class="foot-meta">since {創業年} · {地名}</p>
+      </span>
+    </div>
+    <p class="foot-copy">© {店名}. テンプレデモ表示 · 整骨院 / Seitai · Mint Trust</p>
+  </div>
+</footer>
+
+</body>
+</html>

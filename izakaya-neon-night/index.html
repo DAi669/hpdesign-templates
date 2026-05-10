@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{店名} | 居酒屋 — Neon Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=RocknRoll+One&family=Noto+Sans+JP:wght@400;500;700&family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="izakaya-night">
+
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="izk-head">
+  <div class="izk-head-inner">
+    <a href="#top" class="izk-logo">
+      <span class="logo-chouchin" aria-hidden="true"></span>
+      <span class="logo-text"><span class="izk-en">izakaya</span><span class="izk-jp">{店名}</span></span>
+    </a>
+    <nav class="izk-nav">
+      <a href="#menu">お品書き</a>
+      <a href="#sake">酒</a>
+      <a href="#access">行き方</a>
+    </nav>
+    <span class="izk-open">
+      <span class="dot"></span>
+      <span>営業中 17:00 — 24:00</span>
+    </span>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-stamp" aria-hidden="true">
+      <span class="stamp-jp">夜</span>
+      <span class="stamp-en">est. {創業年}</span>
+    </div>
+
+    <h1 class="hero-h">
+      <span class="hh-row hh-row-1">
+        <span class="hh-deco">▲</span>
+        <span class="hh-jp">夜</span>
+        <span class="hh-jp accent">、</span>
+        <span class="hh-jp">食う</span>
+      </span>
+      <span class="hh-row hh-row-2">
+        <span class="hh-jp">飲</span>
+        <span class="hh-jp">む</span>
+        <span class="hh-deco-r">★</span>
+      </span>
+      <span class="hh-row hh-row-3">
+        <span class="hh-jp">語</span>
+        <span class="hh-jp">る</span>
+        <span class="hh-period">。</span>
+      </span>
+    </h1>
+
+    <div class="hero-tape">
+      <span>{店名}</span>
+      <span>—</span>
+      <span>{地名}</span>
+      <span>—</span>
+      <span>since {創業年}</span>
+      <span>—</span>
+      <span>open till midnight</span>
+    </div>
+
+    <p class="hero-lede">
+      {店名} は {地名} の路地裏に灯る、ちいさな居酒屋です。<br>
+      おひとり様も、ふたりも、ぐるりと座って、酒と肴と話を。
+    </p>
+
+    <a href="tel:{電話}" class="hero-call">
+      <span class="call-decor">— 電話で予約 —</span>
+      <span class="call-num">{電話}</span>
+    </a>
+  </section>
+
+  <section class="menu" id="menu">
+    <header class="izk-sec-head">
+      <span class="izk-mark">壱</span>
+      <h2 class="izk-h">お品書き<span class="en">— menu —</span></h2>
+    </header>
+
+    <div class="menu-cluster">
+      <div class="menu-block">
+        <h3 class="block-title">— 突き出し・小鉢 —</h3>
+        <ul class="dish-list">
+          <li><span>本日の突き出し</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>枝豆 / 冷奴 / お新香</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>ポテサラ — 看板</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-block">
+        <h3 class="block-title">— 焼き物 —</h3>
+        <ul class="dish-list">
+          <li><span>串焼き三本盛り</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>つくね — 自家製</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>豚バラ巻き野菜</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-block big">
+        <h3 class="block-title">— 本日の一品 —</h3>
+        <p class="featured-jp">{看板メニュー名}</p>
+        <p class="featured-en">tonight's signature</p>
+        <p class="featured-desc">{店主名}が市場で選んだ、その日の一番。{看板メニューの説明1行}</p>
+        <p class="featured-yen">¥{価格}</p>
+      </div>
+
+      <div class="menu-block">
+        <h3 class="block-title">— 〆 —</h3>
+        <ul class="dish-list">
+          <li><span>出汁茶漬け</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>稲庭うどん</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+          <li><span>本日のご飯もの</span><span class="dot-line"></span><span class="yen">時価</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="menu-aside">— ※ 仕入れにより変更あり。お酒のあてのオススメは、その日に。 —</p>
+  </section>
+
+  <section class="sake" id="sake">
+    <header class="izk-sec-head">
+      <span class="izk-mark">弐</span>
+      <h2 class="izk-h">酒<span class="en">— sake & drinks —</span></h2>
+    </header>
+
+    <div class="sake-flag">
+      <p class="flag-line-1">日本酒</p>
+      <p class="flag-line-2">十三蔵</p>
+      <p class="flag-line-3">焼酎・ハイボール・果実酒・ビール、すべてあり。</p>
+    </div>
+
+    <ul class="sake-grid">
+      <li>
+        <span class="sake-jp">酒</span>
+        <span class="sake-name">日本酒（本日の三種）</span>
+        <span class="sake-price">¥{価格}〜</span>
+      </li>
+      <li>
+        <span class="sake-jp">焼</span>
+        <span class="sake-name">焼酎・芋／麦／米</span>
+        <span class="sake-price">¥{価格}〜</span>
+      </li>
+      <li>
+        <span class="sake-jp">麦</span>
+        <span class="sake-name">生ビール / 瓶ビール</span>
+        <span class="sake-price">¥{価格}〜</span>
+      </li>
+      <li>
+        <span class="sake-jp">梅</span>
+        <span class="sake-name">梅酒・果実酒・サワー</span>
+        <span class="sake-price">¥{価格}〜</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="access" id="access">
+    <header class="izk-sec-head">
+      <span class="izk-mark">参</span>
+      <h2 class="izk-h">行き方<span class="en">— access —</span></h2>
+    </header>
+
+    <div class="access-poster">
+      <div class="poster-tape"></div>
+      <div class="poster-content">
+        <p class="poster-eyebrow">— {地名}の路地、奥 —</p>
+        <h3 class="poster-name">{店名}</h3>
+        <dl class="poster-dl">
+          <dt>住所</dt><dd>{住所}</dd>
+          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>営業</dt><dd>17:00 — 24:00</dd>
+          <dt>定休日</dt><dd>{定休日}</dd>
+          <dt>席数</dt><dd>カウンター8席 / 小上がり1卓</dd>
+          <dt>支払い</dt><dd>現金 / PayPay</dd>
+        </dl>
+        <p class="poster-note">— 路地の奥、提灯が灯っていれば、開いてます。 —</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="izk-foot">
+  <div class="foot-flag">
+    <span class="ff-1">{店名}</span>
+    <span class="ff-2">— 飲食処 —</span>
+    <span class="ff-3">{創業年}〜</span>
+  </div>
+  <p class="foot-tail">テンプレデモ表示 · 居酒屋 / Izakaya · Neon Night</p>
+</footer>
+
+</body>
+</html>

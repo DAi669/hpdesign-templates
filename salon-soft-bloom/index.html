@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{店名} | Salon — Soft Bloom テンプレート</title>
+  <meta name="description" content="繊細で上品なフェミニン系の美容室向けテンプレート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Hina+Mincho&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<svg class="bloom-deco bloom-1" viewBox="0 0 200 200" aria-hidden="true">
+  <g fill="currentColor" opacity="0.5">
+    <ellipse cx="100" cy="60" rx="22" ry="38" transform="rotate(-30 100 60)"/>
+    <ellipse cx="140" cy="100" rx="22" ry="38" transform="rotate(60 140 100)"/>
+    <ellipse cx="100" cy="140" rx="22" ry="38" transform="rotate(150 100 140)"/>
+    <ellipse cx="60" cy="100" rx="22" ry="38" transform="rotate(-120 60 100)"/>
+    <circle cx="100" cy="100" r="14"/>
+  </g>
+</svg>
+<svg class="bloom-deco bloom-2" viewBox="0 0 200 200" aria-hidden="true">
+  <g fill="currentColor" opacity="0.35">
+    <ellipse cx="100" cy="60" rx="18" ry="34" transform="rotate(-30 100 60)"/>
+    <ellipse cx="140" cy="100" rx="18" ry="34" transform="rotate(60 140 100)"/>
+    <ellipse cx="100" cy="140" rx="18" ry="34" transform="rotate(150 100 140)"/>
+    <ellipse cx="60" cy="100" rx="18" ry="34" transform="rotate(-120 60 100)"/>
+  </g>
+</svg>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-glyph">B</span>
+      <span class="brand-name">{店名}</span>
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#about">about</a></li>
+        <li><a href="#menu">menu</a></li>
+        <li><a href="#stylists">stylist</a></li>
+        <li><a href="#access">visit</a></li>
+      </ul>
+    </nav>
+    <a class="reserve-link" href="#reserve">予約 / reserve</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="kicker">est. {創業年} · for women</p>
+    <h1 class="hero-title">
+      <span class="line-1">a quiet</span>
+      <span class="line-2 italic">bloom,</span>
+      <span class="line-3">in your hair.</span>
+    </h1>
+    <p class="hero-sub">{店名}<br>{1-line サブコピー / 例: 髪と肌に、やさしい時間を。}</p>
+    <div class="hero-meta">
+      <span>open 10:00 — 19:00</span>
+      <span class="meta-bar">/</span>
+      <span>closed: tuesday</span>
+    </div>
+    <a href="#reserve" class="reserve-cta">
+      <span>book a chair</span>
+      <span class="arrow">⟶</span>
+    </a>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-num">№ 01</div>
+      <div class="about-body">
+        <p class="overline">about us</p>
+        <h2 class="section-title"><span class="italic">a salon</span><br>for those who<br>seek <span class="italic">stillness</span>.</h2>
+        <p class="lede">
+          {店名} は、{創業年}年、{店主名} が {地名} に開いたサロンです。
+        </p>
+        <p>
+          慌ただしい日常から少し離れて、お一人の時間を取り戻していただくために。
+          席数を抑え、施術の合間にも余白を残しています。
+        </p>
+        <p>
+          香り、光、温度、椅子の角度。
+          すべて、お客様が深く息をつける瞬間のために選びました。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <p class="overline">№ 02 — menu & price</p>
+    <h2 class="section-title">a list,<br><span class="italic">read slowly.</span></h2>
+
+    <ul class="menu-list">
+      <li class="menu-row">
+        <span class="m-num">i.</span>
+        <span class="m-name">cut</span>
+        <span class="m-jp">カット</span>
+        <span class="m-dots"></span>
+        <span class="m-price">¥{価格1}</span>
+      </li>
+      <li class="menu-row">
+        <span class="m-num">ii.</span>
+        <span class="m-name">color</span>
+        <span class="m-jp">カラー</span>
+        <span class="m-dots"></span>
+        <span class="m-price">¥{価格2}</span>
+      </li>
+      <li class="menu-row">
+        <span class="m-num">iii.</span>
+        <span class="m-name">treatment</span>
+        <span class="m-jp">トリートメント</span>
+        <span class="m-dots"></span>
+        <span class="m-price">¥{価格3}</span>
+      </li>
+      <li class="menu-row featured">
+        <span class="m-num">iv.</span>
+        <span class="m-name">spa & head therapy</span>
+        <span class="m-jp">ヘッドスパ — signature</span>
+        <span class="m-dots"></span>
+        <span class="m-price">¥{価格4}</span>
+      </li>
+      <li class="menu-row">
+        <span class="m-num">v.</span>
+        <span class="m-name">bridal full course</span>
+        <span class="m-jp">ブライダル一式</span>
+        <span class="m-dots"></span>
+        <span class="m-price">¥{価格5}</span>
+      </li>
+    </ul>
+
+    <p class="menu-note">— カウンセリング込み、お一人ずつ完全予約制 —</p>
+  </section>
+
+  <section class="stylists" id="stylists">
+    <p class="overline">№ 03 — the hands</p>
+    <h2 class="section-title">two <span class="italic">stylists</span>,<br>one philosophy.</h2>
+    <div class="stylist-grid">
+      <article class="stylist">
+        <div class="stylist-portrait">
+          <span>{店主写真}</span>
+        </div>
+        <p class="stylist-role">director</p>
+        <h3 class="stylist-name">{店主名}<small>— founder</small></h3>
+        <p class="stylist-quote">「お客様の "今日の気分" を聞くことから始めます。」</p>
+      </article>
+      <article class="stylist">
+        <div class="stylist-portrait">
+          <span>{スタッフ写真}</span>
+        </div>
+        <p class="stylist-role">stylist</p>
+        <h3 class="stylist-name">{スタッフ名}</h3>
+        <p class="stylist-quote">「ヘッドスパは、髪より頭皮を整えるために。」</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve">
+    <p class="overline">№ 04 — reserve</p>
+    <h2 class="section-title big-title">
+      <span class="italic">come in,</span><br>
+      gently.
+    </h2>
+    <p class="reserve-lede">
+      ご予約は、お電話 もしくは Instagram の DM で承ります。<br>
+      初めての方は、カウンセリングのお時間（30分・無料）もご一緒に。
+    </p>
+    <div class="reserve-buttons">
+      <a href="tel:{電話}" class="rc-btn primary">
+        <span>call</span>
+        <span class="rc-num">{電話}</span>
+      </a>
+      <a href="{Instagram URL}" class="rc-btn secondary" target="_blank" rel="noopener">
+        <span>instagram dm</span>
+        <span class="rc-num">@{IG ID}</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="access" id="access">
+    <div class="access-grid">
+      <div class="access-text">
+        <p class="overline">№ 05 — the place</p>
+        <h2 class="section-title">{最寄駅}.<br>{N} min on foot.</h2>
+        <dl class="access-dl">
+          <dt>address</dt><dd>{住所}</dd>
+          <dt>tel</dt><dd>{電話}</dd>
+          <dt>hours</dt><dd>10:00 – 19:00</dd>
+          <dt>closed</dt><dd>{定休日}</dd>
+          <dt>chairs</dt><dd>3 (完全予約制)</dd>
+        </dl>
+      </div>
+      <div class="access-frame">
+        <div class="frame-inner">{店内写真 placeholder}</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <p class="footer-mark">{店名}<span>est. {創業年}</span></p>
+    <p class="footer-line italic">— a quiet bloom, in your hair. —</p>
+    <p class="footer-meta">© {店名} · {住所}<br>テンプレデモ表示</p>
+  </div>
+</footer>
+
+</body>
+</html>

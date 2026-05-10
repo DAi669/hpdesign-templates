@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>{店名} | Modern Bakery — テンプレデモ</title>
+  <meta name="description" content="{店舗紹介文}。モダンミニマル系パン屋HPテンプレ。">
+  <meta property="og:title" content="{店名} | Modern Bakery">
+  <meta property="og:type" content="bakery">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">{頭文字}</span>
+      <span class="brand-name">{店名}</span>
+    </a>
+    <nav class="primary-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <ul id="navList" class="nav-list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+    </nav>
+    <a class="cta-pill" href="tel:{電話}">CONTACT</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="kicker">001 / Bakery</p>
+        <h1 class="hero-title">{店名}.</h1>
+        <p class="hero-sub">{1-line tagline / e.g. Bread, by hand. Daily.}</p>
+        <div class="hero-meta">
+          <span>Est. {創業年}</span>
+          <span>·</span>
+          <span>{地名}</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="placeholder-img placeholder-hero">
+          <span class="placeholder-text">PRODUCT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="container">
+      <header class="section-head">
+        <span class="kicker">002 / Products</span>
+        <h2 class="section-title">Daily.</h2>
+      </header>
+      <div class="products-grid">
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン1}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">01</span>
+            <h3>{パン1}</h3>
+            <span class="product-price">¥{価格1}</span>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン2}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">02</span>
+            <h3>{パン2}</h3>
+            <span class="product-price">¥{価格2}</span>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン3}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">03</span>
+            <h3>{パン3}</h3>
+            <span class="product-price">¥{価格3}</span>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン4}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">04</span>
+            <h3>{パン4}</h3>
+            <span class="product-price">¥{価格4}</span>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン5}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">05</span>
+            <h3>{パン5}</h3>
+            <span class="product-price">¥{価格5}</span>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン6}</span></div></div>
+          <div class="product-meta">
+            <span class="product-num">06</span>
+            <h3>{パン6}</h3>
+            <span class="product-price">¥{価格6}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-num">003</div>
+      <div class="about-content">
+        <span class="kicker">About</span>
+        <h2 class="section-title">{店主名}.</h2>
+        <p class="about-text">
+          {店名} は{創業年}年、{店主名}が{地名}に開いた小さなパン屋です。
+          毎朝{N}種類を焼き、店頭に並べる。それだけ。
+        </p>
+        <p class="about-text">
+          素材は国産、製法は手作業、装飾は最小。
+          パンそのものに集中するためのスタイルです。
+        </p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num" data-count-to="{創業年}">0</span><span class="stat-label">Established</span></div>
+          <div class="stat"><span class="stat-num" data-count-to="{種類数}">0</span><span class="stat-label">Daily varieties</span></div>
+          <div class="stat"><span class="stat-num" data-count-to="100">0</span><span class="stat-label">% Domestic flour</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-large"><div class="placeholder-img"><span class="placeholder-text">Process 01</span></div></div>
+      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 02</span></div></div>
+      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 03</span></div></div>
+      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 04</span></div></div>
+    </div>
+  </section>
+
+  <section class="access" id="access">
+    <div class="container access-grid">
+      <div class="access-text">
+        <span class="kicker">004 / Access</span>
+        <h2 class="section-title">Find.</h2>
+        <dl class="access-info">
+          <dt>Address</dt><dd>{住所}</dd>
+          <dt>Phone</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>Hours</dt><dd>7:00 — {閉店時刻}</dd>
+          <dt>Closed</dt><dd>{定休日}</dd>
+          <dt>Station</dt><dd>{最寄駅} / {N} min walk</dd>
+        </dl>
+      </div>
+      <div class="access-map">
+        <iframe loading="lazy" title="{店名}"
+          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container cta-inner">
+      <h2 class="cta-title">Today's bread,<br>baked at 7:00.</h2>
+      <a href="tel:{電話}" class="btn-line">→ Contact</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="brand-mark">{頭文字}</span>
+    <span class="footer-name">{店名}</span>
+    <span class="footer-meta">© {店名}, {地名}. テンプレデモ。</span>
+  </div>
+</footer>
+
+</body>
+</html>

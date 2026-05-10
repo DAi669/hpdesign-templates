@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>{店名} | Forest Hideaway — テンプレデモ</title>
+  <meta name="description" content="森の隠れ家のような、静かな時間を過ごせるカフェ。{店名}。">
+  <meta property="og:title" content="{店名} | Forest Hideaway">
+  <meta property="og:type" content="restaurant">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="leaf-pattern" aria-hidden="true">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="leafPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <path d="M10 4 Q14 8 12 12 Q10 16 6 12 Q4 8 10 4 Z" fill="currentColor" opacity="0.6"/>
+      </pattern>
+    </defs>
+    <rect width="100" height="100" fill="url(#leafPattern)"/>
+  </svg>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+          <path d="M16 4 Q22 12 18 18 Q16 22 12 18 Q10 14 16 4 Z" fill="currentColor"/>
+          <path d="M16 18 L16 28" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">{店名}</span>
+        <span class="brand-tag">forest hideaway</span>
+      </span>
+    </a>
+    <nav class="primary-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navList" class="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#space">Space</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+    </nav>
+    <a class="phone-cta" href="tel:0000000000">
+      <span aria-hidden="true">☘</span>
+      <span class="phone-label">予約はこちら</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero: full-bleed forest atmosphere -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="placeholder-img placeholder-hero" data-placeholder="森の中のテラス・木漏れ日">
+        <span class="placeholder-text">Hero · Forest</span>
+      </div>
+    </div>
+    <div class="hero-leaves" aria-hidden="true">
+      <span class="leaf leaf-1">🌿</span>
+      <span class="leaf leaf-2">🍃</span>
+      <span class="leaf leaf-3">🌿</span>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">— ようこそ、森の中のカフェへ —</p>
+      <h1 class="hero-title">
+        <span class="hero-jp">時を、ゆっくり<br>呼吸する場所。</span>
+        <span class="hero-en">a quiet hideaway,<br><em>nestled in green.</em></span>
+      </h1>
+      <p class="hero-lead">
+        まちの喧騒から少しだけ離れて、<br>
+        木漏れ日のテーブルで一杯の珈琲を。<br>
+        {店名} は、{店主名}が一人で営む小さなカフェです。
+      </p>
+      <a href="#about" class="hero-arrow" aria-label="ストーリーを見る">
+        <span class="arrow-circle"></span>
+        <span class="arrow-label">scroll</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- About: stacked vertical -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <span class="section-eyebrow">— 01 / about —</span>
+      <h2 class="section-title">小さな森の、<br><em>大人の隠れ家。</em></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            <span class="dropcap">{</span>店名}は、{創業年}年に{店主名}が
+            一人で始めた小さなカフェです。
+            街の路地を一本入った先、緑に囲まれた一軒家の入り口で、
+            お客様をお迎えしています。
+          </p>
+          <p>
+            お一人様もご家族連れも、ペットと一緒の方も、
+            それぞれのペースでお過ごしいただけるよう、
+            16席の店内とテラス席を用意しています。
+          </p>
+        </div>
+        <div class="about-visual">
+          <div class="placeholder-img placeholder-about" data-placeholder="店主の手元・調理風景">
+            <span class="placeholder-text">Owner's Hands</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num" data-count-to="{創業年}">{創業年}</span>
+          <span class="stat-label">創業年</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count-to="16">0</span>
+          <span class="stat-label">店内 席数</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count-to="8">0</span>
+          <span class="stat-label">テラス 席数</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count-to="1">0</span>
+          <span class="stat-label">店主、お一人で</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature dish callout -->
+  <section class="signature">
+    <div class="container">
+      <div class="signature-card">
+        <div class="signature-visual">
+          <div class="placeholder-img placeholder-signature" data-placeholder="看板メニュー画像">
+            <span class="placeholder-text">Signature Plate</span>
+          </div>
+        </div>
+        <div class="signature-text">
+          <span class="section-eyebrow">— 02 / signature —</span>
+          <h2 class="section-title">{看板メニュー名}。</h2>
+          <p>
+            旬の野菜をたっぷりと使った日替わりプレート。
+            その日に届いた素材で構成が変わるので、
+            同じ一皿は二度とお出しできません。
+          </p>
+          <ul class="signature-points">
+            <li>地元農家から届く旬の野菜</li>
+            <li>日替わり・予約推奨</li>
+            <li>ベジタリアン対応可</li>
+          </ul>
+          <p class="signature-price"><span>¥{価格}</span> ドリンク&デザート付</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu: bento grid -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <span class="section-eyebrow">— 03 / menu —</span>
+      <h2 class="section-title">お品書き。</h2>
+      <div class="menu-bento">
+        <article class="bento-card bento-large">
+          <div class="bento-img">
+            <div class="placeholder-img placeholder-menu" data-placeholder="日替わりプレート">
+              <span class="placeholder-text">Daily Plate</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <h3>日替わりプレート</h3>
+            <p>その日の旬を、一皿に。</p>
+            <span class="bento-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="bento-card">
+          <div class="bento-img">
+            <div class="placeholder-img placeholder-menu" data-placeholder="ハンドドリップ">
+              <span class="placeholder-text">Hand Drip</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <h3>ハンドドリップ</h3>
+            <span class="bento-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="bento-card">
+          <div class="bento-img">
+            <div class="placeholder-img placeholder-menu" data-placeholder="自家製スイーツ">
+              <span class="placeholder-text">Sweets</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <h3>自家製スイーツ</h3>
+            <span class="bento-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="bento-card bento-wide">
+          <div class="bento-img">
+            <div class="placeholder-img placeholder-menu" data-placeholder="季節のスープ">
+              <span class="placeholder-text">Seasonal Soup</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <h3>季節のスープ</h3>
+            <p>あたたかい一杯を、ゆっくりと。</p>
+            <span class="bento-price">¥{価格}</span>
+          </div>
+        </article>
+        <article class="bento-card">
+          <div class="bento-img">
+            <div class="placeholder-img placeholder-menu" data-placeholder="ハーブティー">
+              <span class="placeholder-text">Herb Tea</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <h3>ハーブティー</h3>
+            <span class="bento-price">¥{価格}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Space: gallery + ambient -->
+  <section class="space" id="space">
+    <div class="container">
+      <span class="section-eyebrow">— 04 / space —</span>
+      <h2 class="section-title">店内の空気。</h2>
+      <p class="space-lead">
+        木の温もりと、観葉植物の影。<br>
+        どの席に座っても、自然の気配を感じていただけます。
+      </p>
+      <div class="space-gallery">
+        <div class="gallery-item gallery-1">
+          <div class="placeholder-img placeholder-gallery" data-placeholder="店内 1"><span class="placeholder-text">Interior 01</span></div>
+        </div>
+        <div class="gallery-item gallery-2">
+          <div class="placeholder-img placeholder-gallery" data-placeholder="店内 2"><span class="placeholder-text">Interior 02</span></div>
+        </div>
+        <div class="gallery-item gallery-3">
+          <div class="placeholder-img placeholder-gallery" data-placeholder="テラス"><span class="placeholder-text">Terrace</span></div>
+        </div>
+        <div class="gallery-item gallery-4">
+          <div class="placeholder-img placeholder-gallery" data-placeholder="ディテール"><span class="placeholder-text">Detail</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access -->
+  <section class="access" id="access">
+    <div class="container access-inner">
+      <span class="section-eyebrow">— 05 / access —</span>
+      <h2 class="section-title">道すじ。</h2>
+      <div class="access-grid">
+        <dl class="access-info">
+          <dt>住所</dt><dd>{住所}</dd>
+          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>営業時間</dt><dd>11:30–17:00</dd>
+          <dt>定休日</dt><dd>{定休日}</dd>
+          <dt>最寄駅</dt><dd>{最寄駅}より徒歩{N}分</dd>
+          <dt>駐車場</dt><dd>2台あり</dd>
+          <dt>ご予約</dt><dd>お電話 or 公式LINE</dd>
+        </dl>
+        <div class="access-map">
+          <iframe loading="lazy" title="{店名} の地図"
+            src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final">
+    <div class="container cta-inner">
+      <div class="cta-leaves" aria-hidden="true">
+        <span class="leaf">🌿</span><span class="leaf">🍃</span><span class="leaf">🌿</span>
+      </div>
+      <h2>木漏れ日の席で、<br>お待ちしています。</h2>
+      <p>ランチは予約推奨。お電話 or LINE でお気軽に。</p>
+      <a href="tel:{電話}" class="btn btn-primary">電話で予約 →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="40" height="40">
+          <path d="M16 4 Q22 12 18 18 Q16 22 12 18 Q10 14 16 4 Z" fill="currentColor"/>
+          <path d="M16 18 L16 28" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </span>
+      <span class="brand-name">{店名}</span>
+      <p class="footer-tagline">— forest hideaway, since {創業年} —</p>
+    </div>
+    <div class="footer-info">
+      <p>© {店名}. テンプレデモページです。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

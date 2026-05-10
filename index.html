@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HPデザインカタログ｜合同会社DRAI</title>
+<meta name="description" content="個人店向けHP制作サービス・10種類のデザインテンプレート見本一覧。カフェ・パン屋・居酒屋・美容室・整骨院。すべて実物としてご覧いただけます。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;700&display=swap">
+<style>
+:root{
+  --paper:#F5F2EC;
+  --ink:#1B1B1B;
+  --ink-soft:#3A3A38;
+  --rule:#1B1B1B;
+  --mute:#A8A29A;
+  --accent:#C8442B;
+  --beige:#E8E2D5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1}
+body{overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ======= Header ======= */
+.head{padding:28px 48px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--paper);z-index:50;backdrop-filter:saturate(140%) blur(6px)}
+.head .logo{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase}
+.head nav{display:flex;gap:28px}
+.head nav a{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s}
+.head nav a:hover{color:var(--accent)}
+@media (max-width:720px){
+  .head{padding:18px 20px}
+  .head nav{display:none}
+}
+
+/* ======= Masthead ======= */
+.mast{padding:96px 48px 64px;border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
+.mast .issue{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:36px;display:flex;gap:18px;align-items:center}
+.mast .issue::before{content:"";width:48px;height:1px;background:var(--accent)}
+.mast h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(56px,11vw,168px);line-height:.92;letter-spacing:-.04em}
+.mast h1 em{font-style:italic;color:var(--accent)}
+.mast .sub{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.mast .lede{font-family:"Noto Serif JP",serif;font-size:17px;line-height:1.95;font-weight:300;max-width:54ch}
+.mast .lede strong{font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.mast .meta{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--ink-soft);text-align:right}
+.mast .meta span{display:block;margin-bottom:6px}
+.mast .meta b{color:var(--ink);font-weight:500}
+@media (max-width:900px){
+  .mast{padding:56px 20px 40px}
+  .mast .sub{grid-template-columns:1fr;gap:24px}
+  .mast .meta{text-align:left}
+}
+
+/* corner ornament */
+.mast::after{content:"№10/2026";position:absolute;top:48px;right:48px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.3em;color:var(--mute)}
+@media (max-width:720px){.mast::after{display:none}}
+
+/* ======= Filter ======= */
+.filter{padding:24px 48px;border-bottom:1px solid var(--rule);display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:var(--paper);position:sticky;top:74px;z-index:40}
+.filter .label{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-right:18px}
+.filter button{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;border-radius:999px;transition:all .2s}
+.filter button:hover{background:var(--ink);color:var(--paper)}
+.filter button.on{background:var(--ink);color:var(--paper)}
+.filter .count{margin-left:auto;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.2em;color:var(--mute)}
+@media (max-width:900px){
+  .filter{padding:18px 20px;top:64px}
+  .filter .count{display:none}
+}
+
+/* ======= Index list ======= */
+.indexlist{padding:24px 48px 0;border-bottom:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:80px 1.4fr 1fr .9fr 80px;gap:32px;padding:18px 0;border-bottom:1px solid var(--beige);align-items:baseline;cursor:pointer;transition:background .2s,padding .2s}
+.row:hover{background:var(--beige);padding:18px 24px}
+.row .num{font-family:"DM Mono",monospace;font-size:13px;letter-spacing:.1em;color:var(--accent)}
+.row .ttl{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:500;line-height:1.05}
+.row .ttl em{font-style:italic;color:var(--accent)}
+.row .ja{font-family:"Noto Serif JP",serif;font-size:13px;color:var(--ink-soft);font-weight:400}
+.row .tag{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.row .arr{font-family:"DM Mono",monospace;font-size:13px;text-align:right;color:var(--ink-soft);transition:transform .25s}
+.row:hover .arr{transform:translateX(8px);color:var(--accent)}
+@media (max-width:900px){
+  .indexlist{padding:0 20px}
+  .row{grid-template-columns:48px 1fr 28px;gap:14px;padding:18px 0}
+  .row .ja, .row .tag{display:none}
+  .row .ttl{font-size:24px}
+  .row:hover{padding:18px 0;background:transparent}
+}
+
+/* ======= Cards section ======= */
+.gallery{padding:120px 48px;background:var(--paper)}
+.gallery .ghdr{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px;padding-bottom:32px;border-bottom:1px solid var(--rule)}
+.gallery .ghdr h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-.02em}
+.gallery .ghdr h2 em{font-style:italic;color:var(--accent)}
+.gallery .ghdr p{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.95;font-weight:300;max-width:52ch}
+@media (max-width:900px){
+  .gallery{padding:64px 20px}
+  .gallery .ghdr{grid-template-columns:1fr;gap:18px;margin-bottom:36px}
+}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 32px}
+@media (max-width:900px){.grid{grid-template-columns:1fr;gap:48px}}
+
+.card{position:relative;display:block;text-decoration:none;color:inherit;cursor:pointer;border-top:1px solid var(--rule);padding-top:24px}
+.card .cnum{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.3em;color:var(--accent);display:flex;justify-content:space-between;margin-bottom:18px}
+.card .cnum span:last-child{color:var(--mute)}
+.card .cmedia{aspect-ratio:16/10;overflow:hidden;background:var(--beige);position:relative;border:1px solid var(--rule)}
+.card .cmedia .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:"DM Mono",monospace;font-size:11px;color:var(--mute);letter-spacing:.3em;background:linear-gradient(135deg,var(--beige) 0%,var(--paper) 100%)}
+.card .cmedia iframe{width:100%;height:100%;border:0;pointer-events:none;transform:scale(.5);transform-origin:0 0;width:200%;height:200%}
+.card .cinfo{padding:24px 0 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}
+.card .ctxt h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:34px;line-height:1.05;letter-spacing:-.01em;margin-bottom:6px}
+.card .ctxt h3 em{font-style:italic;color:var(--accent)}
+.card .ctxt .cja{font-family:"Noto Serif JP",serif;font-size:13px;color:var(--ink-soft);margin-bottom:14px}
+.card .ctxt .cdesc{font-family:"Noto Sans JP",sans-serif;font-size:13px;line-height:1.85;color:var(--ink-soft);font-weight:300;max-width:42ch}
+.card .ctags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.card .ctags span{font-family:"DM Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--ink-soft);padding:4px 9px;border-radius:999px;color:var(--ink-soft)}
+.card .cview{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:8px;padding-bottom:2px;border-bottom:1px solid var(--ink);transition:gap .25s,color .25s}
+.card:hover .cview{gap:14px;color:var(--accent);border-color:var(--accent)}
+.card:hover .cmedia{box-shadow:8px 8px 0 var(--ink)}
+.card .cmedia{transition:box-shadow .35s cubic-bezier(.2,.8,.2,1)}
+
+/* hide certain cards based on filter */
+.card[data-cat]{transition:opacity .25s,transform .25s}
+.card.hidden{display:none}
+
+/* ======= CTA bar ======= */
+.cta{padding:96px 48px;background:var(--ink);color:var(--paper);text-align:center;position:relative;overflow:hidden}
+.cta h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(40px,7vw,96px);line-height:.95;letter-spacing:-.02em;margin-bottom:18px}
+.cta h2 em{font-style:italic;color:#F5C896}
+.cta p{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.95;font-weight:300;max-width:46ch;margin:0 auto 36px;opacity:.85}
+.cta a.btn{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;background:var(--paper);color:var(--ink);font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;border:none;cursor:pointer;transition:gap .25s,background .25s}
+.cta a.btn:hover{gap:20px;background:#F5C896}
+@media (max-width:720px){.cta{padding:64px 20px}}
+
+/* ======= Foot ======= */
+.foot{padding:48px;border-top:1px solid var(--rule);display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.18em}
+.foot .col span{display:block;margin-bottom:8px;color:var(--mute);text-transform:uppercase;letter-spacing:.3em}
+.foot .col p, .foot .col a{display:block;color:var(--ink);line-height:1.9;font-size:11px;letter-spacing:.12em}
+.foot .col a:hover{color:var(--accent)}
+.foot .copy{grid-column:1/-1;text-align:center;color:var(--mute);padding-top:24px;border-top:1px solid var(--beige);margin-top:12px}
+@media (max-width:720px){
+  .foot{padding:36px 20px;grid-template-columns:1fr;gap:24px}
+}
+
+/* ======= reveal ======= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="logo">DRAI · HP Design Catalog</div>
+  <nav>
+    <a href="#index">Index</a>
+    <a href="#gallery">Gallery</a>
+    <a href="https://dai669.github.io/hpdesign-sales-lp/">Service</a>
+    <a href="https://dai669.github.io/hpdesign-sales-lp/#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="mast">
+  <div class="issue">Vol.01 · Spring/Summer 2026 · Curated Catalogue</div>
+  <h1>Ten Designs<br>for <em>your</em> store.</h1>
+  <div class="sub">
+    <p class="lede">個人店のための、HPデザインカタログ。<strong>カフェ・パン屋・居酒屋・美容室・整骨院</strong>──業種ごとの空気をそのまま伝える10種類のテンプレートを並べました。すべて実際に動くサイトとしてご覧いただけます。お気に入りを見つけて、お声がけください。</p>
+    <div class="meta">
+      <span>VOLUME <b>10 patterns</b></span>
+      <span>FORMAT <b>Static / Responsive</b></span>
+      <span>PRICE <b>¥20,000 flat</b></span>
+      <span>BUILD <b>1 week</b></span>
+    </div>
+  </div>
+</section>
+
+<div class="filter" id="filter">
+  <span class="label">Filter</span>
+  <button data-f="all" class="on">All</button>
+  <button data-f="cafe">Cafe</button>
+  <button data-f="bakery">Bakery</button>
+  <button data-f="izakaya">Izakaya</button>
+  <button data-f="salon">Salon</button>
+  <button data-f="seitai">Seitai</button>
+  <span class="count" id="count">10 / 10</span>
+</div>
+
+<!-- ======= Index (table of contents) ======= -->
+<section class="indexlist" id="index">
+  <a class="row" href="cafe-california-open-air/" data-cat="cafe">
+    <div class="num">№ 01</div>
+    <div class="ttl">California <em>Open</em> Air</div>
+    <div class="ja">カリフォルニア・オープンエア</div>
+    <div class="tag">Cafe / Sun-bleached</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="cafe-editorial-magazine/" data-cat="cafe">
+    <div class="num">№ 02</div>
+    <div class="ttl">Editorial <em>Mag.</em></div>
+    <div class="ja">エディトリアル・マガジン</div>
+    <div class="tag">Cafe / Print-style</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="cafe-forest-hideaway/" data-cat="cafe">
+    <div class="num">№ 03</div>
+    <div class="ttl">Forest <em>Hideaway</em></div>
+    <div class="ja">フォレスト・ハイダウェイ</div>
+    <div class="tag">Cafe / Mossy quiet</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="bakery-artisan-rustic/" data-cat="bakery">
+    <div class="num">№ 04</div>
+    <div class="ttl">Artisan <em>Rustic</em></div>
+    <div class="ja">アルチザン・ラスティック</div>
+    <div class="tag">Bakery / Hand-warm</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="bakery-modern-minimalist/" data-cat="bakery">
+    <div class="num">№ 05</div>
+    <div class="ttl">Modern <em>Minimalist</em></div>
+    <div class="ja">モダン・ミニマリスト</div>
+    <div class="tag">Bakery / White space</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="bakery-storytelling-heritage/" data-cat="bakery">
+    <div class="num">№ 06</div>
+    <div class="ttl">Storytelling <em>Heritage</em></div>
+    <div class="ja">ストーリーテリング・ヘリテージ</div>
+    <div class="tag">Bakery / Family tale</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="izakaya-neon-night/" data-cat="izakaya">
+    <div class="num">№ 07</div>
+    <div class="ttl">Neon <em>Night</em></div>
+    <div class="ja">ネオン・ナイト</div>
+    <div class="tag">Izakaya / Showa-retro</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="salon-soft-bloom/" data-cat="salon">
+    <div class="num">№ 08</div>
+    <div class="ttl">Soft <em>Bloom</em></div>
+    <div class="ja">ソフト・ブルーム</div>
+    <div class="tag">Salon / Pastel feminine</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="salon-monochrome-edge/" data-cat="salon">
+    <div class="num">№ 09</div>
+    <div class="ttl">Monochrome <em>Edge</em></div>
+    <div class="ja">モノクローム・エッジ</div>
+    <div class="tag">Salon / Brutalist</div>
+    <div class="arr">VIEW →</div>
+  </a>
+  <a class="row" href="seitai-mint-trust/" data-cat="seitai">
+    <div class="num">№ 10</div>
+    <div class="ttl">Mint <em>Trust</em></div>
+    <div class="ja">ミント・トラスト</div>
+    <div class="tag">Seitai / Clinical</div>
+    <div class="arr">VIEW →</div>
+  </a>
+</section>
+
+<!-- ======= Gallery (cards) ======= -->
+<section class="gallery" id="gallery">
+  <div class="ghdr reveal">
+    <h2>The <em>Lookbook.</em></h2>
+    <p>10種類のデザインを並べてご覧ください。気になるカードをクリックすると、実際のHPがそのまま開きます。スマホ・タブレット・PC、すべてのサイズで動きます。</p>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <a class="card" href="cafe-california-open-air/" data-cat="cafe">
+      <div class="cnum"><span>№ 01 / Cafe</span><span>Sun-bleached</span></div>
+      <div class="cmedia"><iframe src="cafe-california-open-air/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>California <em>Open</em> Air</h3>
+          <div class="cja">カリフォルニア・オープンエア</div>
+          <p class="cdesc">日差しに焼けたペールイエローと、西海岸のテラスを思わせる開放感。窓辺で本を読みたくなるカフェ向け。</p>
+          <div class="ctags"><span>Pale Yellow</span><span>Display Serif</span><span>Open Air</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="cafe-editorial-magazine/" data-cat="cafe">
+      <div class="cnum"><span>№ 02 / Cafe</span><span>Print-style</span></div>
+      <div class="cmedia"><iframe src="cafe-editorial-magazine/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Editorial <em>Mag.</em></h3>
+          <div class="cja">エディトリアル・マガジン</div>
+          <p class="cdesc">紙の雑誌のような骨格と、コラム的な物語性。コンセプトを語りたい店主のためのエディトリアル設計。</p>
+          <div class="ctags"><span>Magazine Grid</span><span>Editorial</span><span>Storytelling</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="cafe-forest-hideaway/" data-cat="cafe">
+      <div class="cnum"><span>№ 03 / Cafe</span><span>Mossy quiet</span></div>
+      <div class="cmedia"><iframe src="cafe-forest-hideaway/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Forest <em>Hideaway</em></h3>
+          <div class="cja">フォレスト・ハイダウェイ</div>
+          <p class="cdesc">苔色とアースカラーの静けさ。隠れ家・自家焙煎・ひとり時間。雨の日も似合うトーン。</p>
+          <div class="ctags"><span>Moss Green</span><span>Earth tone</span><span>Quiet</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="bakery-artisan-rustic/" data-cat="bakery">
+      <div class="cnum"><span>№ 04 / Bakery</span><span>Hand-warm</span></div>
+      <div class="cmedia"><iframe src="bakery-artisan-rustic/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Artisan <em>Rustic</em></h3>
+          <div class="cja">アルチザン・ラスティック</div>
+          <p class="cdesc">石窯と粉と手仕事のあたたかさを伝える、職人系パン屋のためのラスティックなデザイン。</p>
+          <div class="ctags"><span>Kraft Brown</span><span>Hand-set</span><span>Artisan</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="bakery-modern-minimalist/" data-cat="bakery">
+      <div class="cnum"><span>№ 05 / Bakery</span><span>White space</span></div>
+      <div class="cmedia"><iframe src="bakery-modern-minimalist/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Modern <em>Minimalist</em></h3>
+          <div class="cja">モダン・ミニマリスト</div>
+          <p class="cdesc">余白と型と整列。装飾を最小限にして、パンそのものを主役にするミニマリスト構成。</p>
+          <div class="ctags"><span>White</span><span>Sans-serif</span><span>Minimal</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="bakery-storytelling-heritage/" data-cat="bakery">
+      <div class="cnum"><span>№ 06 / Bakery</span><span>Family tale</span></div>
+      <div class="cmedia"><iframe src="bakery-storytelling-heritage/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Storytelling <em>Heritage</em></h3>
+          <div class="cja">ストーリーテリング・ヘリテージ</div>
+          <p class="cdesc">三代続く家業や、修行先の系譜。歴史と物語を綴る老舗パン屋のためのヘリテージ系デザイン。</p>
+          <div class="ctags"><span>Vintage</span><span>Heritage</span><span>Story</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="izakaya-neon-night/" data-cat="izakaya">
+      <div class="cnum"><span>№ 07 / Izakaya</span><span>Showa-retro</span></div>
+      <div class="cmedia"><iframe src="izakaya-neon-night/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Neon <em>Night</em></h3>
+          <div class="cja">ネオン・ナイト</div>
+          <p class="cdesc">提灯のあかりとネオン管。手書きポスターと判子。昭和レトロを懐かしむ夜の居酒屋に。</p>
+          <div class="ctags"><span>Neon Pink</span><span>Lantern</span><span>Showa</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="salon-soft-bloom/" data-cat="salon">
+      <div class="cnum"><span>№ 08 / Salon</span><span>Pastel feminine</span></div>
+      <div class="cmedia"><iframe src="salon-soft-bloom/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Soft <em>Bloom</em></h3>
+          <div class="cja">ソフト・ブルーム</div>
+          <p class="cdesc">クリームとブラッシュピンク、シャンパンゴールド。やわらかい花の気配を纏うサロン向けデザイン。</p>
+          <div class="ctags"><span>Cream</span><span>Blush</span><span>Italic Serif</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="salon-monochrome-edge/" data-cat="salon">
+      <div class="cnum"><span>№ 09 / Salon</span><span>Brutalist</span></div>
+      <div class="cmedia"><iframe src="salon-monochrome-edge/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Monochrome <em>Edge</em></h3>
+          <div class="cja">モノクローム・エッジ</div>
+          <p class="cdesc">純黒と純白、エレクトリックライム。ティッカーとモノスペース。攻めるサロンのためのブルータリズム。</p>
+          <div class="ctags"><span>Mono</span><span>Lime accent</span><span>Brutalist</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+    <a class="card" href="seitai-mint-trust/" data-cat="seitai">
+      <div class="cnum"><span>№ 10 / Seitai</span><span>Clinical</span></div>
+      <div class="cmedia"><iframe src="seitai-mint-trust/" loading="lazy" sandbox="allow-same-origin"></iframe></div>
+      <div class="cinfo">
+        <div class="ctxt">
+          <h3>Mint <em>Trust</em></h3>
+          <div class="cja">ミント・トラスト</div>
+          <p class="cdesc">ネイビー・ミント・シャンパンゴールド。医療パンフレットの清潔感と、整骨院ならではの信頼設計。</p>
+          <div class="ctags"><span>Navy</span><span>Mint</span><span>Trust</span></div>
+        </div>
+        <div class="cview">View →</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ======= CTA ======= -->
+<section class="cta">
+  <h2>Pick <em>one.</em><br>Send a message.</h2>
+  <p>気に入ったテンプレートが見つかったら、お声がけください。制作料 ¥20,000、最短1週間でお店のHPが公開されます。</p>
+  <a class="btn" href="https://dai669.github.io/hpdesign-sales-lp/#contact">Contact &nbsp;→</a>
+</section>
+
+<footer class="foot">
+  <div class="col">
+    <span>Studio</span>
+    <p>合同会社DRAI</p>
+    <p>〒160-0023 東京都新宿区西新宿3丁目2−9 新宿ワシントンビル本館</p>
+  </div>
+  <div class="col">
+    <span>Service</span>
+    <a href="https://dai669.github.io/hpdesign-sales-lp/">サービス紹介LP →</a>
+    <a href="https://dai669.github.io/hpdesign-sales-lp/#price">価格について →</a>
+    <a href="https://dai669.github.io/hpdesign-sales-lp/#contact">お問い合わせ →</a>
+  </div>
+  <div class="col">
+    <span>Other</span>
+    <a href="https://dai669.github.io/portfolio/">代表者の他の制作実績 →</a>
+  </div>
+  <div class="copy">© 2026 DRAI LLC. — All templates are static, responsive, and yours to choose.</div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  // Filter
+  const buttons = document.querySelectorAll('#filter button');
+  const rows = document.querySelectorAll('.row[data-cat]');
+  const cards = document.querySelectorAll('.card[data-cat]');
+  const count = document.getElementById('count');
+  const total = cards.length;
+
+  buttons.forEach(b => {
+    b.addEventListener('click', () => {
+      const f = b.dataset.f;
+      buttons.forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      let visible = 0;
+      rows.forEach(r => {
+        const show = (f === 'all' || r.dataset.cat === f);
+        r.style.display = show ? '' : 'none';
+      });
+      cards.forEach(c => {
+        const show = (f === 'all' || c.dataset.cat === f);
+        c.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      if (count) count.textContent = `${visible} / ${total}`;
+    });
+  });
+
+  // Reveal on scroll
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduced) {
+    const targets = document.querySelectorAll('.reveal, .card, .row');
+    targets.forEach(el => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('in'), i * 30);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    targets.forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .card, .row').forEach(el => el.classList.add('in'));
+  }
+
+  // robust: ensure iframe previews don't capture clicks (browser fallback)
+  document.querySelectorAll('.cmedia iframe').forEach(f => {
+    f.setAttribute('tabindex', '-1');
+    f.setAttribute('aria-hidden', 'true');
+  });
+})();
+</script>
+</body>
+</html>

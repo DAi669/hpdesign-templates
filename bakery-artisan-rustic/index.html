@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>{店名} | 職人のパン屋 — テンプレデモ</title>
+  <meta name="description" content="{店舗紹介文}。職人手作り・ナチュラル系パン屋HPテンプレ。">
+  <meta property="og:title" content="{店名} | Artisan Bakery">
+  <meta property="og:type" content="bakery">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon" aria-hidden="true">🌾</span>
+      <span class="brand-text">
+        <span class="brand-name">{店名}</span>
+        <span class="brand-tag">— Artisan Bakery —</span>
+      </span>
+    </a>
+    <nav class="primary-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navList" class="nav-list">
+        <li><a href="#story">物語</a></li>
+        <li><a href="#breads">パン</a></li>
+        <li><a href="#process">こだわり</a></li>
+        <li><a href="#access">場所</a></li>
+      </ul>
+    </nav>
+    <a class="phone-cta" href="tel:{電話}">本日のパン →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="placeholder-img placeholder-hero">
+        <span class="placeholder-text">焼き上がりのパン</span>
+      </div>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">— 朝7時、窯から —</p>
+      <h1 class="hero-title">
+        <span class="hero-line-1">小麦と、</span>
+        <span class="hero-line-2"><em>水と、</em></span>
+        <span class="hero-line-3">時間。</span>
+      </h1>
+      <p class="hero-lead">
+        {店名} は、{店主名} が一人で焼く小さなパン屋です。<br>
+        国産小麦と自家製酵母で、毎日{N}種類のパンを焼いています。
+      </p>
+      <div class="hero-stats-line">
+        <span><b>EST.</b> {創業年}</span>
+        <span class="dot">・</span>
+        <span><b>OPEN</b> 7:00 – {閉店時刻}</span>
+        <span class="dot">・</span>
+        <span><b>定休</b> {定休日}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="container">
+      <span class="section-label">— 01 —</span>
+      <h2 class="section-title">小麦のはじまり。</h2>
+      <div class="story-grid">
+        <div class="story-text">
+          <p class="story-lead">
+            {店名} は、{創業年}年に{店主名}が始めた小さなパン屋です。
+            毎朝4時に窯に火を入れ、夕方までに{N}種類を焼き上げます。
+          </p>
+          <p>
+            自家製酵母とイースト、ふたつの発酵を使い分けることで、
+            「軽い甘み」と「噛むごとに広がるコク」を両立させています。
+            国産小麦を中心に、季節の素材で構成を変えていく毎日です。
+          </p>
+          <blockquote class="story-quote">
+            「パンは、その日の気温と湿度で性格が変わる。
+            だから、毎日が初日。」
+            <cite>— {店主名}</cite>
+          </blockquote>
+        </div>
+        <div class="story-visual">
+          <div class="placeholder-img placeholder-story">
+            <span class="placeholder-text">店主の手</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="breads" id="breads">
+    <div class="container">
+      <span class="section-label">— 02 —</span>
+      <h2 class="section-title">本日のパン。</h2>
+      <p class="section-lead">
+        天気と気温で焼き上がりが変わるので、
+        毎日少しずつメニューが入れ替わります。
+      </p>
+      <div class="breads-grid">
+        <article class="bread-card">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン1}</span></div>
+          </div>
+          <div class="bread-body">
+            <h3>{パン1}</h3>
+            <p>{パン1の説明}</p>
+            <span class="bread-price">¥{価格1}</span>
+          </div>
+        </article>
+        <article class="bread-card">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン2}</span></div>
+          </div>
+          <div class="bread-body">
+            <h3>{パン2}</h3>
+            <p>{パン2の説明}</p>
+            <span class="bread-price">¥{価格2}</span>
+          </div>
+        </article>
+        <article class="bread-card bread-feature">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン3 看板}</span></div>
+          </div>
+          <div class="bread-body">
+            <span class="badge">看板</span>
+            <h3>{パン3 看板}</h3>
+            <p>{パン3の説明}</p>
+            <span class="bread-price">¥{価格3}</span>
+          </div>
+        </article>
+        <article class="bread-card">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン4}</span></div>
+          </div>
+          <div class="bread-body">
+            <h3>{パン4}</h3>
+            <p>{パン4の説明}</p>
+            <span class="bread-price">¥{価格4}</span>
+          </div>
+        </article>
+        <article class="bread-card">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン5}</span></div>
+          </div>
+          <div class="bread-body">
+            <h3>{パン5}</h3>
+            <p>{パン5の説明}</p>
+            <span class="bread-price">¥{価格5}</span>
+          </div>
+        </article>
+        <article class="bread-card">
+          <div class="bread-img">
+            <div class="placeholder-img placeholder-bread"><span class="placeholder-text">{パン6}</span></div>
+          </div>
+          <div class="bread-body">
+            <h3>{パン6}</h3>
+            <p>{パン6の説明}</p>
+            <span class="bread-price">¥{価格6}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="container">
+      <span class="section-label">— 03 —</span>
+      <h2 class="section-title">こだわり、四つ。</h2>
+      <ol class="process-list">
+        <li>
+          <span class="process-num">01</span>
+          <h3>国産小麦のみ</h3>
+          <p>北海道・関東の生産者から直接仕入れた小麦を、シーズンごとに使い分けています。</p>
+        </li>
+        <li>
+          <span class="process-num">02</span>
+          <h3>自家製酵母</h3>
+          <p>レーズン酵母と全粒粉酵母を継ぎ足しながら、{N}年使い続けています。</p>
+        </li>
+        <li>
+          <span class="process-num">03</span>
+          <h3>低温長時間発酵</h3>
+          <p>夜から朝まで18時間。ゆっくり発酵させることで、小麦の甘みを引き出します。</p>
+        </li>
+        <li>
+          <span class="process-num">04</span>
+          <h3>窯は薪、補助に石窯</h3>
+          <p>外側はカリッと、内側はもっちり。火の通り方で食感が変わります。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="access" id="access">
+    <div class="container access-grid">
+      <div class="access-text">
+        <span class="section-label">— 04 —</span>
+        <h2 class="section-title">場所。</h2>
+        <dl class="access-info">
+          <dt>住所</dt><dd>{住所}</dd>
+          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
+          <dt>営業時間</dt><dd>7:00 – {閉店時刻}（売切れ次第終了）</dd>
+          <dt>定休日</dt><dd>{定休日}</dd>
+          <dt>最寄駅</dt><dd>{最寄駅}より徒歩{N}分</dd>
+        </dl>
+        <p class="access-note">
+          ※ 焼き上がり時間は Instagram でお知らせしています。
+        </p>
+      </div>
+      <div class="access-map">
+        <iframe loading="lazy" title="{店名} の地図"
+          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container cta-inner">
+      <h2>窯から出たばかりの<br>香りを、店先で。</h2>
+      <a href="tel:{電話}" class="btn btn-primary">焼き上がりを問い合わせ</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-icon">🌾</span>
+      <span class="brand-name">{店名}</span>
+      <p class="footer-tagline">— Since {創業年}, hand-baked daily —</p>
+    </div>
+    <div class="footer-meta">
+      <p>© {店名}. テンプレデモページです。</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

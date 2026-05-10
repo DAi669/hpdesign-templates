@@ -1,201 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{店名} | 居酒屋 — Neon Night</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=RocknRoll+One&family=Noto+Sans+JP:wght@400;500;700&family=Major+Mono+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>居酒屋 とり伊｜東京・新橋の焼鳥と日本酒</title>
+<meta name="description" content="新橋ガード下の焼鳥屋「とり伊」。創業34年、店主が一本ずつ焼く。日本酒は常時25種類。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=RocknRoll+One&family=Major+Mono+Display&family=Noto+Serif+JP:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
-<body class="izakaya-night">
+<body>
 
-<div class="vignette" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
+<div class="lantern" aria-hidden="true"></div>
 
-<header class="izk-head">
-  <div class="izk-head-inner">
-    <a href="#top" class="izk-logo">
-      <span class="logo-chouchin" aria-hidden="true"></span>
-      <span class="logo-text"><span class="izk-en">izakaya</span><span class="izk-jp">{店名}</span></span>
-    </a>
-    <nav class="izk-nav">
-      <a href="#menu">お品書き</a>
-      <a href="#sake">酒</a>
-      <a href="#access">行き方</a>
-    </nav>
-    <span class="izk-open">
-      <span class="dot"></span>
-      <span>営業中 17:00 — 24:00</span>
+<header class="hd">
+  <a href="#top" class="brand">
+    <span class="b-mark">伊</span>
+    <span class="b-w">
+      <span class="b1">居酒屋 とり伊</span>
+      <span class="b2">SHIMBASHI · since 1992</span>
     </span>
-  </div>
+  </a>
+  <nav>
+    <a href="#menu">献立</a>
+    <a href="#sake">酒</a>
+    <a href="#info">店</a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="hero-stamp" aria-hidden="true">
-      <span class="stamp-jp">夜</span>
-      <span class="stamp-en">est. {創業年}</span>
-    </div>
-
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-grain"></div>
+  <div class="chouchin chouchin-1" aria-hidden="true"></div>
+  <div class="chouchin chouchin-2" aria-hidden="true"></div>
+  <div class="hero-in">
+    <span class="hero-eb">EST. 1992 ／ 新橋ガード下</span>
     <h1 class="hero-h">
-      <span class="hh-row hh-row-1">
-        <span class="hh-deco">▲</span>
-        <span class="hh-jp">夜</span>
-        <span class="hh-jp accent">、</span>
-        <span class="hh-jp">食う</span>
-      </span>
-      <span class="hh-row hh-row-2">
-        <span class="hh-jp">飲</span>
-        <span class="hh-jp">む</span>
-        <span class="hh-deco-r">★</span>
-      </span>
-      <span class="hh-row hh-row-3">
-        <span class="hh-jp">語</span>
-        <span class="hh-jp">る</span>
-        <span class="hh-period">。</span>
-      </span>
+      <span class="line"><em class="neon">焼鳥</em>と</span>
+      <span class="line">日本酒。</span>
+      <span class="line tiny">それだけの店です。</span>
     </h1>
-
-    <div class="hero-tape">
-      <span>{店名}</span>
-      <span>—</span>
-      <span>{地名}</span>
-      <span>—</span>
-      <span>since {創業年}</span>
-      <span>—</span>
-      <span>open till midnight</span>
+    <p class="hero-sub">店主が、一本ずつ焼きます。<br>日本酒は、常時25種類。</p>
+    <div class="hero-row">
+      <span class="open-pill"><span class="dot"></span>17:00 OPEN · 23:00 LAST</span>
     </div>
+  </div>
+  <div class="ticker">
+    <span>焼鳥 · 日本酒 · おでん · 季節の肴 · 焼鳥 · 日本酒 · おでん · 季節の肴 · 焼鳥 · 日本酒 · おでん · 季節の肴 · 焼鳥 · 日本酒 · おでん · 季節の肴 · </span>
+  </div>
+</section>
 
-    <p class="hero-lede">
-      {店名} は {地名} の路地裏に灯る、ちいさな居酒屋です。<br>
-      おひとり様も、ふたりも、ぐるりと座って、酒と肴と話を。
-    </p>
-
-    <a href="tel:{電話}" class="hero-call">
-      <span class="call-decor">— 電話で予約 —</span>
-      <span class="call-num">{電話}</span>
-    </a>
-  </section>
-
-  <section class="menu" id="menu">
-    <header class="izk-sec-head">
-      <span class="izk-mark">壱</span>
-      <h2 class="izk-h">お品書き<span class="en">— menu —</span></h2>
-    </header>
-
-    <div class="menu-cluster">
-      <div class="menu-block">
-        <h3 class="block-title">— 突き出し・小鉢 —</h3>
-        <ul class="dish-list">
-          <li><span>本日の突き出し</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>枝豆 / 冷奴 / お新香</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>ポテサラ — 看板</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+<section class="menu" id="menu">
+  <div class="cont">
+    <span class="eb">— お品書き · 焼鳥 —</span>
+    <h2><em class="neon-pink">焼鳥</em>、ぜんぶ手仕事。</h2>
+    <div class="menu-grid">
+      <div class="mn-col">
+        <h3 class="mn-cat">塩</h3>
+        <ul>
+          <li><span>ねぎま</span><span class="dots"></span><span class="pp">¥220</span></li>
+          <li><span>もも</span><span class="dots"></span><span class="pp">¥220</span></li>
+          <li><span>ささみ（梅 or わさび）</span><span class="dots"></span><span class="pp">¥260</span></li>
+          <li><span>つくね</span><span class="dots"></span><span class="pp">¥240</span></li>
+          <li><span>ぼんじり</span><span class="dots"></span><span class="pp">¥260</span></li>
+          <li><span>かわ（カリカリ焼き）</span><span class="dots"></span><span class="pp">¥220</span></li>
         </ul>
       </div>
-
-      <div class="menu-block">
-        <h3 class="block-title">— 焼き物 —</h3>
-        <ul class="dish-list">
-          <li><span>串焼き三本盛り</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>つくね — 自家製</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>豚バラ巻き野菜</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
+      <div class="mn-col">
+        <h3 class="mn-cat">タレ</h3>
+        <ul>
+          <li><span>もも</span><span class="dots"></span><span class="pp">¥220</span></li>
+          <li><span>レバー</span><span class="dots"></span><span class="pp">¥240</span></li>
+          <li><span>ハツ</span><span class="dots"></span><span class="pp">¥240</span></li>
+          <li><span>砂肝</span><span class="dots"></span><span class="pp">¥240</span></li>
+          <li><span>手羽先（甘ダレ）</span><span class="dots"></span><span class="pp">¥320</span></li>
+          <li><span>つくね</span><span class="dots"></span><span class="pp">¥260</span></li>
         </ul>
       </div>
-
-      <div class="menu-block big">
-        <h3 class="block-title">— 本日の一品 —</h3>
-        <p class="featured-jp">{看板メニュー名}</p>
-        <p class="featured-en">tonight's signature</p>
-        <p class="featured-desc">{店主名}が市場で選んだ、その日の一番。{看板メニューの説明1行}</p>
-        <p class="featured-yen">¥{価格}</p>
-      </div>
-
-      <div class="menu-block">
-        <h3 class="block-title">— 〆 —</h3>
-        <ul class="dish-list">
-          <li><span>出汁茶漬け</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>稲庭うどん</span><span class="dot-line"></span><span class="yen">¥{価格}</span></li>
-          <li><span>本日のご飯もの</span><span class="dot-line"></span><span class="yen">時価</span></li>
+      <div class="mn-col">
+        <h3 class="mn-cat">逸品</h3>
+        <ul>
+          <li><span>白レバー</span><span class="dots"></span><span class="pp">¥420</span></li>
+          <li><span>大山どり 鶏刺し</span><span class="dots"></span><span class="pp">¥780</span></li>
+          <li><span>店主おまかせ盛り（5本）</span><span class="dots"></span><span class="pp">¥1,300</span></li>
+          <li><span>焼きおにぎり</span><span class="dots"></span><span class="pp">¥320</span></li>
+          <li><span>鶏スープ</span><span class="dots"></span><span class="pp">¥420</span></li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <p class="menu-aside">— ※ 仕入れにより変更あり。お酒のあてのオススメは、その日に。 —</p>
-  </section>
-
-  <section class="sake" id="sake">
-    <header class="izk-sec-head">
-      <span class="izk-mark">弐</span>
-      <h2 class="izk-h">酒<span class="en">— sake & drinks —</span></h2>
-    </header>
-
-    <div class="sake-flag">
-      <p class="flag-line-1">日本酒</p>
-      <p class="flag-line-2">十三蔵</p>
-      <p class="flag-line-3">焼酎・ハイボール・果実酒・ビール、すべてあり。</p>
-    </div>
-
+<section class="sake" id="sake">
+  <div class="cont">
+    <span class="eb">— 日本酒 / SAKE · 25種 —</span>
+    <h2>店主<em class="neon-yellow">厳選</em>の25本。</h2>
     <ul class="sake-grid">
-      <li>
-        <span class="sake-jp">酒</span>
-        <span class="sake-name">日本酒（本日の三種）</span>
-        <span class="sake-price">¥{価格}〜</span>
-      </li>
-      <li>
-        <span class="sake-jp">焼</span>
-        <span class="sake-name">焼酎・芋／麦／米</span>
-        <span class="sake-price">¥{価格}〜</span>
-      </li>
-      <li>
-        <span class="sake-jp">麦</span>
-        <span class="sake-name">生ビール / 瓶ビール</span>
-        <span class="sake-price">¥{価格}〜</span>
-      </li>
-      <li>
-        <span class="sake-jp">梅</span>
-        <span class="sake-name">梅酒・果実酒・サワー</span>
-        <span class="sake-price">¥{価格}〜</span>
-      </li>
+      <li><span class="sk-prefex">山形</span><span class="sk-name">十四代 / 本丸</span><span class="sk-price">¥1,200</span></li>
+      <li><span class="sk-prefex">福島</span><span class="sk-name">飛露喜 / 特別純米</span><span class="sk-price">¥980</span></li>
+      <li><span class="sk-prefex">三重</span><span class="sk-name">而今 / 純米</span><span class="sk-price">¥1,080</span></li>
+      <li><span class="sk-prefex">秋田</span><span class="sk-name">新政 / Colors</span><span class="sk-price">¥1,300</span></li>
+      <li><span class="sk-prefex">山口</span><span class="sk-name">獺祭 / 三割九分</span><span class="sk-price">¥1,400</span></li>
+      <li><span class="sk-prefex">愛知</span><span class="sk-name">醸し人九平次</span><span class="sk-price">¥1,200</span></li>
+      <li><span class="sk-prefex">栃木</span><span class="sk-name">仙禽 / 雪だるま</span><span class="sk-price">¥1,100</span></li>
+      <li><span class="sk-prefex">佐賀</span><span class="sk-name">鍋島 / 純米吟醸</span><span class="sk-price">¥1,000</span></li>
     </ul>
-  </section>
+    <p class="sake-note">他、季節限定 17 種を日替わりでご用意しています。お声がけください。</p>
+  </div>
+</section>
 
-  <section class="access" id="access">
-    <header class="izk-sec-head">
-      <span class="izk-mark">参</span>
-      <h2 class="izk-h">行き方<span class="en">— access —</span></h2>
-    </header>
-
-    <div class="access-poster">
-      <div class="poster-tape"></div>
-      <div class="poster-content">
-        <p class="poster-eyebrow">— {地名}の路地、奥 —</p>
-        <h3 class="poster-name">{店名}</h3>
-        <dl class="poster-dl">
-          <dt>住所</dt><dd>{住所}</dd>
-          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
-          <dt>営業</dt><dd>17:00 — 24:00</dd>
-          <dt>定休日</dt><dd>{定休日}</dd>
-          <dt>席数</dt><dd>カウンター8席 / 小上がり1卓</dd>
-          <dt>支払い</dt><dd>現金 / PayPay</dd>
-        </dl>
-        <p class="poster-note">— 路地の奥、提灯が灯っていれば、開いてます。 —</p>
-      </div>
+<section class="poster">
+  <div class="cont">
+    <div class="poster-card">
+      <span class="ps-title">本日の<br>おすすめ。</span>
+      <ul>
+        <li>のどぐろの炙り</li>
+        <li>初鰹 / 高知</li>
+        <li>そら豆と新生姜</li>
+        <li>新茶アイス（自家製）</li>
+      </ul>
+      <span class="ps-stamp">店主</span>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="info" id="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— 店舗情報 —</span>
+      <h2><em class="neon-pink">居酒屋</em> とり伊。</h2>
+      <dl>
+        <dt>住所</dt><dd>東京都港区新橋X-X-X 新橋ガード下</dd>
+        <dt>電話</dt><dd>03-XXXX-XXXX</dd>
+        <dt>営業</dt><dd>17:00 — 23:30（L.O. 23:00）</dd>
+        <dt>定休</dt><dd>日曜・祝日</dd>
+        <dt>席数</dt><dd>カウンター 8席 / テーブル 2卓</dd>
+        <dt>支払い</dt><dd>現金のみ</dd>
+      </dl>
+    </div>
+    <div class="info-side">
+      <div class="info-card">
+        <span class="ic-eb">本日 営業中</span>
+        <span class="ic-big">17:00 — 23:30</span>
+        <span class="ic-sub">日祝 定休 ／ カウンター8席</span>
+      </div>
+      <p class="info-note">「予約の電話は、19時までに」<br>20時以降は焼きに集中していて、<br>取れないことがあります。</p>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer class="izk-foot">
-  <div class="foot-flag">
-    <span class="ff-1">{店名}</span>
-    <span class="ff-2">— 飲食処 —</span>
-    <span class="ff-3">{創業年}〜</span>
+<footer class="ft">
+  <div class="ft-in">
+    <span><em>居酒屋 とり伊</em> · TORI-I</span>
+    <span>© 1992—2026 · SHIMBASHI</span>
   </div>
-  <p class="foot-tail">テンプレデモ表示 · 居酒屋 / Izakaya · Neon Night</p>
 </footer>
 
 </body>

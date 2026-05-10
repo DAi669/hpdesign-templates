@@ -1,212 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{店名} | Salon — Soft Bloom テンプレート</title>
-  <meta name="description" content="繊細で上品なフェミニン系の美容室向けテンプレート。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Hina+Mincho&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salon Lumière｜大阪・南堀江のプライベートサロン</title>
+<meta name="description" content="大阪・南堀江のプライベートヘアサロン Salon Lumière（ルミエール）。完全予約制、1日4組まで。やわらかい花の気配を纏うサロン。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500&family=Hina+Mincho&family=Noto+Sans+JP:wght@200;300;400;500;700&family=DM+Mono&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 <body>
 
-<svg class="bloom-deco bloom-1" viewBox="0 0 200 200" aria-hidden="true">
-  <g fill="currentColor" opacity="0.5">
-    <ellipse cx="100" cy="60" rx="22" ry="38" transform="rotate(-30 100 60)"/>
-    <ellipse cx="140" cy="100" rx="22" ry="38" transform="rotate(60 140 100)"/>
-    <ellipse cx="100" cy="140" rx="22" ry="38" transform="rotate(150 100 140)"/>
-    <ellipse cx="60" cy="100" rx="22" ry="38" transform="rotate(-120 60 100)"/>
-    <circle cx="100" cy="100" r="14"/>
-  </g>
-</svg>
-<svg class="bloom-deco bloom-2" viewBox="0 0 200 200" aria-hidden="true">
-  <g fill="currentColor" opacity="0.35">
-    <ellipse cx="100" cy="60" rx="18" ry="34" transform="rotate(-30 100 60)"/>
-    <ellipse cx="140" cy="100" rx="18" ry="34" transform="rotate(60 140 100)"/>
-    <ellipse cx="100" cy="140" rx="18" ry="34" transform="rotate(150 100 140)"/>
-    <ellipse cx="60" cy="100" rx="18" ry="34" transform="rotate(-120 60 100)"/>
-  </g>
-</svg>
+<div class="petals" aria-hidden="true">
+  <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
+  <span class="petal p4"></span><span class="petal p5"></span><span class="petal p6"></span>
+</div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-glyph">B</span>
-      <span class="brand-name">{店名}</span>
-    </a>
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#about">about</a></li>
-        <li><a href="#menu">menu</a></li>
-        <li><a href="#stylists">stylist</a></li>
-        <li><a href="#access">visit</a></li>
-      </ul>
-    </nav>
-    <a class="reserve-link" href="#reserve">予約 / reserve</a>
-  </div>
+<header class="hd">
+  <a href="#top" class="brand">
+    <span class="b-logo">L<em>—</em></span>
+    <span class="b-w">
+      <span class="b1"><em>Salon</em> Lumière</span>
+      <span class="b2">— Minamihorie, Osaka —</span>
+    </span>
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#stylist">Stylist</a>
+    <a href="#reserve">Reserve</a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <p class="kicker">est. {創業年} · for women</p>
-    <h1 class="hero-title">
-      <span class="line-1">a quiet</span>
-      <span class="line-2 italic">bloom,</span>
-      <span class="line-3">in your hair.</span>
-    </h1>
-    <p class="hero-sub">{店名}<br>{1-line サブコピー / 例: 髪と肌に、やさしい時間を。}</p>
-    <div class="hero-meta">
-      <span>open 10:00 — 19:00</span>
-      <span class="meta-bar">/</span>
-      <span>closed: tuesday</span>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <span class="hero-eb">— Private salon · 1日 4組まで —</span>
+      <h1 class="hero-h">
+        <span class="line"><em>やわらかな</em></span>
+        <span class="line">あなたを、</span>
+        <span class="line script">咲かせる。</span>
+      </h1>
+      <p class="hero-sub">大阪・南堀江の小さなプライベートサロン。<br>あなたのためだけの時間と、空間を。</p>
+      <a href="#reserve" class="btn-magnet" data-magnet><span>初回予約 ¥2,000 OFF →</span></a>
     </div>
-    <a href="#reserve" class="reserve-cta">
-      <span>book a chair</span>
-      <span class="arrow">⟶</span>
-    </a>
-  </section>
-
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-num">№ 01</div>
-      <div class="about-body">
-        <p class="overline">about us</p>
-        <h2 class="section-title"><span class="italic">a salon</span><br>for those who<br>seek <span class="italic">stillness</span>.</h2>
-        <p class="lede">
-          {店名} は、{創業年}年、{店主名} が {地名} に開いたサロンです。
-        </p>
-        <p>
-          慌ただしい日常から少し離れて、お一人の時間を取り戻していただくために。
-          席数を抑え、施術の合間にも余白を残しています。
-        </p>
-        <p>
-          香り、光、温度、椅子の角度。
-          すべて、お客様が深く息をつける瞬間のために選びました。
-        </p>
+    <div class="hero-imgs">
+      <div class="himg himg-1" data-tilt><div class="himg-i"></div></div>
+      <div class="himg himg-2" data-tilt><div class="himg-i"></div></div>
+      <div class="hsig">
+        <span class="hs-no">№ 01 / 26</span>
+        <span class="hs-msg">— since 2019 —</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="menu" id="menu">
-    <p class="overline">№ 02 — menu & price</p>
-    <h2 class="section-title">a list,<br><span class="italic">read slowly.</span></h2>
-
-    <ul class="menu-list">
-      <li class="menu-row">
-        <span class="m-num">i.</span>
-        <span class="m-name">cut</span>
-        <span class="m-jp">カット</span>
-        <span class="m-dots"></span>
-        <span class="m-price">¥{価格1}</span>
-      </li>
-      <li class="menu-row">
-        <span class="m-num">ii.</span>
-        <span class="m-name">color</span>
-        <span class="m-jp">カラー</span>
-        <span class="m-dots"></span>
-        <span class="m-price">¥{価格2}</span>
-      </li>
-      <li class="menu-row">
-        <span class="m-num">iii.</span>
-        <span class="m-name">treatment</span>
-        <span class="m-jp">トリートメント</span>
-        <span class="m-dots"></span>
-        <span class="m-price">¥{価格3}</span>
-      </li>
-      <li class="menu-row featured">
-        <span class="m-num">iv.</span>
-        <span class="m-name">spa & head therapy</span>
-        <span class="m-jp">ヘッドスパ — signature</span>
-        <span class="m-dots"></span>
-        <span class="m-price">¥{価格4}</span>
-      </li>
-      <li class="menu-row">
-        <span class="m-num">v.</span>
-        <span class="m-name">bridal full course</span>
-        <span class="m-jp">ブライダル一式</span>
-        <span class="m-dots"></span>
-        <span class="m-price">¥{価格5}</span>
-      </li>
-    </ul>
-
-    <p class="menu-note">— カウンセリング込み、お一人ずつ完全予約制 —</p>
-  </section>
-
-  <section class="stylists" id="stylists">
-    <p class="overline">№ 03 — the hands</p>
-    <h2 class="section-title">two <span class="italic">stylists</span>,<br>one philosophy.</h2>
-    <div class="stylist-grid">
-      <article class="stylist">
-        <div class="stylist-portrait">
-          <span>{店主写真}</span>
-        </div>
-        <p class="stylist-role">director</p>
-        <h3 class="stylist-name">{店主名}<small>— founder</small></h3>
-        <p class="stylist-quote">「お客様の "今日の気分" を聞くことから始めます。」</p>
+<section class="about" id="about">
+  <div class="cont about-grid">
+    <div class="ab-l">
+      <span class="eb">— About —</span>
+      <h2><em>4つだけ</em>の<br>こだわり。</h2>
+    </div>
+    <div class="ab-r">
+      <article class="ab-card" data-tilt>
+        <span class="ab-no">01</span>
+        <h3>1日 4組まで</h3>
+        <p>同時間帯のお客様は最大2名まで。じっくり、ゆっくり。</p>
       </article>
-      <article class="stylist">
-        <div class="stylist-portrait">
-          <span>{スタッフ写真}</span>
-        </div>
-        <p class="stylist-role">stylist</p>
-        <h3 class="stylist-name">{スタッフ名}</h3>
-        <p class="stylist-quote">「ヘッドスパは、髪より頭皮を整えるために。」</p>
+      <article class="ab-card" data-tilt>
+        <span class="ab-no">02</span>
+        <h3>髪質改善トリートメント</h3>
+        <p>独自配合のオーガニック処方で、回数を重ねるほどに。</p>
+      </article>
+      <article class="ab-card" data-tilt>
+        <span class="ab-no">03</span>
+        <h3>カウンセリング 30分</h3>
+        <p>初回は必ず、髪のお悩みと理想を、ゆっくりお伺いします。</p>
+      </article>
+      <article class="ab-card" data-tilt>
+        <span class="ab-no">04</span>
+        <h3>個室シャンプー</h3>
+        <p>シャンプーブースは完全個室。アロマと、目の前の植栽と。</p>
       </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="reserve" id="reserve">
-    <p class="overline">№ 04 — reserve</p>
-    <h2 class="section-title big-title">
-      <span class="italic">come in,</span><br>
-      gently.
-    </h2>
-    <p class="reserve-lede">
-      ご予約は、お電話 もしくは Instagram の DM で承ります。<br>
-      初めての方は、カウンセリングのお時間（30分・無料）もご一緒に。
-    </p>
-    <div class="reserve-buttons">
-      <a href="tel:{電話}" class="rc-btn primary">
-        <span>call</span>
-        <span class="rc-num">{電話}</span>
-      </a>
-      <a href="{Instagram URL}" class="rc-btn secondary" target="_blank" rel="noopener">
-        <span>instagram dm</span>
-        <span class="rc-num">@{IG ID}</span>
-      </a>
-    </div>
-  </section>
+<section class="menu" id="menu">
+  <div class="cont">
+    <span class="eb">— Menu —</span>
+    <h2>メニューと<em>料金</em>。</h2>
 
-  <section class="access" id="access">
-    <div class="access-grid">
-      <div class="access-text">
-        <p class="overline">№ 05 — the place</p>
-        <h2 class="section-title">{最寄駅}.<br>{N} min on foot.</h2>
-        <dl class="access-dl">
-          <dt>address</dt><dd>{住所}</dd>
-          <dt>tel</dt><dd>{電話}</dd>
-          <dt>hours</dt><dd>10:00 – 19:00</dd>
-          <dt>closed</dt><dd>{定休日}</dd>
-          <dt>chairs</dt><dd>3 (完全予約制)</dd>
-        </dl>
+    <div class="mn-tabs">
+      <div class="mn-tab">
+        <h3>Hair</h3>
+        <ul>
+          <li><span>カット</span><span class="dots"></span><span class="pp">¥6,800</span></li>
+          <li><span>カラー（リタッチ）</span><span class="dots"></span><span class="pp">¥9,800</span></li>
+          <li><span>カラー（フル）</span><span class="dots"></span><span class="pp">¥13,800</span></li>
+          <li><span>パーマ</span><span class="dots"></span><span class="pp">¥12,800</span></li>
+          <li><span>デジタルパーマ</span><span class="dots"></span><span class="pp">¥16,800</span></li>
+          <li><span>縮毛矯正</span><span class="dots"></span><span class="pp">¥22,000</span></li>
+        </ul>
       </div>
-      <div class="access-frame">
-        <div class="frame-inner">{店内写真 placeholder}</div>
+      <div class="mn-tab mn-feat">
+        <span class="mn-badge">人気</span>
+        <h3>髪質改善</h3>
+        <ul>
+          <li><span>髪質改善トリートメント</span><span class="dots"></span><span class="pp">¥8,800</span></li>
+          <li><span>サイエンスアクア（90分）</span><span class="dots"></span><span class="pp">¥14,800</span></li>
+          <li><span>水素トリートメント</span><span class="dots"></span><span class="pp">¥6,800</span></li>
+          <li><span>ヘッドスパ（30分）</span><span class="dots"></span><span class="pp">¥4,800</span></li>
+          <li><span>ヘッドスパ（60分）</span><span class="dots"></span><span class="pp">¥8,800</span></li>
+        </ul>
+      </div>
+      <div class="mn-tab">
+        <h3>Bridal</h3>
+        <ul>
+          <li><span>前撮り ヘアセット</span><span class="dots"></span><span class="pp">¥12,000</span></li>
+          <li><span>挙式当日 ヘアセット</span><span class="dots"></span><span class="pp">¥18,000</span></li>
+          <li><span>振袖 ヘアセット＋着付</span><span class="dots"></span><span class="pp">¥28,000</span></li>
+          <li><span>出張サロン（要相談）</span><span class="dots"></span><span class="pp">+¥10,000</span></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="stylist" id="stylist">
+  <div class="cont stylist-grid">
+    <div class="st-text">
+      <span class="eb">— Stylist —</span>
+      <h2>あなたを、<br><em>知ってくれる</em><br>スタイリスト。</h2>
+      <p>1人の担当が、最初から最後までお相手します。同じ人に、何度も来ていただけることが、私たちのいちばんの誇りです。</p>
+    </div>
+    <div class="st-cards">
+      <article class="st" data-tilt>
+        <div class="st-img st-i1"></div>
+        <div class="st-info">
+          <span class="st-role">代表 ／ 8年目</span>
+          <h3>美月 桐子</h3>
+          <p>得意：髪質改善、ボブ／ロング、白髪ぼかし。<br>「あなたが朝起きるたびに、好きになれる髪を」</p>
+        </div>
+      </article>
+      <article class="st" data-tilt>
+        <div class="st-img st-i2"></div>
+        <div class="st-info">
+          <span class="st-role">スタイリスト ／ 5年目</span>
+          <h3>島田 杏</h3>
+          <p>得意：ハイトーンカラー、デザインカット、ブライダル。<br>「攻めたいときも、優しく」</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="cont reserve-card">
+    <div class="rc-l">
+      <span class="eb">— First Visit —</span>
+      <h2>初回ご予約、<br><em>¥2,000 OFF</em>。</h2>
+      <p>初めての方限定。すべてのメニューから、¥2,000 引きでお試しいただけます。<br>まずはカウンセリングから、お気軽に。</p>
+    </div>
+    <div class="rc-r">
+      <a href="#" class="btn-magnet big" data-magnet><span>WEB予約 24h →</span></a>
+      <a href="#" class="btn-tel"><span>06-XXXX-XXXX</span><em>営業時間内のみ</em></a>
+      <p class="r-note">※ 当日のご予約は、お電話のみ承ります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— Salon —</span>
+      <h2>Salon <em>Lumière</em>.</h2>
+      <dl>
+        <dt>住所</dt><dd>大阪府大阪市西区南堀江X-X-X 南堀江ハウス 2F</dd>
+        <dt>営業</dt><dd>10:00 — 20:00（最終受付 18:30）</dd>
+        <dt>定休</dt><dd>毎週火曜日</dd>
+        <dt>アクセス</dt><dd>地下鉄「四ツ橋」駅 徒歩4分</dd>
+      </dl>
+    </div>
+    <div class="info-side">
+      <div class="info-card">
+        <span class="ic-eb">Today's Hours</span>
+        <span class="ic-big">10:00 — 20:00</span>
+        <span class="ic-sub">最終受付 18:30 ／ 火曜定休</span>
+      </div>
+      <a href="#" class="ig-link"><span>Instagram で日々のスタイル</span><em>@salon.lumiere</em></a>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-grid">
-    <p class="footer-mark">{店名}<span>est. {創業年}</span></p>
-    <p class="footer-line italic">— a quiet bloom, in your hair. —</p>
-    <p class="footer-meta">© {店名} · {住所}<br>テンプレデモ表示</p>
+<footer class="ft">
+  <div class="ft-in">
+    <span><em>Salon</em> Lumière · since 2019</span>
+    <span>© 2019—2026 · 大阪・南堀江</span>
   </div>
 </footer>
 

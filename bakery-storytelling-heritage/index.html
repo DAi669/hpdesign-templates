@@ -1,236 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>{店名} | 創業{創業年}年 — テンプレデモ</title>
-  <meta name="description" content="{創業年}年から続く老舗パン屋。{店名}の三代記。">
-  <meta property="og:title" content="{店名} | Heritage Bakery">
-  <meta property="og:type" content="bakery">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Shippori+Mincho:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ベーカリー 三代屋｜兵庫・芦屋の老舗ベーカリー</title>
+<meta name="description" content="兵庫・芦屋の老舗ベーカリー「三代屋」。創業1956年、三代続くパン屋。看板の山型食パンと自家製あんパン。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=DM+Mono&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-crest" aria-hidden="true">
-        <svg viewBox="0 0 60 60" width="44" height="44">
-          <circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1"/>
-          <text x="30" y="36" text-anchor="middle" font-family="serif" font-size="14" font-weight="700" fill="currentColor">{頭文字}</text>
-        </svg>
-      </span>
-      <span class="brand-text">
-        <span class="brand-name">{店名}</span>
-        <span class="brand-est">EST. {創業年}</span>
-      </span>
-    </a>
-    <nav class="primary-nav">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="navList" class="nav-list">
-        <li><a href="#heritage">三代の歴史</a></li>
-        <li><a href="#products">看板の品</a></li>
-        <li><a href="#craft">技</a></li>
-        <li><a href="#access">店舗</a></li>
-      </ul>
-    </nav>
-    <a class="phone-cta" href="tel:{電話}">ご予約 →</a>
-  </div>
+<div class="prog-rail" aria-hidden="true">
+  <span class="prog-fill" id="progFill"></span>
+</div>
+
+<header class="hd">
+  <a href="#top" class="brand">
+    <span class="b-mark">参</span>
+    <span class="b-w">
+      <span class="b1">ベーカリー 三代屋</span>
+      <span class="b2">SANDAI-YA · since 1956</span>
+    </span>
+  </a>
+  <nav>
+    <a href="#chronicle">沿革</a>
+    <a href="#bread">パン</a>
+    <a href="#info">店舗</a>
+  </nav>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="placeholder-img placeholder-hero">
-        <span class="placeholder-text">アーカイブ写真</span>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-in">
+    <span class="hero-eb">兵庫・芦屋 ／ 創業 1956年</span>
+    <h1 class="hero-h">
+      <span>三代続いた</span>
+      <span><em>看板の</em></span>
+      <span>食パン。</span>
+    </h1>
+    <p class="hero-sub">昭和31年から、変わらない一斤を。<br>毎朝、同じ手順で焼き続けています。</p>
+    <div class="hero-meta">
+      <div><span class="m-l">創業</span><span class="m-v">1956</span></div>
+      <div><span class="m-l">店主</span><span class="m-v">三代目 武藤 達也</span></div>
+      <div><span class="m-l">受賞</span><span class="m-v">兵庫県知事賞 ほか</span></div>
     </div>
-    <div class="hero-inner">
-      <div class="hero-crest">
-        <svg viewBox="0 0 100 100" width="80" height="80">
-          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
-          <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" stroke-width="1"/>
-          <text x="50" y="58" text-anchor="middle" font-family="serif" font-size="22" font-weight="700" fill="currentColor">{頭文字}</text>
-        </svg>
-      </div>
-      <p class="hero-since">SINCE {創業年}</p>
-      <h1 class="hero-title">
-        <span class="hero-line-1">{N}年、</span>
-        <span class="hero-line-2"><em>同じ窯で、</em></span>
-        <span class="hero-line-3">同じ味を。</span>
-      </h1>
-      <p class="hero-lead">
-        {創業年}年、{初代名}が{地名}に店を開きました。<br>
-        以来、三代にわたり、変わらぬ製法で。
-      </p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section class="heritage" id="heritage">
-    <div class="container">
-      <span class="section-eyebrow">— Heritage —</span>
-      <h2 class="section-title">三代の<br>記録。</h2>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <span class="timeline-year">{創業年}</span>
-          <h3 class="timeline-gen">初代 — {初代名}</h3>
-          <p>{地名}に店を開く。窯と石臼を持ち込み、地元の小麦で焼き始める。</p>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-year">{二代目年}</span>
-          <h3 class="timeline-gen">二代目 — {二代目名}</h3>
-          <p>父から店を受け継ぎ、保存料を一切使わない方針に転換。地域に支えられながら現代まで続く礎を築く。</p>
-        </li>
-        <li class="timeline-item timeline-current">
-          <span class="timeline-year">{三代目年} – 現在</span>
-          <h3 class="timeline-gen">三代目 — {店主名}</h3>
-          <p>祖父・父の製法を継承しつつ、新しい品種の小麦と低温長時間発酵を取り入れる。{N}種類のパンを毎日焼き上げる。</p>
-        </li>
-      </ol>
-    </div>
-  </section>
+<!-- CHRONICLE (vertical timeline) -->
+<section class="chronicle" id="chronicle">
+  <div class="cont chr-grid">
+    <aside class="chr-side">
+      <span class="eb">— Chronicle —</span>
+      <h2>三代の<br><em>沿革</em>。</h2>
+      <p class="chr-tag">70年の物語を、ページの<br>横にスクロールしながら。</p>
+    </aside>
 
-  <section class="products" id="products">
-    <div class="container">
-      <span class="section-eyebrow">— Signatures —</span>
-      <h2 class="section-title">看板の品。</h2>
-      <div class="products-grid">
-        <article class="product product-flagship">
-          <div class="product-num">No. 01</div>
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{看板パン1}</span></div></div>
-          <div class="product-body">
-            <h3>{看板パン1}</h3>
-            <p class="product-since">since {創業年}</p>
-            <p>{パン1の歴史的背景・物語}</p>
-            <span class="product-price">¥{価格1}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-num">No. 02</div>
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン2}</span></div></div>
-          <div class="product-body">
-            <h3>{パン2}</h3>
-            <p>{パン2の説明}</p>
-            <span class="product-price">¥{価格2}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-num">No. 03</div>
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン3}</span></div></div>
-          <div class="product-body">
-            <h3>{パン3}</h3>
-            <p>{パン3の説明}</p>
-            <span class="product-price">¥{価格3}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-num">No. 04</div>
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン4}</span></div></div>
-          <div class="product-body">
-            <h3>{パン4}</h3>
-            <p>{パン4の説明}</p>
-            <span class="product-price">¥{価格4}</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+    <ol class="chr-list">
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">1956</div>
+        <div class="chr-body">
+          <span class="chr-gen">初代</span>
+          <h3>武藤 重太郎、芦屋に店を構える</h3>
+          <p>戦後の復興期、芦屋川沿いに小さなパン屋を開店。当時はパンが珍しく、地元の小学校の給食パンを請け負うところから始まりました。</p>
+          <div class="chr-img chr-i1"></div>
+        </div>
+      </li>
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">1972</div>
+        <div class="chr-body">
+          <span class="chr-gen">二代目</span>
+          <h3>長男・武藤 健次が継ぐ</h3>
+          <p>父の跡を継ぎ、フランス・パリで2年修行ののち戻る。山型食パン・あんパン・カレーパンの3本柱を確立。「芦屋のパン屋」として地元紙に取り上げられる。</p>
+        </div>
+      </li>
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">1995</div>
+        <div class="chr-body">
+          <span class="chr-gen">出来事</span>
+          <h3>阪神・淡路大震災</h3>
+          <p>店舗が半壊。営業再開まで4ヶ月。地域の方からの応援で立て直す。「あの時、毎日パンを作りに来てくれたお客さんの顔は忘れられません」（二代目談）</p>
+        </div>
+      </li>
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">2014</div>
+        <div class="chr-body">
+          <span class="chr-gen">三代目</span>
+          <h3>長女・武藤 達也が継ぐ</h3>
+          <p>東京の老舗ベーカリーで5年修行ののち、家業を継承。看板商品はそのまま、新作の「あんバター食パン」「明太フランス」を追加。</p>
+          <div class="chr-img chr-i2"></div>
+        </div>
+      </li>
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">2024</div>
+        <div class="chr-body">
+          <span class="chr-gen">受賞</span>
+          <h3>兵庫県知事賞 受賞</h3>
+          <p>看板の山型食パンが「ひょうごの逸品100選」に選定。「変わらない味を続けている」点を評価いただきました。</p>
+        </div>
+      </li>
+      <li class="chr-item" data-chapter>
+        <div class="chr-year">2026</div>
+        <div class="chr-body">
+          <span class="chr-gen">いま</span>
+          <h3>3世代、4代目を見据えて</h3>
+          <p>現在、初代の孫である4代目候補（小学5年生）が、土曜日に店を手伝っています。70年続いた店を、次の世代へ。</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-  <section class="craft" id="craft">
-    <div class="container craft-grid">
-      <div class="craft-text">
-        <span class="section-eyebrow">— Craft —</span>
-        <h2 class="section-title">受け継いだ、<br>技。</h2>
-        <p>
-          初代から伝わる窯は、煉瓦造り。
-          薪を焚き、石を熱し、その輻射熱でパンを焼く。
-          機械では出せない、ムラのある美しい焼き目。
-        </p>
-        <p>
-          製法は手で。素材は国産で。
-          時代が変わっても、変えない部分があります。
-        </p>
-        <ul class="craft-points">
-          <li><span class="craft-num">○</span> 創業時の煉瓦窯を現役で使用</li>
-          <li><span class="craft-num">○</span> 国産小麦{N}種類を季節で使い分け</li>
-          <li><span class="craft-num">○</span> 手ごね・手成形・低温長時間発酵</li>
-          <li><span class="craft-num">○</span> 保存料・添加物 一切不使用</li>
-        </ul>
-      </div>
-      <div class="craft-visual">
-        <div class="placeholder-img placeholder-craft"><span class="placeholder-text">煉瓦窯</span></div>
-      </div>
-    </div>
-  </section>
+<!-- BREAD -->
+<section class="bread" id="bread">
+  <div class="cont">
+    <span class="eb">— Our Bread · 創業から変わらない3本柱 —</span>
+    <h2>看板の<em>3本</em>。</h2>
 
-  <section class="press">
-    <div class="container">
-      <span class="section-eyebrow">— Press & Awards —</span>
-      <h2 class="section-title">受賞・掲載。</h2>
-      <ul class="press-list">
-        <li><span class="press-year">{年}</span><span class="press-source">{媒体名}</span><span class="press-title">「{受賞名/特集タイトル}」</span></li>
-        <li><span class="press-year">{年}</span><span class="press-source">{媒体名}</span><span class="press-title">{特集タイトル}</span></li>
-        <li><span class="press-year">{年}</span><span class="press-source">{媒体名}</span><span class="press-title">{特集タイトル}</span></li>
-      </ul>
+    <div class="bread-row">
+      <article class="bf">
+        <div class="bf-img bf-i1"></div>
+        <div class="bf-text">
+          <span class="bf-no">№ 01</span>
+          <h3>山型食パン</h3>
+          <p>創業から70年、変わらない配合。湯種を使ったしっとりとした生地と、ふんわりした口当たり。トーストしてバターとジャムが定番。</p>
+          <div class="bf-row"><span>1斤</span><span class="bf-pp">¥520</span></div>
+        </div>
+      </article>
+      <article class="bf">
+        <div class="bf-img bf-i2"></div>
+        <div class="bf-text">
+          <span class="bf-no">№ 02</span>
+          <h3>つぶあんパン</h3>
+          <p>北海道・十勝産の小豆を、店内で毎朝炊いて。皮はもちもち、中はぎっしり。お土産にも、地元の方の朝食にも。</p>
+          <div class="bf-row"><span>1個</span><span class="bf-pp">¥220</span></div>
+        </div>
+      </article>
+      <article class="bf">
+        <div class="bf-img bf-i3"></div>
+        <div class="bf-text">
+          <span class="bf-no">№ 03</span>
+          <h3>カレーパン</h3>
+          <p>二代目の手を経て、辛さと甘さの絶妙なバランスに。揚げたてが一番。ランチに、お子さまのおやつに。</p>
+          <div class="bf-row"><span>1個</span><span class="bf-pp">¥280</span></div>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="access" id="access">
-    <div class="container access-grid">
-      <div class="access-text">
-        <span class="section-eyebrow">— Access —</span>
-        <h2 class="section-title">店舗。</h2>
-        <dl class="access-info">
-          <dt>住所</dt><dd>{住所}</dd>
-          <dt>電話</dt><dd><a href="tel:{電話}">{電話}</a></dd>
-          <dt>営業時間</dt><dd>7:00 – {閉店時刻}（売切れ次第終了）</dd>
-          <dt>定休日</dt><dd>{定休日}</dd>
-          <dt>最寄駅</dt><dd>{最寄駅}より徒歩{N}分</dd>
-        </dl>
-      </div>
-      <div class="access-map">
-        <iframe loading="lazy" title="{店名} の地図"
-          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
-      </div>
+<!-- INFO -->
+<section class="info" id="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— Visit —</span>
+      <h2>芦屋川沿い、<br><em>三代屋</em>。</h2>
+      <dl>
+        <dt>住所</dt><dd>兵庫県芦屋市西山町X-X-X 芦屋川沿い</dd>
+        <dt>電話</dt><dd>0797-XX-XXXX</dd>
+        <dt>営業</dt><dd>07:00 — 18:00（売り切れ次第終了）</dd>
+        <dt>定休</dt><dd>日曜日 / 第3月曜日</dd>
+        <dt>アクセス</dt><dd>JR・阪神「芦屋」駅 徒歩8分</dd>
+      </dl>
     </div>
-  </section>
-
-  <section class="cta-final">
-    <div class="container cta-inner">
-      <p class="cta-since">SINCE {創業年}</p>
-      <h2 class="cta-title">{N}年、変わらぬ味を。</h2>
-      <a href="tel:{電話}" class="btn-primary">電話で予約 →</a>
+    <div class="seal-card">
+      <div class="seal">
+        <span class="seal-jp">三代屋</span>
+        <span class="seal-en">SANDAI-YA</span>
+        <span class="seal-since">est. 1956</span>
+      </div>
+      <p class="seal-msg">「お父さん、おじいちゃん、ひいおじいちゃんのパン」<br>3代続けて、同じ手順で焼いています。</p>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <span class="brand-crest" aria-hidden="true">
-        <svg viewBox="0 0 60 60" width="48" height="48">
-          <circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="1"/>
-          <text x="30" y="36" text-anchor="middle" font-family="serif" font-size="14" font-weight="700" fill="currentColor">{頭文字}</text>
-        </svg>
-      </span>
-      <span class="brand-name">{店名}</span>
-      <p class="footer-tagline">— {N}年の技、変わらぬ味。 —</p>
-    </div>
-    <div class="footer-meta">
-      <p>© {店名}, since {創業年}. {地名}.</p>
-      <p class="footer-disclaimer">本ページはテンプレデモです。</p>
-    </div>
+<footer class="ft">
+  <div class="ft-in">
+    <span><em>三代屋</em> · SANDAI-YA</span>
+    <span>© 1956—2026 · ASHIYA, HYOGO</span>
   </div>
 </footer>
 

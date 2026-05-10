@@ -1,54 +1,41 @@
-// bakery-storytelling-heritage
-(() => {
+(()=>{
   'use strict';
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let scrollY = 0; let ticking = false;
-  const header = document.getElementById('siteHeader');
+  const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  function onScroll() {
-    scrollY = window.scrollY || 0;
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (header) header.classList.toggle('scrolled', scrollY > 24);
-        ticking = false;
+  // Reading progress (fills the rail)
+  const fill=document.getElementById('progFill');
+  if(fill){
+    const upd=()=>{
+      const total=document.documentElement.scrollHeight-window.innerHeight;
+      const pct=Math.max(0,Math.min(100,(window.scrollY/total)*100));
+      fill.style.height=pct+'%';
+    };
+    document.addEventListener('scroll',upd,{passive:true});
+    upd();
+  }
+
+  // Chronicle in-view (bullet color change)
+  if('IntersectionObserver' in window && !reduced){
+    const items=document.querySelectorAll('[data-chapter]');
+    const cio=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting && e.intersectionRatio>0.5){e.target.classList.add('in-view')}
       });
-      ticking = true;
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
+    },{threshold:[0,0.5,1]});
+    items.forEach(el=>cio.observe(el));
 
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.getElementById('navList');
-  if (toggle && list) {
-    toggle.addEventListener('click', () => {
-      const open = list.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      list.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
-  }
-
-  // Heritage timeline reveal (sequential, slow)
-  if ('IntersectionObserver' in window && !reduced) {
-    const targets = document.querySelectorAll('.timeline-item, .product, .craft-text, .craft-visual, .press-list li, .access-grid');
-    targets.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(32px)';
-      el.style.transition = 'opacity 1.1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1)';
-    });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-          }, i * 110);
+    const ts=document.querySelectorAll('.chr-item,.bf,.info-grid > *');
+    ts.forEach(el=>el.style.opacity='0');
+    const io=new IntersectionObserver(es=>{
+      es.forEach((e,i)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity='';
+          e.target.classList.add('in-view');
+          e.target.style.animationDelay=(i*40)+'ms';
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    targets.forEach(el => io.observe(el));
+    },{threshold:.15});
+    ts.forEach(el=>io.observe(el));
   }
 })();

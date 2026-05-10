@@ -1,85 +1,65 @@
-// cafe-forest-hideaway - vanilla JS
-(() => {
+(()=>{
   'use strict';
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let scrollY = 0; let ticking = false;
-  const header = document.getElementById('siteHeader');
+  const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  function onScroll() {
-    scrollY = window.scrollY || 0;
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (header) header.classList.toggle('scrolled', scrollY > 24);
-        // gentle parallax on hero leaves
-        if (!reduced) {
-          document.querySelectorAll('.hero-leaves .leaf').forEach((leaf, i) => {
-            leaf.style.transform = `translateY(${scrollY * (0.1 + i * 0.05)}px)`;
-          });
-        }
-        ticking = false;
+  // Parallax layers
+  const layers=document.querySelectorAll('.hero [data-speed]');
+  if(layers.length && !reduced){
+    let last=0;
+    const onScroll=()=>{
+      const y=window.scrollY;
+      if(y>window.innerHeight)return;
+      layers.forEach(l=>{
+        const s=parseFloat(l.dataset.speed||0);
+        l.style.transform=`translate3d(0, ${y*s}px, 0)`;
       });
-      ticking = true;
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // Mobile nav
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.getElementById('navList');
-  if (toggle && list) {
-    toggle.addEventListener('click', () => {
-      const open = list.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      list.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+    };
+    document.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
   }
 
-  // Section reveal (slow, organic)
-  if ('IntersectionObserver' in window && !reduced) {
-    const targets = document.querySelectorAll('.about, .signature-card, .bento-card, .gallery-item, .access-grid, .cta-inner');
-    targets.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(40px)';
-      el.style.transition = 'opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-          }, i * 90);
+  // SVG path draw on scroll into view
+  const path=document.getElementById('hpath');
+  if(path && !reduced){
+    const total=2400;
+    const pathObs=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          path.style.transition='stroke-dashoffset 2.5s cubic-bezier(.4,.2,.3,1)';
+          path.style.strokeDashoffset='0';
+        }
+      });
+    },{threshold:0.3});
+    pathObs.observe(path);
+  }
+
+  // Scroll reveal
+  if('IntersectionObserver' in window && !reduced){
+    const ts=document.querySelectorAll('.ab-grid > *,.b,.v-card,.v-link,.visit dl');
+    ts.forEach(el=>el.style.opacity='0');
+    const io=new IntersectionObserver(es=>{
+      es.forEach((e,i)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity='';
+          e.target.classList.add('in-view');
+          e.target.style.animationDelay=(i*60)+'ms';
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
-    targets.forEach(el => io.observe(el));
+    },{threshold:.18});
+    ts.forEach(el=>io.observe(el));
   }
 
-  // Stat count-up
-  const stats = document.querySelectorAll('.stat-num[data-count-to]');
-  function countUp(el) {
-    const target = parseInt(el.dataset.countTo, 10);
-    if (reduced) { el.textContent = target.toLocaleString(); return; }
-    const dur = 1600; const start = performance.now();
-    const initial = parseInt(el.textContent.replace(/,/g, ''), 10) || 0;
-    function tick(now) {
-      const t = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(initial + (target - initial) * eased).toLocaleString();
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  if ('IntersectionObserver' in window) {
-    const sIo = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { countUp(e.target); sIo.unobserve(e.target); }
-      });
-    }, { threshold: 0.5 });
-    stats.forEach(el => sIo.observe(el));
+  // Image tilt on mousemove
+  const tilt=document.querySelector('[data-tilt]');
+  if(tilt && !reduced && window.matchMedia('(min-width:901px)').matches){
+    const inner=tilt.querySelector('.ab-img-inner');
+    tilt.addEventListener('mousemove',e=>{
+      const r=tilt.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-0.5;
+      const y=(e.clientY-r.top)/r.height-0.5;
+      inner.style.transform=`rotateY(${x*-10}deg) rotateX(${y*8}deg) translateZ(20px)`;
+    });
+    tilt.addEventListener('mouseleave',()=>{inner.style.transform=''});
   }
 })();

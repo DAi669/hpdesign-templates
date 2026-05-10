@@ -1,188 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>{店名} | Modern Bakery — テンプレデモ</title>
-  <meta name="description" content="{店舗紹介文}。モダンミニマル系パン屋HPテンプレ。">
-  <meta property="og:title" content="{店名} | Modern Bakery">
-  <meta property="og:type" content="bakery">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pâtisserie OPEN｜代官山のミニマル・パティスリー</title>
+<meta name="description" content="代官山の小さなパティスリー「Pâtisserie OPEN（オーペン）」。素材を主役にする、極限ミニマル。日替わり 6 種類のみ。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;600;800&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&family=Noto+Sans+JP:wght@200;300;400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-mark">{頭文字}</span>
-      <span class="brand-name">{店名}</span>
-    </a>
-    <nav class="primary-nav">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="navList" aria-label="Menu">
-        <span></span><span></span>
-      </button>
-      <ul id="navList" class="nav-list">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#access">Access</a></li>
-      </ul>
-    </nav>
-    <a class="cta-pill" href="tel:{電話}">CONTACT</a>
-  </div>
+<header class="hd">
+  <a href="#top" class="brand">
+    <span class="b-logo">P—</span>
+    <span class="b-w"><span class="b1">Pâtisserie</span><span class="b2">OPEN.</span></span>
+  </a>
+  <nav>
+    <a href="#today">Today</a>
+    <a href="#story">Story</a>
+    <a href="#info">Info</a>
+  </nav>
+  <span class="hd-stat"><span class="dot"></span>OPEN · 11:00–18:00</span>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="kicker">001 / Bakery</p>
-        <h1 class="hero-title">{店名}.</h1>
-        <p class="hero-sub">{1-line tagline / e.g. Bread, by hand. Daily.}</p>
-        <div class="hero-meta">
-          <span>Est. {創業年}</span>
-          <span>·</span>
-          <span>{地名}</span>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="placeholder-img placeholder-hero">
-          <span class="placeholder-text">PRODUCT</span>
-        </div>
-      </div>
+<section class="hero">
+  <div class="hero-mark" aria-hidden="true">
+    <span class="hm-line">PÂTISSERIE</span>
+    <span class="hm-line hm-em">OPEN.</span>
+    <span class="hm-line hm-tiny">— DAIKANYAMA · TOKYO —</span>
+  </div>
+  <div class="hero-foot">
+    <div class="hf-l">
+      <p>素材を主役にする、<br>極限のパティスリー。</p>
     </div>
-  </section>
+    <div class="hf-r">
+      <span class="hf-num">06</span>
+      <span class="hf-lbl">items / day</span>
+    </div>
+  </div>
+</section>
 
-  <section class="products" id="products">
-    <div class="container">
-      <header class="section-head">
-        <span class="kicker">002 / Products</span>
-        <h2 class="section-title">Daily.</h2>
-      </header>
-      <div class="products-grid">
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン1}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">01</span>
-            <h3>{パン1}</h3>
-            <span class="product-price">¥{価格1}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン2}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">02</span>
-            <h3>{パン2}</h3>
-            <span class="product-price">¥{価格2}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン3}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">03</span>
-            <h3>{パン3}</h3>
-            <span class="product-price">¥{価格3}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン4}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">04</span>
-            <h3>{パン4}</h3>
-            <span class="product-price">¥{価格4}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン5}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">05</span>
-            <h3>{パン5}</h3>
-            <span class="product-price">¥{価格5}</span>
-          </div>
-        </article>
-        <article class="product">
-          <div class="product-img"><div class="placeholder-img"><span class="placeholder-text">{パン6}</span></div></div>
-          <div class="product-meta">
-            <span class="product-num">06</span>
-            <h3>{パン6}</h3>
-            <span class="product-price">¥{価格6}</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+<section class="today" id="today">
+  <div class="cont today-head">
+    <span class="eb">— Today's Selection · 5月12日 —</span>
+    <h2>本日の<em>6皿</em>。</h2>
+    <p>日々違うものを、6 種類だけ作っています。<br>14:00 までに半数、17:00 までに完売することがほとんどです。</p>
+  </div>
+  <div class="today-scroll" data-scroll>
+    <article class="td">
+      <span class="td-no">01</span>
+      <div class="td-img td-i1"></div>
+      <div class="td-info"><h3>Tarte au Citron</h3><p class="td-jp">瀬戸内レモンのタルト</p><p class="td-desc">広島・大崎下島のレモン、卵黄たっぷりのクレーム。</p><span class="td-pp">¥720</span></div>
+    </article>
+    <article class="td">
+      <span class="td-no">02</span>
+      <div class="td-img td-i2"></div>
+      <div class="td-info"><h3>Mont Blanc</h3><p class="td-jp">熊本和栗のモンブラン</p><p class="td-desc">熊本県山鹿市・栗原農園の和栗を、絞り出して。</p><span class="td-pp">¥1,080</span></div>
+    </article>
+    <article class="td">
+      <span class="td-no">03</span>
+      <div class="td-img td-i3"></div>
+      <div class="td-info"><h3>Fraisier</h3><p class="td-jp">あまおうのフレジエ</p><p class="td-desc">福岡・博多あまおう、ピスタチオクリーム。</p><span class="td-pp">¥980</span></div>
+    </article>
+    <article class="td">
+      <span class="td-no">04</span>
+      <div class="td-img td-i4"></div>
+      <div class="td-info"><h3>Cheesecake</h3><p class="td-jp">バスクチーズケーキ</p><p class="td-desc">フランス産フロマージュブラン、表面はしっかり焦がして。</p><span class="td-pp">¥620</span></div>
+    </article>
+    <article class="td">
+      <span class="td-no">05</span>
+      <div class="td-img td-i5"></div>
+      <div class="td-info"><h3>Canelé</h3><p class="td-jp">カヌレ・ボルドー</p><p class="td-desc">蜜蝋を塗った銅型で。外はカリカリ、中はもちっと。</p><span class="td-pp">¥420</span></div>
+    </article>
+    <article class="td">
+      <span class="td-no">06</span>
+      <div class="td-img td-i6"></div>
+      <div class="td-info"><h3>Madeleine</h3><p class="td-jp">エシレ・マドレーヌ</p><p class="td-desc">エシレバターと和歌山の蜂蜜、焼きたてが一番。</p><span class="td-pp">¥320</span></div>
+    </article>
+  </div>
+  <div class="today-progress" aria-hidden="true"><span class="tp-bar"></span></div>
+</section>
 
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-num">003</div>
-      <div class="about-content">
-        <span class="kicker">About</span>
-        <h2 class="section-title">{店主名}.</h2>
-        <p class="about-text">
-          {店名} は{創業年}年、{店主名}が{地名}に開いた小さなパン屋です。
-          毎朝{N}種類を焼き、店頭に並べる。それだけ。
-        </p>
-        <p class="about-text">
-          素材は国産、製法は手作業、装飾は最小。
-          パンそのものに集中するためのスタイルです。
-        </p>
-        <div class="about-stats">
-          <div class="stat"><span class="stat-num" data-count-to="{創業年}">0</span><span class="stat-label">Established</span></div>
-          <div class="stat"><span class="stat-num" data-count-to="{種類数}">0</span><span class="stat-label">Daily varieties</span></div>
-          <div class="stat"><span class="stat-num" data-count-to="100">0</span><span class="stat-label">% Domestic flour</span></div>
-        </div>
-      </div>
+<section class="story" id="story">
+  <div class="cont">
+    <div class="big-quote">
+      <span class="q-mark">"</span>
+      <p>「6 つだけ」を、毎日作る。<br>少なく、深く。それが、いまの私のパティスリー。</p>
+      <cite>— 店主・遠藤 麻紀 ／ MOF Pâtissier 修行歴 8年</cite>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="gallery">
-    <div class="gallery-grid">
-      <div class="gallery-item gallery-large"><div class="placeholder-img"><span class="placeholder-text">Process 01</span></div></div>
-      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 02</span></div></div>
-      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 03</span></div></div>
-      <div class="gallery-item"><div class="placeholder-img"><span class="placeholder-text">Process 04</span></div></div>
+<section class="info" id="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— Open —</span>
+      <h2>Pâtisserie<br><em>OPEN.</em></h2>
+      <dl>
+        <dt>住所</dt><dd>東京都渋谷区代官山町X-X-X 代官山ハウス 1F</dd>
+        <dt>営業</dt><dd>11:00 — 18:00（売り切れ次第終了）</dd>
+        <dt>定休</dt><dd>火曜・水曜</dd>
+        <dt>電話</dt><dd>03-XXXX-XXXX</dd>
+        <dt>支払い</dt><dd>各種カード / 電子マネー対応 / 現金も可</dd>
+        <dt>予約</dt><dd>ホール（直径15cm）は3日前までWeb予約</dd>
+      </dl>
     </div>
-  </section>
-
-  <section class="access" id="access">
-    <div class="container access-grid">
-      <div class="access-text">
-        <span class="kicker">004 / Access</span>
-        <h2 class="section-title">Find.</h2>
-        <dl class="access-info">
-          <dt>Address</dt><dd>{住所}</dd>
-          <dt>Phone</dt><dd><a href="tel:{電話}">{電話}</a></dd>
-          <dt>Hours</dt><dd>7:00 — {閉店時刻}</dd>
-          <dt>Closed</dt><dd>{定休日}</dd>
-          <dt>Station</dt><dd>{最寄駅} / {N} min walk</dd>
-        </dl>
-      </div>
-      <div class="access-map">
-        <iframe loading="lazy" title="{店名}"
-          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
-      </div>
+    <div class="info-grid-r">
+      <div class="ig-img"></div>
+      <a href="#" class="ig-link"><span>Instagram で本日のセレクション</span><em>@patisserie.open</em></a>
+      <a href="#" class="ig-link"><span>ホールケーキを予約</span><em>3日前まで</em></a>
     </div>
-  </section>
-
-  <section class="cta-final">
-    <div class="container cta-inner">
-      <h2 class="cta-title">Today's bread,<br>baked at 7:00.</h2>
-      <a href="tel:{電話}" class="btn-line">→ Contact</a>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="brand-mark">{頭文字}</span>
-    <span class="footer-name">{店名}</span>
-    <span class="footer-meta">© {店名}, {地名}. テンプレデモ。</span>
+<footer class="ft">
+  <div class="ft-in">
+    <span class="ft-l">PÂTISSERIE <em>OPEN.</em></span>
+    <span class="ft-r">© 2022—2026 · DAIKANYAMA</span>
   </div>
 </footer>
 

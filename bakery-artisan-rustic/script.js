@@ -1,53 +1,46 @@
-// bakery-artisan-rustic
-(() => {
+(()=>{
   'use strict';
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let scrollY = 0; let ticking = false;
-  const header = document.getElementById('siteHeader');
+  const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  function onScroll() {
-    scrollY = window.scrollY || 0;
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        if (header) header.classList.toggle('scrolled', scrollY > 24);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.getElementById('navList');
-  if (toggle && list) {
-    toggle.addEventListener('click', () => {
-      const open = list.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      list.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+  // Typewriter effect on hero eyebrow
+  const tw=document.querySelector('[data-typewriter]');
+  if(tw && !reduced){
+    const txt=tw.textContent;
+    tw.textContent='';
+    let i=0;
+    const startTw=()=>{
+      const t=setInterval(()=>{
+        tw.textContent=txt.slice(0,i+1);
+        i++;
+        if(i>=txt.length){clearInterval(t)}
+      },80);
+    };
+    setTimeout(startTw,300);
   }
 
-  if ('IntersectionObserver' in window && !reduced) {
-    const targets = document.querySelectorAll('.story-grid, .bread-card, .process-list li, .access-grid');
-    targets.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(28px)';
-      el.style.transition = 'opacity 0.9s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1)';
-    });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-          }, i * 80);
+  // Clip-path image reveal on hero load
+  if(!reduced){
+    setTimeout(()=>{
+      document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('shown'));
+    },200);
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el=>{el.style.clipPath='none'});
+  }
+
+  // Reveal on scroll
+  if('IntersectionObserver' in window && !reduced){
+    const ts=document.querySelectorAll('.br,.proc-list li,.info-grid > *,.sec-head');
+    ts.forEach(el=>el.style.opacity='0');
+    const io=new IntersectionObserver(es=>{
+      es.forEach((e,i)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity='';
+          e.target.classList.add('in-view');
+          e.target.style.animationDelay=(i*50)+'ms';
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
-    targets.forEach(el => io.observe(el));
+    },{threshold:.2});
+    ts.forEach(el=>io.observe(el));
   }
 })();

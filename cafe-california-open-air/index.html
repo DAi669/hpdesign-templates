@@ -1,320 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>{店名} | California Open Air — テンプレデモ</title>
-  <meta name="description" content="{店舗紹介文のダミー}。西海岸×オープンエア型のカフェHPテンプレ。">
-  <meta property="og:title" content="{店名} | California Open Air">
-  <meta property="og:type" content="restaurant">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Café Lilou｜鎌倉・七里ヶ浜の海カフェ</title>
+<meta name="description" content="鎌倉・七里ヶ浜の海カフェ Café Lilou（カフェ・リル）。窓いっぱいの海と、自家焙煎のコーヒー。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 <body>
+<div class="cursor-light" aria-hidden="true"></div>
 
-<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
-<div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
-
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
+<header class="hd">
+  <div class="hd-in">
     <a href="#top" class="brand">
-      <span class="brand-mark">{頭文字}</span>
-      <span class="brand-name">{店名}<small>{店名カナ} / {地名}</small></span>
+      <span class="bk">L</span>
+      <div class="bw">
+        <span class="b1">Café Lilou</span>
+        <span class="b2">— Shichirigahama, Kamakura —</span>
+      </div>
     </a>
-    <nav class="primary-nav" aria-label="主要ナビゲーション">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNavList" aria-label="メニューを開閉する">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="primaryNavList" class="nav-list">
-        <li><a href="#story">Story</a></li>
-        <li><a href="#signature">Signature</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#access">Access</a></li>
-        <li><a href="#news">News</a></li>
-      </ul>
+    <nav class="nav">
+      <a href="#story">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#beans">Beans</a>
+      <a href="#info">Info</a>
     </nav>
-    <a class="phone-cta" href="tel:{電話}" aria-label="電話で問い合わせる">
-      <span class="phone-icon" aria-hidden="true">☎</span>
-      <span class="phone-number">{電話}</span>
-    </a>
+    <a href="#info" class="cta">10:00 OPEN ↓</a>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero" aria-labelledby="heroHeading">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="placeholder-img placeholder-hero" data-placeholder="ヒーロー画像差し替え予定 / テラス・サーフボード・午前光">
-        <span class="placeholder-text">Hero · California Open Air</span>
-        <span class="placeholder-sub">terrace · surfboard · morning light</span>
-      </div>
-    </div>
-    <div class="hero-inner">
-      <p class="eyebrow">Since {創業年} · {地名}</p>
-      <h1 id="heroHeading" class="hero-title">
-        <span class="hero-title-en">California Open Air,</span>
-        <span class="hero-title-jp">{キャッチコピー}</span>
-      </h1>
-      <p class="hero-lead">
-        {店舗の紹介文1行目}<br>
-        {店舗の紹介文2行目}
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num" data-count-to="{創業年}">{創業年}</span><span class="stat-label">創業</span></div>
-        <div class="stat"><span class="stat-num" data-count-to="{歴史年数}">0</span><span class="stat-label">年の歴史</span></div>
-        <div class="stat"><span class="stat-num" data-count-to="{IGフォロワー数}">0</span><span class="stat-label">IGフォロワー</span></div>
-      </div>
-      <div class="hero-cta">
-        <a href="#menu" class="btn btn-primary">メニューを見る</a>
-        <a href="#access" class="btn btn-ghost">行き方を確認</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="story" id="story" aria-labelledby="storyHeading">
-    <div class="container">
-      <p class="section-eyebrow">Our Story</p>
-      <h2 id="storyHeading" class="section-title">{ストーリーセクション見出し1行目}<br>{ストーリーセクション見出し2行目}</h2>
-      <div class="story-grid">
-        <article class="story-pillar">
-          <span class="pillar-year">{年代1}</span>
-          <h3 class="pillar-title">{時代名1}</h3>
-          <p>{時代1の説明文}</p>
-        </article>
-        <article class="story-pillar">
-          <span class="pillar-year">{年代2}</span>
-          <h3 class="pillar-title">{時代名2}</h3>
-          <p>{時代2の説明文}</p>
-        </article>
-        <article class="story-pillar">
-          <span class="pillar-year">{年代3}</span>
-          <h3 class="pillar-title">{時代名3}</h3>
-          <p>{時代3の説明文}</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Since {創業年}</span><span class="dot">●</span>
-      <span>{訴求軸1}</span><span class="dot">●</span>
-      <span>California Open Air</span><span class="dot">●</span>
-      <span>{訴求軸2}</span><span class="dot">●</span>
-      <span>{地名} South</span><span class="dot">●</span>
-      <span>{訴求軸3}</span><span class="dot">●</span>
-      <span>Since {創業年}</span><span class="dot">●</span>
-      <span>{訴求軸1}</span><span class="dot">●</span>
-      <span>California Open Air</span><span class="dot">●</span>
-      <span>{訴求軸2}</span><span class="dot">●</span>
-      <span>{地名} South</span><span class="dot">●</span>
-      <span>{訴求軸3}</span><span class="dot">●</span>
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-in">
+    <span class="hero-eb">EST. 2017 · #SHICHIRIGAHAMA</span>
+    <h1 class="hero-h">
+      <span class="line"><em>窓いっぱいの</em></span>
+      <span class="line outline">海と、</span>
+      <span class="line">コーヒー。</span>
+    </h1>
+    <p class="hero-sub">江ノ電の音と、波の音。<br>七里ヶ浜の小さな海カフェ、Café Lilou。</p>
+    <div class="hero-row">
+      <span class="hero-pill"><span class="dot"></span> Open Now · 〜18:00</span>
+      <a href="#menu" class="hero-arrow">Menu を見る <span>→</span></a>
     </div>
   </div>
+  <div class="hero-loop">
+    <span class="loop-track">SLOW MORNING · WINDOW SEAT · OCEAN VIEW · HOUSE BLEND · GALETTE · SLOW MORNING · WINDOW SEAT · OCEAN VIEW · HOUSE BLEND · GALETTE · </span>
+  </div>
+</section>
 
-  <section class="signature" id="signature" aria-labelledby="signatureHeading">
-    <div class="container signature-grid">
-      <div class="signature-visual">
-        <div class="signature-img-wrap">
-          <div class="placeholder-img placeholder-square" data-placeholder="看板メニュー画像差替予定">
-            <span class="placeholder-text">Signature</span>
-            <span class="placeholder-sub">{看板メニュー名}</span>
-          </div>
-        </div>
+<section class="story" id="story">
+  <div class="cont">
+    <div class="story-grid">
+      <div class="story-l">
+        <span class="eb">— Our Story —</span>
+        <h2>サーフボードと、<br><em>本</em>のあいだに。</h2>
       </div>
-      <div class="signature-text">
-        <p class="section-eyebrow">Signature</p>
-        <h2 id="signatureHeading" class="section-title">看板の一杯。<br><span class="ja-thin">{看板メニュー名} ¥{価格}。</span></h2>
-        <p>
-          {看板メニューの説明文1行目}<br>
-          {看板メニューの説明文2行目}<br>
-          {看板メニューの説明文3行目}
-        </p>
-        <ul class="signature-points">
-          <li>{特徴1}</li>
-          <li>{特徴2}</li>
-          <li>{特徴3}</li>
-          <li>{特徴4}</li>
-        </ul>
+      <div class="story-r">
+        <p>「波待ちのあいだに読む本があったら最高だな」── そんな会話から、Café Lilou は始まりました。</p>
+        <p>2017年、七里ヶ浜の海岸線を見おろす場所に小さなカフェを開きました。窓辺の席は7つだけ。早朝サーファーから、絵本を読みにくる親子まで、思い思いの時間が流れていきます。</p>
+        <p class="sig">店主 ／ 中川 葉月</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="menu" id="menu" aria-labelledby="menuHeading">
-    <div class="container">
-      <p class="section-eyebrow">Menu</p>
-      <h2 id="menuHeading" class="section-title">お品書き</h2>
-      <div class="menu-tabs" role="tablist" aria-label="メニューカテゴリ">
-        <button role="tab" aria-selected="true" aria-controls="tabDrinks" id="tabBtnDrinks" class="menu-tab active">Drinks</button>
-        <button role="tab" aria-selected="false" aria-controls="tabFood" id="tabBtnFood" class="menu-tab">Food</button>
-        <button role="tab" aria-selected="false" aria-controls="tabLunch" id="tabBtnLunch" class="menu-tab">Lunch Set</button>
-      </div>
+<section class="menu" id="menu">
+  <div class="cont menu-head">
+    <span class="eb">— Menu / 横スクロールでご覧ください —</span>
+    <h2>季節の<em>一皿</em>。</h2>
+    <div class="menu-hint" aria-hidden="true"><span>← drag · scroll →</span></div>
+  </div>
+  <div class="menu-scroll" data-menu-scroll>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 01</span><h3>House Blend</h3><p>ブラジル × エチオピア × グアテマラ。海風に合うように、酸味は控えめに。</p><span class="m-price">¥520</span></div>
+    </article>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 02</span><h3>Latté Lilou</h3><p>ふんわりミルクフォーム、看板の一杯。アートはその日の気分で。</p><span class="m-price">¥620</span></div>
+    </article>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1481070555726-e2fe8357725c?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 03</span><h3>Galette Complète</h3><p>蕎麦粉のガレット、ハム・卵・チーズ。カフェの定番ランチ。</p><span class="m-price">¥1,280</span></div>
+    </article>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 04</span><h3>季節のスコーン</h3><p>5月はレモンとローズマリー。クロテッドクリーム添え。</p><span class="m-price">¥480</span></div>
+    </article>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 05</span><h3>Avocado Toast</h3><p>自家製カンパーニュ、アボカド、フェタ、レモン。朝の海とどうぞ。</p><span class="m-price">¥980</span></div>
+    </article>
+    <article class="m">
+      <div class="m-img" style="background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1200&q=80&auto=format&fit=crop')"></div>
+      <div class="m-body"><span class="m-no">№ 06</span><h3>季節のフルーツタルト</h3><p>5月は和歌山の柑橘。タルト生地はバターたっぷり。</p><span class="m-price">¥720</span></div>
+    </article>
+  </div>
+</section>
 
-      <div id="tabDrinks" role="tabpanel" aria-labelledby="tabBtnDrinks" class="menu-grid active">
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{ドリンク1}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{ドリンク1}</h3>
-            <p class="menu-desc">{ドリンク1の説明}</p>
-            <span class="menu-price">¥{価格1}</span>
-          </div>
-        </article>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{ドリンク2}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{ドリンク2}</h3>
-            <p class="menu-desc">{ドリンク2の説明}</p>
-            <span class="menu-price">¥{価格2}</span>
-          </div>
-        </article>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{ドリンク3}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{ドリンク3}</h3>
-            <p class="menu-desc">{ドリンク3の説明}</p>
-            <span class="menu-price">¥{価格3}</span>
-          </div>
-        </article>
-      </div>
-
-      <div id="tabFood" role="tabpanel" aria-labelledby="tabBtnFood" class="menu-grid" hidden>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{フード1}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{フード1}</h3>
-            <p class="menu-desc">{フード1の説明}</p>
-            <span class="menu-price">¥{価格}</span>
-          </div>
-        </article>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{フード2}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{フード2}</h3>
-            <p class="menu-desc">{フード2の説明}</p>
-            <span class="menu-price">¥{価格}</span>
-          </div>
-        </article>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{フード3}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{フード3}</h3>
-            <p class="menu-desc">{フード3の説明}</p>
-            <span class="menu-price">¥{価格}</span>
-          </div>
-        </article>
-      </div>
-
-      <div id="tabLunch" role="tabpanel" aria-labelledby="tabBtnLunch" class="menu-grid" hidden>
-        <article class="menu-card">
-          <div class="menu-img placeholder-img"><span class="placeholder-text">{ランチ1}</span></div>
-          <div class="menu-body">
-            <h3 class="menu-name">{ランチ1}</h3>
-            <p class="menu-desc">{ランチ1の説明}</p>
-            <span class="menu-price">¥{価格}</span>
-          </div>
-        </article>
-        <article class="menu-card menu-card-info">
-          <div class="menu-info-icon" aria-hidden="true">+</div>
-          <div class="menu-body">
-            <h3 class="menu-name">ランチセット</h3>
-            <p class="menu-desc">対象ランチに +¥{追加価格} でドリンク追加。</p>
-            <span class="menu-price">+¥{追加価格}</span>
-          </div>
-        </article>
-      </div>
+<section class="beans" id="beans">
+  <div class="cont beans-grid">
+    <div class="beans-img"></div>
+    <div class="beans-text">
+      <span class="eb">— Roasted In-house —</span>
+      <h2>コーヒー豆、<br><em>店内焙煎。</em></h2>
+      <p>毎週水曜の朝、店内の小さな焙煎機で焙煎しています。100g単位でその場で挽いて販売も。家でも、波の音を聴くようにコーヒーを飲んでください。</p>
+      <ul class="beans-list">
+        <li><span>House Blend 100g</span><span>¥1,200</span></li>
+        <li><span>Ethiopia Yirgacheffe 100g</span><span>¥1,400</span></li>
+        <li><span>Brazil Cerrado 100g</span><span>¥1,200</span></li>
+        <li><span>Decaf Colombia 100g</span><span>¥1,400</span></li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="access" id="access" aria-labelledby="accessHeading">
-    <div class="container access-grid">
-      <div class="access-text">
-        <p class="section-eyebrow">Access</p>
-        <h2 id="accessHeading" class="section-title">{最寄駅}、徒歩{N}分。</h2>
-        <dl class="access-info">
-          <dt>住所</dt>
-          <dd>〒{郵便番号} {住所}</dd>
-          <dt>電話</dt>
-          <dd><a href="tel:{電話}">{電話}</a></dd>
-          <dt>営業時間</dt>
-          <dd>{営業時間}</dd>
-          <dt>アクセス</dt>
-          <dd>{交通アクセス}</dd>
-          <dt>設備</dt>
-          <dd>{設備一覧}</dd>
-        </dl>
-        <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Google Maps で開く</a>
-      </div>
-      <div class="access-map">
-        <iframe loading="lazy" title="{店名} の地図"
-          src="https://www.google.com/maps?q={住所URLエンコード}&output=embed" allowfullscreen></iframe>
-      </div>
+<section class="info" id="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— Visit —</span>
+      <h2>Café Lilou.</h2>
+      <dl>
+        <dt>住所</dt><dd>神奈川県鎌倉市七里ガ浜東X-X-X 七里マリーナビル 2F</dd>
+        <dt>電話</dt><dd>0467-XX-XXXX</dd>
+        <dt>営業</dt><dd>10:00 — 18:00（L.O. 17:00）</dd>
+        <dt>定休</dt><dd>毎週火曜日</dd>
+        <dt>席数</dt><dd>7席（窓辺カウンター 5席 + テーブル1卓）</dd>
+        <dt>アクセス</dt><dd>江ノ電「七里ヶ浜」駅 徒歩2分</dd>
+      </dl>
     </div>
-  </section>
-
-  <section class="news" id="news" aria-labelledby="newsHeading">
-    <div class="container">
-      <p class="section-eyebrow">News</p>
-      <h2 id="newsHeading" class="section-title">お知らせ</h2>
-      <div class="news-grid">
-        <article class="news-card">
-          <span class="news-date">{ニュース日付1}</span>
-          <h3 class="news-title">{ニュースタイトル1}</h3>
-          <p>{ニュース内容1}</p>
-        </article>
-        <article class="news-card">
-          <span class="news-date">{ニュース日付2}</span>
-          <h3 class="news-title">{ニュースタイトル2}</h3>
-          <p>{ニュース内容2}</p>
-        </article>
-        <article class="news-card">
-          <span class="news-date">{ニュース日付3}</span>
-          <h3 class="news-title">{ニュースタイトル3}</h3>
-          <p>{ニュース内容3}</p>
-        </article>
+    <div class="info-side">
+      <div class="info-card">
+        <span class="ic-eb">Today's Hours</span>
+        <span class="ic-big">10:00 — 18:00</span>
+        <span class="ic-sub">Last Order 17:00 / 火曜定休</span>
       </div>
+      <a href="#" class="big-link">
+        <span>Instagram で日々の海を <em>@cafe_lilou</em></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#" class="big-link">
+        <span>窓辺の席を 1日2組 <em>事前予約</em></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
-  </section>
-
-  <section class="cta-final" aria-labelledby="ctaHeading">
-    <div class="container cta-inner">
-      <h2 id="ctaHeading">{CTAキャッチコピー}</h2>
-      <p>{営業時間}。ご予約は電話 or DMで。</p>
-      <div class="cta-buttons">
-        <a class="btn btn-primary btn-large" href="tel:{電話}">電話する {電話}</a>
-        <a class="btn btn-ghost btn-large" href="{Instagram URL}" target="_blank" rel="noopener">Instagram {IG ID}</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <span class="brand-mark">{頭文字}</span>
-      <span class="brand-name">{店名}<small>{店名カナ} / {地名}</small></span>
-      <p class="footer-tagline">Since {創業年}, {訴求コピー} in {地名}.</p>
-    </div>
-    <nav class="footer-nav" aria-label="フッターナビゲーション">
-      <ul>
-        <li><a href="#story">Story</a></li>
-        <li><a href="#signature">Signature</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#access">Access</a></li>
-        <li><a href="#news">News</a></li>
-      </ul>
-    </nav>
-    <div class="footer-social">
-      <a href="{Instagram URL}" target="_blank" rel="noopener">Instagram</a>
-      <a href="{食べログ URL}" target="_blank" rel="noopener">食べログ</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <small>本ページは California Open Air テンプレのデモ表示です。実案件適用時は producer の `02_pattern_decision.md` を参照。</small>
+<footer class="ft">
+  <div class="cont ft-in">
+    <span><em>Café</em> Lilou · since 2017</span>
+    <span>© Lilou · Shichirigahama, Kamakura</span>
   </div>
 </footer>
 

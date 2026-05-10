@@ -1,224 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{店名} | EDGE — Monochrome Salon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BEAM HAIR｜原宿のブルータリスト・ヘアサロン</title>
+<meta name="description" content="原宿の攻めるヘアサロン「BEAM HAIR」。ハイトーン、デザインカラー、刈り上げ。10:00–22:00、定休なし。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
-<body class="mono-edge">
+<body>
 
-<div class="grid-overlay" aria-hidden="true"></div>
-<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
 
-<header class="head">
-  <div class="head-inner">
-    <a href="#top" class="head-mark">
-      <span class="mark-sq"></span>
-      <span class="mark-text">{店名}<sup>®</sup></span>
-    </a>
-    <nav class="head-nav">
-      <a href="#cuts">01 / Cuts</a>
-      <a href="#crew">02 / Crew</a>
-      <a href="#book">03 / Book</a>
-    </nav>
-    <div class="head-clock" id="liveClock">--:--:--</div>
-  </div>
+<div class="ticker-top" aria-hidden="true">
+  <span>BEAM HAIR · OPEN 10:00 – 22:00 · NO DAY OFF · INSTANT RESERVATION · BEAM HAIR · OPEN 10:00 – 22:00 · NO DAY OFF · INSTANT RESERVATION · </span>
+</div>
+
+<header class="hd">
+  <a href="#top" class="brand">
+    <span class="b-mark">B</span>
+    <span class="b-w">
+      <span class="b1">BEAM HAIR</span>
+      <span class="b2">HARAJUKU · 原宿</span>
+    </span>
+  </a>
+  <nav>
+    <a href="#wow">Wow</a>
+    <a href="#menu">Menu</a>
+    <a href="#crew">Crew</a>
+    <a href="#book">Book</a>
+  </nav>
+  <span class="hd-clock" id="clock">--:--:--</span>
 </header>
 
 <main id="top">
 
-  <section class="hero">
-    <div class="hero-meta-line">
-      <span>● LIVE</span>
-      <span>SALON / TOKYO</span>
-      <span>EST. {創業年}</span>
-      <span>NO_CONCESSIONS</span>
-    </div>
-
-    <h1 class="hero-h">
-      <span class="hero-row hero-row-1">
-        <span class="hero-num">№01</span>
-        <span class="hero-word">SHARP</span>
-      </span>
-      <span class="hero-row hero-row-2">
-        <span class="hero-word italic">CUTS&nbsp;&amp;</span>
-        <span class="hero-num">№02</span>
-      </span>
-      <span class="hero-row hero-row-3">
-        <span class="hero-num">№03</span>
-        <span class="hero-word stroke">NO&nbsp;BS.</span>
-      </span>
-    </h1>
-
-    <p class="hero-tag">
-      A salon for those who already know what they want —<br>
-      and those who want to find out.
-    </p>
-
-    <div class="hero-stats">
-      <div class="hstat">
-        <span class="hstat-num">12<span class="hstat-yr">YR</span></span>
-        <span class="hstat-lab">in business</span>
-      </div>
-      <div class="hstat">
-        <span class="hstat-num">3<span class="hstat-yr">/3</span></span>
-        <span class="hstat-lab">stylists.<br>that's it.</span>
-      </div>
-      <div class="hstat">
-        <span class="hstat-num">90<span class="hstat-yr">MIN</span></span>
-        <span class="hstat-lab">avg session</span>
-      </div>
-    </div>
-
+<section class="hero">
+  <div class="hero-meta">
+    <span class="hm-l">№ 01 / 2026</span>
+    <span class="hm-c"><span class="dot"></span>OPEN NOW</span>
+    <span class="hm-r">— EAST · TOKYO —</span>
+  </div>
+  <h1 class="hero-h">
+    <span class="hh-line" data-scramble>HAIRCUT</span>
+    <span class="hh-line outline" data-scramble>SHOULD</span>
+    <span class="hh-line accent" data-scramble>BE LOUD.</span>
+  </h1>
+  <div class="hero-foot">
+    <p class="hero-sub">原宿の路地裏、6席の小さなサロン。<br>ハイトーン、デザインカラー、刈り上げ。<br>「攻めたい時の駆け込み寺」を、目指してます。</p>
     <a href="#book" class="hero-cta">
-      <span class="cta-arrow">→</span>
-      <span>BOOK&nbsp;A&nbsp;SLOT</span>
-      <span class="cta-arrow">→</span>
+      <span>RESERVE NOW</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
-  </section>
+  </div>
+</section>
 
-  <section class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP ×</span>
-      <span>SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP × SHARP ×</span>
+<section class="wow" id="wow">
+  <div class="cont wow-grid">
+    <div class="wow-l">
+      <span class="eb">— Why us —</span>
+      <h2>WHO ARE<br>BEAM<br>HAIR.</h2>
     </div>
-  </section>
-
-  <section class="cuts" id="cuts">
-    <div class="cuts-head">
-      <span class="sec-num">02 / WHAT WE DO</span>
-      <h2 class="sec-h">CUTS,<br><span class="italic">no fluff.</span></h2>
+    <div class="wow-r">
+      <article class="wow-item"><span class="wn">001</span><h3>BLEACH SPECIALIST</h3><p>ダブル、トリプルブリーチ、シルバーやペールピンクのデザインカラーが得意。Y2K・地雷・量産・ガル系まで。</p></article>
+      <article class="wow-item"><span class="wn">002</span><h3>NO DAY OFF</h3><p>定休日なし。10:00 – 22:00、深夜も応相談。終電後の駆け込みも対応します。</p></article>
+      <article class="wow-item"><span class="wn">003</span><h3>SAME PRICE</h3><p>1ヶ月後のリタッチも、半年ぶりのフルブリーチも、同じ価格表。料金で迷わない。</p></article>
+      <article class="wow-item"><span class="wn">004</span><h3>NO TALK ALLOWED</h3><p>ご希望ならば、施術中の会話ゼロでお過ごしいただけます。スマホもイヤホンも自由。</p></article>
     </div>
+  </div>
+</section>
 
-    <div class="cuts-grid">
-      <article class="cut-card">
-        <div class="cut-id">01</div>
-        <h3 class="cut-name">SIGNATURE CUT</h3>
-        <p class="cut-jp">— カウンセリング込みで90分。</p>
-        <p class="cut-desc">Started from how you want to feel. Reverse-engineered into how you want to look.</p>
-        <p class="cut-price"><span>¥{価格1}</span></p>
-      </article>
+<section class="menu" id="menu">
+  <div class="cont">
+    <span class="eb">— Menu / Price —</span>
+    <h2 class="menu-h">PRICE<br><em>RAW.</em></h2>
+    <table class="menu-tbl">
+      <tr><td class="m-cat">CUT</td><td class="m-name">CUT ONLY</td><td class="m-pp">¥6,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">CUT + SHAMPOO</td><td class="m-pp">¥7,800</td></tr>
+      <tr><td class="m-cat">COLOR</td><td class="m-name">RETOUCH</td><td class="m-pp">¥9,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">FULL COLOR</td><td class="m-pp">¥13,800</td></tr>
+      <tr><td class="m-cat">BLEACH</td><td class="m-name">SINGLE BLEACH</td><td class="m-pp">¥14,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">DOUBLE BLEACH</td><td class="m-pp">¥24,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">TRIPLE BLEACH</td><td class="m-pp">¥34,800</td></tr>
+      <tr><td class="m-cat">DESIGN</td><td class="m-name">INNER COLOR</td><td class="m-pp">¥9,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">FACE FRAMING</td><td class="m-pp">¥7,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">EAR / NECK SHAVE</td><td class="m-pp">¥3,800</td></tr>
+      <tr><td class="m-cat">EXTRA</td><td class="m-name">TREATMENT BASIC</td><td class="m-pp">¥3,800</td></tr>
+      <tr><td class="m-cat"></td><td class="m-name">SCALP CARE 30min</td><td class="m-pp">¥3,800</td></tr>
+    </table>
+  </div>
+</section>
 
-      <article class="cut-card highlight">
-        <div class="cut-id">02</div>
-        <span class="cut-tag">⚡ POPULAR</span>
-        <h3 class="cut-name">COLOR + CUT</h3>
-        <p class="cut-jp">— ハイライト・バレイヤージュ対応。</p>
-        <p class="cut-desc">Color built layer by layer. Lasts up to 8 weeks before fading into something just as wearable.</p>
-        <p class="cut-price"><span>¥{価格2}</span></p>
-      </article>
-
-      <article class="cut-card">
-        <div class="cut-id">03</div>
-        <h3 class="cut-name">DEEP TREATMENT</h3>
-        <p class="cut-jp">— ダメージレベル別 3コース。</p>
-        <p class="cut-desc">Bond builder + scalp work + steam. The kind of thing you'll wish you'd booked sooner.</p>
-        <p class="cut-price"><span>¥{価格3}</span></p>
-      </article>
-
-      <article class="cut-card">
-        <div class="cut-id">04</div>
-        <h3 class="cut-name">SHAVE &amp; LINES</h3>
-        <p class="cut-jp">— レザーカット / フェードカット / ライン入れ。</p>
-        <p class="cut-desc">For those of you who think detail is a religion. We'll match it.</p>
-        <p class="cut-price"><span>¥{価格4}</span></p>
-      </article>
+<section class="crew" id="crew">
+  <div class="cont">
+    <span class="eb">— Crew —</span>
+    <h2>CREW.<br><em>—— FOUR.</em></h2>
+    <div class="crew-grid">
+      <article class="cr"><div class="cr-img cr-i1"></div><div class="cr-info"><span>01 / DIRECTOR</span><h3>SHION</h3><p>BLEACH · DESIGN · Y2K</p></div></article>
+      <article class="cr"><div class="cr-img cr-i2"></div><div class="cr-info"><span>02 / STYLIST</span><h3>RIKU</h3><p>UNDERCUT · KARMA · STREET</p></div></article>
+      <article class="cr"><div class="cr-img cr-i3"></div><div class="cr-info"><span>03 / STYLIST</span><h3>YUKI</h3><p>FACE FRAMING · INNER · GAL</p></div></article>
+      <article class="cr"><div class="cr-img cr-i4"></div><div class="cr-info"><span>04 / TRAINEE</span><h3>NOA</h3><p>SHAMPOO · SPA · ASSISTANT</p></div></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="manifest">
-    <p class="m-line">— No upselling. —</p>
-    <p class="m-line m-big italic">No "shall&nbsp;we&nbsp;try&nbsp;something&nbsp;new?".</p>
-    <p class="m-line">— Just what you came for, executed properly. —</p>
-  </section>
-
-  <section class="crew" id="crew">
-    <div class="crew-head">
-      <span class="sec-num">03 / THE CREW</span>
-      <h2 class="sec-h">3 PAIRS<br>OF HANDS.</h2>
+<section class="book" id="book">
+  <div class="cont book-card">
+    <div class="bk-l">
+      <span class="bk-eb">— Reserve Now —</span>
+      <h2 class="bk-h">JUST<br><em>WALK IN.</em></h2>
+      <p>ご新規様、初回 <strong>¥3,000 OFF</strong>。<br>当日予約は WEB が一番早いです。</p>
     </div>
-    <div class="crew-list">
-      <article class="crew-card">
-        <div class="crew-portrait" aria-hidden="true">
-          <span class="portrait-id">PORTRAIT_01</span>
-          <span class="portrait-cross"></span>
-        </div>
-        <p class="crew-role">FOUNDER · DIRECTOR</p>
-        <h3 class="crew-name">{店主名}</h3>
-        <p class="crew-bio">{店主名} runs the chairs. {N}年目, ex-Tokyo / NY salon network. Specializes in cuts that move.</p>
-      </article>
-      <article class="crew-card">
-        <div class="crew-portrait" aria-hidden="true">
-          <span class="portrait-id">PORTRAIT_02</span>
-          <span class="portrait-cross"></span>
-        </div>
-        <p class="crew-role">STYLIST</p>
-        <h3 class="crew-name">{スタイリスト2名}</h3>
-        <p class="crew-bio">Color specialist. Trained in Berlin / Seoul. Brings hard-edge palettes back to wearable warmth.</p>
-      </article>
-      <article class="crew-card">
-        <div class="crew-portrait" aria-hidden="true">
-          <span class="portrait-id">PORTRAIT_03</span>
-          <span class="portrait-cross"></span>
-        </div>
-        <p class="crew-role">JUNIOR</p>
-        <h3 class="crew-name">{スタイリスト3名}</h3>
-        <p class="crew-bio">Treatment & scalp work. Two years in. Will probably take your favorite chair eventually.</p>
-      </article>
+    <div class="bk-r">
+      <a href="#" class="bk-cta primary"><span>WEB RESERVATION 24H</span><em>→</em></a>
+      <a href="#" class="bk-cta"><span>03-XXXX-XXXX</span><em>tel</em></a>
+      <a href="#" class="bk-cta"><span>@beam_hair_harajuku</span><em>insta</em></a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="book" id="book">
-    <div class="book-grid">
-      <div class="book-text">
-        <span class="sec-num">04 / BOOK</span>
-        <h2 class="sec-h book-h">
-          <span>BOOK</span>
-          <span class="italic">a chair.</span>
-        </h2>
-        <p class="book-lede">
-          Walk-ins available, but a booked slot gets the full session.
-          DM, call, or text — whichever moves first.
-        </p>
-        <div class="book-meta">
-          <p><span>HOURS</span><b>11:00 – 21:00</b></p>
-          <p><span>CLOSED</span><b>{定休日}</b></p>
-          <p><span>WHERE</span><b>{住所}</b></p>
-          <p><span>PHONE</span><a href="tel:{電話}"><b>{電話}</b></a></p>
-        </div>
-      </div>
-      <div class="book-actions">
-        <a href="tel:{電話}" class="bk-btn bk-primary">
-          <span class="bk-num">01</span>
-          <span class="bk-act">CALL</span>
-          <span class="bk-arrow">→</span>
-        </a>
-        <a href="{Instagram URL}" class="bk-btn" target="_blank" rel="noopener">
-          <span class="bk-num">02</span>
-          <span class="bk-act">DM @{IG ID}</span>
-          <span class="bk-arrow">→</span>
-        </a>
-        <a href="mailto:{メール}" class="bk-btn">
-          <span class="bk-num">03</span>
-          <span class="bk-act">EMAIL</span>
-          <span class="bk-arrow">→</span>
-        </a>
+<section class="info">
+  <div class="cont info-grid">
+    <div>
+      <span class="eb">— Salon —</span>
+      <h2 class="info-h">BEAM<br>HAIR.</h2>
+      <dl>
+        <dt>住所</dt><dd>東京都渋谷区神宮前X-X-X 原宿GROUND 4F</dd>
+        <dt>営業</dt><dd>10:00 — 22:00（無休）</dd>
+        <dt>電話</dt><dd>03-XXXX-XXXX</dd>
+        <dt>支払</dt><dd>各種カード / 電子マネー / 現金</dd>
+        <dt>アクセス</dt><dd>JR「原宿」駅 徒歩4分 / 副都心線「明治神宮前」徒歩2分</dd>
+      </dl>
+    </div>
+    <div class="info-r">
+      <div class="i-card">
+        <span class="ic-l">CURRENT</span>
+        <span class="ic-big" id="curHours">10:00 → 22:00</span>
+        <span class="ic-s">NO DAY OFF · 6 SEATS</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="foot">
-  <div class="foot-inner">
-    <p class="foot-mark">{店名}<sup>®</sup> — EDGE_v.{創業年}</p>
-    <p class="foot-loc">{住所} / TOKYO / JAPAN</p>
-    <p class="foot-tag">SHARP × NO_BS × <span class="italic">repeat.</span></p>
+<footer class="ft">
+  <div class="ft-in">
+    <span class="ft-l">BEAM HAIR · HARAJUKU</span>
+    <span class="ft-r">© 2024—2026</span>
   </div>
 </footer>
 

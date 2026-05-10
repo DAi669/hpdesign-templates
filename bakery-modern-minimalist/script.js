@@ -1,64 +1,41 @@
-// bakery-modern-minimalist
-(() => {
+(()=>{
   'use strict';
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.getElementById('navList');
-  if (toggle && list) {
-    toggle.addEventListener('click', () => {
-      const open = list.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      list.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+  // Drag-to-scroll + progress bar for today section
+  const ms=document.querySelector('[data-scroll]');
+  const bar=document.querySelector('.tp-bar');
+  if(ms){
+    let down=false,startX=0,startScroll=0;
+    ms.addEventListener('mousedown',e=>{down=true;startX=e.pageX-ms.offsetLeft;startScroll=ms.scrollLeft});
+    ms.addEventListener('mouseleave',()=>down=false);
+    ms.addEventListener('mouseup',()=>down=false);
+    ms.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();const x=e.pageX-ms.offsetLeft;ms.scrollLeft=startScroll-(x-startX)*1.4});
+    if(bar){
+      const updateBar=()=>{
+        const max=ms.scrollWidth-ms.clientWidth;
+        const pct=Math.max(0.05,Math.min(1,ms.scrollLeft/max));
+        bar.style.width=(pct*100)+'%';
+      };
+      ms.addEventListener('scroll',updateBar,{passive:true});
+      updateBar();
+    }
   }
 
-  // Subtle reveal
-  if ('IntersectionObserver' in window && !reduced) {
-    const targets = document.querySelectorAll('.product, .about-grid, .access-grid, .cta-inner, .gallery-item');
-    targets.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
-    });
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => {
-            e.target.style.opacity = '1';
-            e.target.style.transform = 'translateY(0)';
-          }, i * 60);
+  // Reveal on scroll
+  if('IntersectionObserver' in window && !reduced){
+    const ts=document.querySelectorAll('.td,.info-grid > *,.big-quote,.today-head');
+    ts.forEach(el=>el.style.opacity='0');
+    const io=new IntersectionObserver(es=>{
+      es.forEach((e,i)=>{
+        if(e.isIntersecting){
+          e.target.style.opacity='';
+          e.target.classList.add('in-view');
+          e.target.style.animationDelay=(i*40)+'ms';
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
-    targets.forEach(el => io.observe(el));
-  }
-
-  // Stat count-up
-  const stats = document.querySelectorAll('.stat-num[data-count-to]');
-  function countUp(el) {
-    const target = parseInt(el.dataset.countTo, 10);
-    if (reduced) { el.textContent = target.toLocaleString(); return; }
-    const dur = 1400; const start = performance.now();
-    const initial = parseInt(el.textContent.replace(/,/g, ''), 10) || 0;
-    function tick(now) {
-      const t = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(initial + (target - initial) * eased).toLocaleString();
-      if (t < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  if ('IntersectionObserver' in window) {
-    const sIo = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { countUp(e.target); sIo.unobserve(e.target); }
-      });
-    }, { threshold: 0.5 });
-    stats.forEach(el => sIo.observe(el));
+    },{threshold:.18});
+    ts.forEach(el=>io.observe(el));
   }
 })();

@@ -118,3 +118,27 @@ h2 em{font-style:italic;color:var(--brass);font-weight:400}
 .in-view{animation:rise 1s cubic-bezier(.2,.8,.2,1) backwards}
 @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.in-view,.hero-h .line,.hero-sub,.hero-meta{animation:none}}
+
+/* =====================================================
+   Level1 共通5モーション (2026-05-12 batch4 追加)
+   ===================================================== */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].is-in{opacity:1;transform:none}
+.hd{transition:padding .3s ease,background .3s ease,box-shadow .3s ease,backdrop-filter .3s ease}
+.hd.is-scrolled{box-shadow:0 2px 14px rgba(0,0,0,0.45);backdrop-filter:saturate(140%) blur(10px)}
+.hd.is-scrolled .hd-in{padding-top:8px;padding-bottom:8px}
+@keyframes l1KenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.1) translate(-2%,-1.5%)}}
+.l1-kenburns{animation:l1KenBurns 22s ease-in-out infinite alternate;will-change:transform}
+.l1-line{display:inline-block;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.l1-line.is-in{opacity:1;transform:none}
+.l1-fab{position:fixed;right:18px;bottom:18px;z-index:80;padding:14px 22px;border-radius:50px;font-family:inherit;font-weight:700;font-size:14px;letter-spacing:.06em;color:var(--night,#0F1626);text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,0.4);opacity:0;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease,box-shadow .25s ease;display:inline-flex;align-items:center;gap:8px;line-height:1}
+.l1-fab.is-visible{opacity:1;transform:none}
+.l1-fab:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,0.5)}
+.l1-fab::after{content:"→";font-weight:400;font-size:15px}
+@media (max-width:720px){.l1-fab{right:12px;bottom:12px;padding:12px 18px;font-size:13px}}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  .l1-kenburns{animation:none!important}
+  .l1-line{opacity:1!important;transform:none!important;transition:none!important}
+  .l1-fab{transition:none!important}
+}

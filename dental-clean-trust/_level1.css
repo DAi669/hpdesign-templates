@@ -1,0 +1,50 @@
+/* =====================================================
+   Level 1 共通モーション (5モーション)
+   2026-05-12 batch3 Level1 横展開 (software-engineer-a)
+   既存 style.css に被せる差分のみ。既存スタイルは触らない
+   ===================================================== */
+
+/* M1. data-reveal フェード (既存 .in-view と並列) */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+[data-reveal].is-in{opacity:1;transform:none}
+[data-reveal-delay="80"]{transition-delay:.08s}
+[data-reveal-delay="160"]{transition-delay:.16s}
+[data-reveal-delay="240"]{transition-delay:.24s}
+[data-reveal-delay="320"]{transition-delay:.32s}
+
+/* M2. 固定ヘッダ縮小 (.hd.is-scrolled) */
+.hd{transition:background .3s cubic-bezier(.2,.8,.2,1),padding .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s cubic-bezier(.2,.8,.2,1),backdrop-filter .3s cubic-bezier(.2,.8,.2,1)}
+.hd.is-scrolled{background:rgba(255,255,255,0.94);backdrop-filter:saturate(140%) blur(10px);box-shadow:0 2px 14px rgba(0,0,0,0.06)}
+.hd.is-scrolled > *{transform:scale(.94);transform-origin:left center;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+
+/* M3. ヒーロー Ken Burns (.hero.is-kenburns 内の .hero-img/.hero-bg にゆっくりズーム) */
+.hero.is-kenburns .hero-img,
+.hero.is-kenburns .hero-bg,
+.hero.is-kenburns .hero-photo{animation:lvl1KenBurns 22s ease-in-out infinite alternate;will-change:transform}
+@keyframes lvl1KenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.08) translate(-1.5%,-1%)}}
+
+/* M4. キネティックタイポ (data-split で文字単位スライド) */
+[data-split] > span.lvl1-c{display:inline-block;opacity:0;transform:translateY(28px) rotate(2deg);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+[data-split].is-in > span.lvl1-c{opacity:1;transform:none}
+
+/* M5. 追従CTA (body末尾に動的注入) */
+.lvl1-fab{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(20px);transition:opacity .4s cubic-bezier(.2,.8,.2,1),transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.lvl1-fab.is-visible{opacity:1;transform:none;pointer-events:auto}
+.lvl1-fab a{display:flex;align-items:center;justify-content:center;padding:14px 22px;font-family:inherit;font-weight:700;font-size:14px;letter-spacing:.06em;box-shadow:0 8px 24px rgba(0,0,0,0.18);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s cubic-bezier(.2,.8,.2,1);border-radius:6px;text-decoration:none;background:#111;color:#fff;border:1px solid rgba(255,255,255,0.06)}
+.lvl1-fab a:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.25)}
+@media (max-width:720px){
+  .lvl1-fab{bottom:0;right:0;left:0;flex-direction:row;gap:0;border-radius:0;box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+  .lvl1-fab a{flex:1;border-radius:0;padding:14px 8px;font-size:13px;box-shadow:none}
+  .lvl1-fab a:hover{transform:none}
+  body.has-lvl1-fab{padding-bottom:60px}
+}
+
+/* prefers-reduced-motion 対応 (全アニメ無効化) */
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  .hero.is-kenburns .hero-img,
+  .hero.is-kenburns .hero-bg,
+  .hero.is-kenburns .hero-photo{animation:none!important}
+  [data-split] > span.lvl1-c{opacity:1!important;transform:none!important}
+  .lvl1-fab{transition:none!important}
+}

@@ -1,0 +1,118 @@
+/* =====================================================
+   Level 1 共通モーション (5モーション) - 2026-05-12
+   M1 スクロール連動フェード / M2 固定ヘッダ縮小 / M3 ヒーロー Ken Burns
+   M4 キネティックタイポ      / M5 追従CTA (FAB)
+   既存デザインに上書き追加する形 (詳細度は最小限・既存配色変数を再利用)
+   ===================================================== */
+
+/* ---- 共通変数 (テンプレ既存変数がない場合のフォールバック) ---- */
+:root{
+  --m-ease:cubic-bezier(.2,.8,.2,1);
+  --m-fab-bg:#0E0B0A;
+  --m-fab-fg:#ffffff;
+  --m-fab-accent:#C28B5E;
+}
+
+/* =====================================================
+   M1. スクロール連動フェード (data-reveal)
+   ===================================================== */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s var(--m-ease), transform .9s var(--m-ease);
+  will-change:opacity, transform;
+}
+[data-reveal].is-in{opacity:1; transform:none}
+
+/* =====================================================
+   M2. 固定ヘッダ縮小 (.hd.is-scrolled)
+   既存背景・色は壊さず、padding/影/blur のみ強化
+   ===================================================== */
+.hd{transition:padding .3s var(--m-ease), box-shadow .3s var(--m-ease), backdrop-filter .3s var(--m-ease), background-color .3s var(--m-ease)}
+.hd.is-scrolled{box-shadow:0 2px 14px rgba(0,0,0,0.10); backdrop-filter:saturate(140%) blur(12px)}
+.hd.is-scrolled .hd-in{padding-top:10px !important; padding-bottom:10px !important}
+
+/* =====================================================
+   M3. ヒーロー Ken Burns (22秒ループ・ゆっくりズーム+パン)
+   既存の hero 背景レイヤーに animation を付与
+   ===================================================== */
+@keyframes m-kenburns{
+  0%  {transform:scale(1)    translate(0,0)}
+  100%{transform:scale(1.10) translate(-2%,-1.5%)}
+}
+.hero .hero-img,
+.hero .hero-bg,
+.hero .hero-photo{
+  animation:m-kenburns 22s ease-in-out infinite alternate;
+  will-change:transform;
+}
+
+/* =====================================================
+   M4. キネティックタイポ (data-split 文字単位スライドイン)
+   ===================================================== */
+[data-split] > span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(36px) rotate(1.5deg);
+  transition:opacity .7s var(--m-ease), transform .7s var(--m-ease);
+  will-change:opacity, transform;
+}
+[data-split].is-in > span{opacity:1; transform:none}
+
+/* =====================================================
+   M5. 追従CTA (FAB) - 右下固定 / scroll > 600px で表示
+   ===================================================== */
+.m-fab{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:80;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .4s var(--m-ease), transform .4s var(--m-ease);
+  pointer-events:none;
+}
+.m-fab.is-visible{opacity:1; transform:none; pointer-events:auto}
+.m-fab a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 22px;
+  font-family:inherit;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.06em;
+  text-decoration:none;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  transition:transform .25s var(--m-ease), box-shadow .25s var(--m-ease);
+  border-radius:6px;
+  white-space:nowrap;
+}
+.m-fab a:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,0.25)}
+.m-fab .m-fab-primary{background:var(--m-fab-accent); color:#fff; border:1px solid transparent}
+.m-fab .m-fab-secondary{background:#fff; color:var(--m-fab-bg); border:1px solid rgba(0,0,0,0.12)}
+.m-fab .ic{opacity:.7; font-size:12px}
+
+@media (max-width:720px){
+  .m-fab{right:0; left:0; bottom:0; flex-direction:row; gap:0; transform:translateY(100%)}
+  .m-fab.is-visible{transform:none}
+  .m-fab a{flex:1; justify-content:center; border-radius:0; padding:14px 8px; font-size:13px; box-shadow:none}
+  .m-fab a:hover{transform:none}
+  body.has-fab-bar{padding-bottom:56px}
+}
+
+/* =====================================================
+   prefers-reduced-motion: 全アニメ無効化
+   ===================================================== */
+@media (prefers-reduced-motion:reduce){
+  .hero .hero-img,
+  .hero .hero-bg,
+  .hero .hero-photo{animation:none !important}
+  [data-reveal]{opacity:1 !important; transform:none !important; transition:none !important}
+  [data-split] > span{opacity:1 !important; transform:none !important; transition:none !important}
+  .m-fab{transition:none !important}
+  *{transition-duration:.01ms !important}
+}

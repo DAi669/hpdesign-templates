@@ -57,4 +57,31 @@
     },{threshold:.16});
     ts.forEach(el=>io.observe(el));
   }
+
+  // ===== Level1 共通5モーション (2026-05-12 batch4 追加) =====
+  // M1: [data-reveal] スクロール連動フェード
+  const rv=document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window && !reduced && rv.length){
+    const rio=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const d=parseInt(e.target.dataset.revealDelay,10)||0;setTimeout(()=>e.target.classList.add('is-in'),d);rio.unobserve(e.target);}});},{threshold:.15});
+    rv.forEach(el=>rio.observe(el));
+  } else { rv.forEach(el=>el.classList.add('is-in')); }
+
+  // M2: 固定ヘッダ縮小 (scroll > 24px)
+  const hd=document.querySelector('.hd');
+  if(hd){
+    const onSc=()=>hd.classList.toggle('is-scrolled',window.scrollY>24);
+    onSc(); window.addEventListener('scroll',onSc,{passive:true});
+  }
+
+  // M3: ヒーロー Ken Burns (背景画像なしのため .hero 自体へ弱適用は不要・既存デザイン尊重)
+  // → 整体テンプレのヒーローはグラデのみ。装飾要素 .hero-stats などへの揺れは過剰なので適用しない
+
+  // M4: キネティックタイポ (ヒーロー .line を行単位スライド)
+  const lines=document.querySelectorAll('.hero h1 .line');
+  if(lines.length && !reduced){
+    lines.forEach((el,i)=>{ el.classList.add('l1-line'); el.style.transitionDelay=(i*0.12)+'s'; });
+    requestAnimationFrame(()=>lines.forEach(el=>el.classList.add('is-in')));
+  }
+
+  // M5: 追従CTA - 整体は既存 .fab があるためスキップ
 })();

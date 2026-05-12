@@ -120,3 +120,33 @@ h2 em{font-style:italic;color:var(--rust);font-family:"Cormorant Infant",serif;f
 .in-view{animation:rise 1s cubic-bezier(.2,.8,.2,1) backwards}
 @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.in-view,.himg{animation:none;clip-path:none}}
+
+/* =====================================================
+   Level1 共通モーション add-on (2026-05-12)
+   ===================================================== */
+[data-l1-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
+[data-l1-reveal].is-in{opacity:1;transform:none}
+.hd{transition:padding .3s cubic-bezier(.2,.8,.2,1),background .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s cubic-bezier(.2,.8,.2,1),backdrop-filter .3s cubic-bezier(.2,.8,.2,1)}
+.hd.l1-scrolled{box-shadow:0 2px 14px rgba(0,0,0,0.08)}
+.l1-kenburns{animation:l1-kenburns 22s ease-in-out infinite alternate;will-change:transform}
+@keyframes l1-kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.10) translate(-1.5%,-1%)}}
+[data-l1-split] > span{display:inline-block;opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.2,.8,.2,1),transform .65s cubic-bezier(.2,.8,.2,1)}
+[data-l1-split].is-in > span{opacity:1;transform:none}
+.l1-fab{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(20px);transition:opacity .4s cubic-bezier(.2,.8,.2,1),transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.l1-fab.is-visible{opacity:1;transform:none;pointer-events:auto}
+.l1-fab a{display:flex;align-items:center;gap:8px;padding:14px 20px;font-family:"Noto Sans JP",sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,0.18);border-radius:4px;transition:transform .25s,box-shadow .25s;text-decoration:none}
+.l1-fab a:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.25)}
+.l1-fab-tel{background:#fff;color:#222;border:1px solid rgba(0,0,0,0.12)}
+.l1-fab-book{background:#222;color:#fff}
+@media (max-width:720px){
+  .l1-fab{bottom:0;right:0;left:0;flex-direction:row;gap:0;border-radius:0;box-shadow:0 -4px 20px rgba(0,0,0,0.12)}
+  .l1-fab a{flex:1;justify-content:center;border-radius:0;padding:14px 8px;font-size:13px;box-shadow:none}
+  .l1-fab a:hover{transform:none}
+  body.l1-has-fab{padding-bottom:60px}
+}
+@media (prefers-reduced-motion:reduce){
+  [data-l1-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  [data-l1-split] > span{opacity:1!important;transform:none!important;transition:none!important}
+  .l1-kenburns{animation:none!important}
+  .l1-fab{transition:none!important}
+}

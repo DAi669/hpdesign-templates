@@ -1,3 +1,9 @@
+/* =====================================================
+   麺屋 たけし - 共通スタイル
+   3ページ (index / menu / story) 共通 CSS
+   2026-05-12 パイロット改修 (research 指針 Level 1/2/3 全適用)
+   ===================================================== */
+
 :root{
   --ink:#0E0A06;
   --paper:#F8F1E3;
@@ -5,10 +11,12 @@
   --gold:#C68D2F;
   --soot:#1A1410;
   --line:rgba(14,10,6,0.18);
+  --ease:cubic-bezier(.2,.8,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 1}
 body{overflow-x:hidden;line-height:1.7}
+body.is-locked{overflow:hidden} /* ハンバーガー展開時の背面スクロールロック */
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .cont{max-width:1180px;margin:0 auto;padding:0 32px}
@@ -18,46 +26,160 @@ img{max-width:100%;display:block}
 .sec-h{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(32px,5.5vw,68px);line-height:1.05;letter-spacing:-.01em;margin-bottom:36px}
 .sec-h em{font-style:normal;color:var(--crimson)}
 
-/* ========= HEADER ========= */
-.hd{position:sticky;top:0;z-index:50;background:rgba(248,241,227,0.94);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
-.hd-in{max-width:1180px;margin:0 auto;padding:14px 32px;display:flex;justify-content:space-between;align-items:center}
-.brand{display:flex;align-items:center;gap:14px}
+/* =====================================================
+   HEADER (共通・固定縮小ヘッダー)
+   研究指針 Level 1-B: scroll > 24px で .shrunk
+   ===================================================== */
+.hd{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(248,241,227,0);transition:background .3s var(--ease),padding .3s var(--ease),box-shadow .3s var(--ease),backdrop-filter .3s var(--ease)}
+.hd.is-scrolled{background:rgba(248,241,227,0.96);backdrop-filter:saturate(140%) blur(10px);box-shadow:0 2px 14px rgba(14,10,6,0.06);border-bottom:1px solid var(--line)}
+.hd-in{max-width:1180px;margin:0 auto;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;transition:padding .3s var(--ease)}
+.hd.is-scrolled .hd-in{padding:10px 32px}
+.brand{display:flex;align-items:center;gap:14px;transition:transform .3s var(--ease)}
+.hd.is-scrolled .brand{transform:scale(.92)}
 .brand-mark{display:flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--crimson);color:#fff;font-family:"Shippori Mincho",serif;font-weight:800;font-size:24px;border-radius:4px}
 .brand-w{display:flex;flex-direction:column;line-height:1.1}
 .brand-en{font-family:"Bebas Neue",sans-serif;font-size:11px;letter-spacing:.22em;color:var(--ink)}
 .brand-jp{font-family:"Shippori Mincho",serif;font-weight:700;font-size:15px}
-.hd nav{display:flex;gap:28px}
-.hd nav a{font-family:"Shippori Mincho",serif;font-weight:500;font-size:14px;letter-spacing:.08em;transition:color .2s}
+
+/* ヘッダー (ヒーロー上だと文字白) */
+.hd:not(.is-scrolled) .brand-en,
+.hd:not(.is-scrolled) .brand-jp{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+.hd:not(.is-scrolled) nav a{color:#fff;text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+/* サブページ (ヒーロー小さめ) では常時白背景扱い */
+body.is-sub .hd{background:rgba(248,241,227,0.96);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+body.is-sub .hd .brand-en,body.is-sub .hd .brand-jp,body.is-sub .hd nav a{color:var(--ink);text-shadow:none}
+
+.hd nav{display:flex;gap:28px;align-items:center}
+.hd nav a{font-family:"Shippori Mincho",serif;font-weight:500;font-size:14px;letter-spacing:.08em;transition:color .2s,opacity .3s var(--ease);position:relative;opacity:0;transform:translateY(-4px);animation:navIn .6s var(--ease) forwards;animation-delay:calc(var(--i,0)*80ms + 200ms)}
+@keyframes navIn{to{opacity:1;transform:none}}
 .hd nav a:hover{color:var(--crimson)}
+.hd nav a.is-current{color:var(--crimson)}
+.hd nav a.is-current::after{content:"";position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--crimson)}
+
+/* ハンバーガー (768px 未満で表示・研究指針 Level 2-H) */
+.burger{display:none;width:44px;height:44px;border:none;background:transparent;cursor:pointer;position:relative;z-index:201}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px auto;transition:transform .35s var(--ease),opacity .25s var(--ease),background .25s var(--ease)}
+.hd:not(.is-scrolled) .burger span{background:#fff}
+body.is-sub .hd .burger span{background:var(--ink)}
+.burger.is-open span{background:var(--ink)!important}
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.drawer{position:fixed;inset:0;background:var(--paper);z-index:200;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.4rem;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.drawer.is-open{opacity:1;visibility:visible}
+.drawer a{font-family:"Shippori Mincho",serif;font-size:26px;font-weight:700;color:var(--ink);letter-spacing:.06em;opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.drawer.is-open a{opacity:1;transform:none}
+.drawer.is-open a:nth-child(1){transition-delay:.1s}
+.drawer.is-open a:nth-child(2){transition-delay:.18s}
+.drawer.is-open a:nth-child(3){transition-delay:.26s}
+.drawer.is-open a:nth-child(4){transition-delay:.34s}
+.drawer-cta{margin-top:1rem;padding:14px 36px;background:var(--crimson);color:#fff!important;font-family:"Bebas Neue",sans-serif!important;letter-spacing:.18em;font-size:16px!important}
+
 @media (max-width:720px){
-  .hd-in{padding:12px 18px}
+  .hd-in{padding:14px 18px}
+  .hd.is-scrolled .hd-in{padding:8px 18px}
   .hd nav{display:none}
+  .burger{display:block}
 }
 
-/* ========= HERO ========= */
-.hero{position:relative;height:90vh;min-height:600px;overflow:hidden;background:var(--soot)}
-.hero-img{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(14,10,6,0.35) 0%,rgba(168,40,28,0.45) 60%,rgba(14,10,6,0.85) 100%),url('https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=2000&q=85&auto=format&fit=crop');background-size:cover;background-position:center}
-.hero-grain{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,0.012) 2px,rgba(255,255,255,0.012) 3px);pointer-events:none}
-.hero-noren{position:absolute;top:0;left:0;width:140px;height:120px;background:linear-gradient(180deg,var(--crimson) 0%,var(--crimson) 70%,transparent 100%);box-shadow:8px 4px 18px rgba(0,0,0,0.35);clip-path:polygon(0 0,100% 0,100% 100%,72% 80%,55% 100%,38% 80%,18% 100%,0 80%);display:flex;align-items:center;justify-content:center}
+/* =====================================================
+   HERO (トップページ・大型)
+   研究指針 Level 1-C: Ken Burns / Level 2-F: キネティックタイポ
+   ===================================================== */
+.hero{position:relative;height:92vh;min-height:620px;overflow:hidden;background:var(--soot)}
+.hero-img{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(14,10,6,0.35) 0%,rgba(168,40,28,0.45) 60%,rgba(14,10,6,0.85) 100%),url('https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=2000&q=85&auto=format&fit=crop');background-size:cover;background-position:center;animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.12) translate(-2%,-1.5%)}}
+.hero-grain{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,0.012) 2px,rgba(255,255,255,0.012) 3px);pointer-events:none;z-index:2}
+.hero-noren{position:absolute;top:0;left:0;width:140px;height:120px;background:linear-gradient(180deg,var(--crimson) 0%,var(--crimson) 70%,transparent 100%);box-shadow:8px 4px 18px rgba(0,0,0,0.35);clip-path:polygon(0 0,100% 0,100% 100%,72% 80%,55% 100%,38% 80%,18% 100%,0 80%);display:flex;align-items:center;justify-content:center;z-index:3}
 .hero-noren::after{content:"麺";font-family:"Shippori Mincho",serif;font-weight:800;font-size:48px;color:#fff;margin-top:-18px;text-shadow:0 2px 8px rgba(0,0,0,0.4)}
 .hero-in{position:relative;z-index:5;max-width:1180px;margin:0 auto;padding:0 32px;height:100%;display:flex;flex-direction:column;justify-content:center;color:#fff}
-.hero-eyebrow{font-family:"Bebas Neue",sans-serif;letter-spacing:.32em;font-size:13px;color:var(--gold);margin-bottom:24px}
+.hero-eyebrow{font-family:"Bebas Neue",sans-serif;letter-spacing:.32em;font-size:13px;color:var(--gold);margin-bottom:24px;opacity:0;transform:translateY(12px);animation:fadeUp .8s var(--ease) .3s forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
 .hero-h{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(48px,11vw,160px);line-height:.94;letter-spacing:-.02em;color:#fff;text-shadow:0 4px 22px rgba(0,0,0,0.5)}
 .hero-h .hh-1{display:block;color:var(--gold)}
 .hero-h .hh-2{display:block}
 .hero-h .hh-3{display:inline-block;font-size:.5em;background:var(--crimson);color:#fff;padding:8px 22px;margin-top:14px;letter-spacing:.04em}
-.hero-sub{font-family:"Shippori Mincho",serif;font-size:clamp(15px,2vw,21px);line-height:1.85;margin-top:32px;max-width:36ch}
-.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:36px}
+
+/* キネティックタイポ (文字単位スライド) - data-split で発火 */
+.hero-h [data-split] > span{display:inline-block;opacity:0;transform:translateY(40px) rotate(2deg);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.hero-h [data-split].is-in > span{opacity:1;transform:none}
+
+.hero-sub{font-family:"Shippori Mincho",serif;font-size:clamp(15px,2vw,21px);line-height:1.85;margin-top:32px;max-width:36ch;opacity:0;transform:translateY(12px);animation:fadeUp .8s var(--ease) 1.4s forwards}
+.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:36px;opacity:0;transform:translateY(12px);animation:fadeUp .8s var(--ease) 1.6s forwards}
 .hero-meta span{font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:.18em;padding:8px 14px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,0.3);backdrop-filter:blur(4px)}
 .hero-vert{position:absolute;right:32px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:"Shippori Mincho",serif;font-size:18px;letter-spacing:.5em;color:rgba(255,255,255,0.5);z-index:5}
+
+/* スクロールヒント */
+.hero-scrollhint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-family:"Bebas Neue",sans-serif;font-size:11px;letter-spacing:.32em;opacity:0;animation:fadeUp .8s var(--ease) 2s forwards}
+.hero-scrollhint::after{content:"";width:1px;height:42px;background:rgba(255,255,255,.5);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.01%{transform-origin:bottom}}
+
 @media (max-width:720px){
-  .hero{height:auto;min-height:560px;padding:120px 0 64px}
+  .hero{height:auto;min-height:560px;padding:120px 0 84px}
   .hero-vert{display:none}
   .hero-noren{width:100px;height:90px}
   .hero-noren::after{font-size:36px}
+  .hero-scrollhint{bottom:20px}
 }
 
-/* ========= MENU ========= */
+/* HERO サブページ用 (小さめ・固定ヘッダー分のオフセット込み) */
+body.is-sub main{padding-top:72px}
+@media (max-width:720px){body.is-sub main{padding-top:64px}}
+.hero-sub-page{position:relative;height:46vh;min-height:340px;overflow:hidden;background:var(--soot);margin-top:0}
+.hero-sub-page .hero-img{animation:kenburns 28s ease-in-out infinite alternate}
+.hero-sub-page .hero-in{justify-content:flex-end;padding-bottom:48px}
+.hero-sub-page h1{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(40px,7vw,90px);line-height:1;color:#fff;text-shadow:0 4px 22px rgba(0,0,0,0.5)}
+.hero-sub-page .sub-eyebrow{font-family:"Bebas Neue",sans-serif;letter-spacing:.32em;font-size:13px;color:var(--gold);margin-bottom:20px}
+.hero-sub-page .sub-tagline{font-family:"Shippori Mincho",serif;font-size:clamp(14px,1.6vw,17px);color:rgba(255,255,255,.85);margin-top:18px;max-width:50ch;line-height:1.85}
+@media (max-width:720px){
+  .hero-sub-page{height:auto;min-height:300px;padding:130px 0 40px}
+}
+
+/* =====================================================
+   おすすめカルーセル (横スクロール)
+   ===================================================== */
+.today{padding:80px 0 30px;background:var(--paper);overflow:hidden}
+.today-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:18px}
+.today-head h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(26px,3.5vw,42px);line-height:1.1;letter-spacing:-.01em}
+.today-head .small{font-family:"Bebas Neue",sans-serif;letter-spacing:.22em;font-size:12px;color:rgba(14,10,6,.5)}
+.carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 32px 28px;margin:0 -32px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.carousel::-webkit-scrollbar{height:6px}
+.carousel::-webkit-scrollbar-track{background:transparent}
+.carousel::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.c-card{flex:0 0 260px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.c-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px -16px rgba(14,10,6,0.3)}
+.c-card .c-img{aspect-ratio:1/1;background-size:cover;background-position:center}
+.c-card .c-body{padding:16px 18px 18px}
+.c-card h3{font-family:"Shippori Mincho",serif;font-weight:800;font-size:17px;margin-bottom:6px}
+.c-card p{font-size:12px;line-height:1.7;color:rgba(14,10,6,.65);margin-bottom:10px}
+.c-card .c-price{font-family:"Bebas Neue",sans-serif;font-size:20px;color:var(--crimson);letter-spacing:.04em}
+@media (max-width:720px){
+  .carousel{padding:8px 18px 22px;margin:0 -18px}
+  .c-card{flex:0 0 220px}
+}
+
+/* =====================================================
+   フィーチャー (看板の一杯・パララックス背景)
+   ===================================================== */
+.feature{padding:120px 0;background:var(--soot);color:#F8F1E3;position:relative;overflow:hidden}
+.feature::before{content:"";position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(14,10,6,0.7) 0%,rgba(14,10,6,0.92) 100%),url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=2000&q=80&auto=format&fit=crop');background-size:cover;background-position:center;will-change:transform;z-index:0}
+.feature .cont{position:relative;z-index:2}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature-img{aspect-ratio:1/1;background-image:url('https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=1400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;border-radius:4px;box-shadow:18px 18px 0 var(--crimson)}
+.feature-text .eb{color:var(--gold)}
+.feature-text h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(30px,4.6vw,58px);line-height:1.05;color:#fff;margin-bottom:24px}
+.feature-text h2 em{font-style:normal;color:var(--gold)}
+.feature-text p{font-family:"Shippori Mincho",serif;font-size:16px;line-height:2;color:rgba(248,241,227,.85);margin-bottom:16px}
+.feature-price{display:inline-block;margin-top:18px;padding:14px 28px;border:2px solid var(--gold);font-family:"Bebas Neue",sans-serif;letter-spacing:.14em;font-size:22px;color:var(--gold)}
+@media (max-width:900px){
+  .feature-grid{grid-template-columns:1fr;gap:36px}
+  .feature-img{box-shadow:10px 10px 0 var(--crimson);max-width:480px}
+}
+
+/* =====================================================
+   MENU (献立)
+   ===================================================== */
 .menu{padding:120px 0;background:var(--paper)}
 .menu-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:auto auto;gap:24px;margin-bottom:48px}
 .m-feature{grid-column:1;grid-row:1/3}
@@ -69,7 +191,7 @@ img{max-width:100%;display:block}
   .menu-grid{grid-template-columns:1fr}
   .m-feature{grid-column:1}
 }
-.m-card{background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease}
+.m-card{background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .m-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px -16px rgba(14,10,6,0.3)}
 .m-img{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative}
 .m-feature .m-img{aspect-ratio:1/1}
@@ -77,6 +199,8 @@ img{max-width:100%;display:block}
 .m-img-2{background-image:url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=1000&q=80&auto=format&fit=crop')}
 .m-img-3{background-image:url('https://images.unsplash.com/photo-1632709810780-b5a4343ce46e?w=1000&q=80&auto=format&fit=crop')}
 .m-img-4{background-image:url('https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=1000&q=80&auto=format&fit=crop')}
+.m-img-5{background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000&q=80&auto=format&fit=crop')}
+.m-img-6{background-image:url('https://images.unsplash.com/photo-1614563637806-1d0e645e0940?w=1000&q=80&auto=format&fit=crop')}
 .m-info{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
 .m-feature .m-info{padding:32px}
 .m-no{font-family:"Yuji Boku",serif;font-size:32px;color:var(--crimson);line-height:1}
@@ -89,13 +213,45 @@ img{max-width:100%;display:block}
 .m-price{font-family:"Bebas Neue",sans-serif;font-size:22px;letter-spacing:.04em;color:var(--ink)}
 .m-feature .m-price{font-size:30px;color:var(--crimson)}
 
+.menu-cta{text-align:center;margin-top:24px}
+.menu-cta a{display:inline-flex;align-items:center;gap:14px;padding:18px 36px;background:var(--ink);color:#fff;font-family:"Shippori Mincho",serif;font-weight:700;font-size:16px;letter-spacing:.08em;transition:background .25s,transform .25s var(--ease)}
+.menu-cta a:hover{background:var(--crimson);transform:translateY(-2px)}
+.menu-cta a::after{content:"→";font-family:"Bebas Neue",sans-serif;font-size:20px}
+
 .topping{background:var(--soot);color:#fff;padding:36px 40px;border-radius:6px}
 .topping h4{font-family:"Shippori Mincho",serif;font-size:18px;margin-bottom:18px;color:var(--gold)}
 .topping ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px 28px;list-style:none}
 .topping li{display:flex;justify-content:space-between;font-family:"Shippori Mincho",serif;font-size:14px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,0.18)}
 .topping span{font-family:"Bebas Neue",sans-serif;color:var(--gold);letter-spacing:.06em}
 
-/* ========= STORY ========= */
+/* =====================================================
+   MENU PAGE 専用 (menu.html)
+   ===================================================== */
+.menu-section{padding:80px 0 40px}
+.menu-section h2{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(24px,3.2vw,36px);margin-bottom:8px}
+.menu-section .small-eb{display:block;font-family:"Bebas Neue",sans-serif;letter-spacing:.22em;font-size:12px;color:var(--crimson);margin-bottom:10px}
+.menu-section p.intro{font-size:14px;color:rgba(14,10,6,.7);margin-bottom:32px;max-width:48ch;line-height:1.9}
+.menu-rows{display:grid;gap:12px}
+.menu-row{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.menu-row .mr-img{aspect-ratio:1/1;background-size:cover;background-position:center;border-radius:4px}
+.menu-row .mr-name{font-family:"Shippori Mincho",serif;font-weight:800;font-size:18px;margin-bottom:4px}
+.menu-row .mr-desc{font-size:13px;color:rgba(14,10,6,.65);line-height:1.7}
+.menu-row .mr-tag{display:inline-block;font-family:"Bebas Neue",sans-serif;font-size:10px;letter-spacing:.18em;background:var(--gold);color:#fff;padding:2px 8px;margin-left:8px;vertical-align:middle}
+.menu-row .mr-price{font-family:"Bebas Neue",sans-serif;font-size:22px;color:var(--crimson);letter-spacing:.04em;white-space:nowrap}
+@media (max-width:720px){
+  .menu-row{grid-template-columns:80px 1fr;gap:14px}
+  .menu-row .mr-price{grid-column:2;justify-self:start;font-size:18px}
+}
+
+.allergen{margin:60px 0;padding:32px;background:#fff;border:1px solid var(--line);border-radius:6px}
+.allergen h3{font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;margin-bottom:14px;color:var(--crimson)}
+.allergen p{font-size:13px;line-height:1.9;color:rgba(14,10,6,.75)}
+.allergen ul{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.allergen li{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.14em;padding:5px 12px;background:var(--paper);border:1px solid var(--line);border-radius:3px}
+
+/* =====================================================
+   STORY (トップ抜粋 / story.html 用)
+   ===================================================== */
 .story{padding:120px 0;background:var(--soot);color:#F8F1E3;position:relative;overflow:hidden}
 .story::before{content:"麺";position:absolute;top:-80px;right:-40px;font-family:"Shippori Mincho",serif;font-weight:800;font-size:480px;color:rgba(168,40,28,0.08);line-height:1;pointer-events:none}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative}
@@ -105,33 +261,136 @@ img{max-width:100%;display:block}
 .story-text h2.sec-h em{color:var(--gold)}
 .story-text p{font-family:"Shippori Mincho",serif;font-size:16px;line-height:2;color:rgba(248,241,227,.85);margin-bottom:18px}
 .signature{margin-top:32px!important;font-family:"Shippori Mincho",serif;font-style:italic;color:var(--gold)!important;border-top:1px solid rgba(248,241,227,0.2);padding-top:16px}
+
+.story-cta{display:inline-flex;align-items:center;gap:14px;margin-top:28px;padding:14px 30px;border:2px solid var(--gold);color:var(--gold);font-family:"Shippori Mincho",serif;font-weight:700;font-size:15px;letter-spacing:.08em;transition:background .25s,color .25s,transform .25s var(--ease)}
+.story-cta:hover{background:var(--gold);color:var(--soot);transform:translateY(-2px)}
+.story-cta::after{content:"→";font-family:"Bebas Neue",sans-serif;font-size:18px}
+
 @media (max-width:900px){
   .story-grid{grid-template-columns:1fr;gap:32px}
   .story-img{box-shadow:8px 8px 0 var(--crimson)}
 }
 
-/* ========= INFO ========= */
+/* タイムライン (story.html) */
+.timeline{padding:100px 0;background:var(--paper)}
+.timeline-grid{display:grid;gap:0;position:relative;max-width:780px;margin:0 auto;padding-left:60px}
+.timeline-grid::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--crimson) 0%,var(--gold) 100%)}
+.tl-item{position:relative;padding:0 0 48px 0}
+.tl-item::before{content:"";position:absolute;left:-50px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--crimson);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--crimson)}
+.tl-year{font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:.06em;color:var(--crimson);line-height:1}
+.tl-title{font-family:"Shippori Mincho",serif;font-weight:800;font-size:20px;margin-top:8px;margin-bottom:10px}
+.tl-text{font-size:14px;line-height:1.9;color:rgba(14,10,6,.75)}
+@media (max-width:720px){
+  .timeline-grid{padding-left:42px}
+  .timeline-grid::before{left:12px}
+  .tl-item::before{left:-36px}
+}
+
+/* ギャラリー (story.html) */
+.gallery{padding:100px 0;background:var(--soot);color:#F8F1E3}
+.gallery .eb{color:var(--gold)}
+.gallery h2{color:#F8F1E3}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.gallery-grid figure{aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:4px;position:relative;overflow:hidden;transition:transform .4s var(--ease)}
+.gallery-grid figure:hover{transform:scale(1.03)}
+.gallery-grid figure::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(0deg,rgba(14,10,6,.85) 0%,transparent 100%);color:#F8F1E3;font-family:"Shippori Mincho",serif;font-size:13px;letter-spacing:.04em}
+.g1{background-image:url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=1000&q=80&auto=format&fit=crop')}
+.g2{background-image:url('https://images.unsplash.com/photo-1632709810780-b5a4343ce46e?w=1000&q=80&auto=format&fit=crop')}
+.g3{background-image:url('https://images.unsplash.com/photo-1614563637806-1d0e645e0940?w=1000&q=80&auto=format&fit=crop')}
+.g4{background-image:url('https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=1000&q=80&auto=format&fit=crop')}
+.g5{background-image:url('https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=1000&q=80&auto=format&fit=crop')}
+.g6{background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000&q=80&auto=format&fit=crop')}
+@media (max-width:720px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+}
+
+/* =====================================================
+   INFO (店舗情報・アクセス・地図)
+   ===================================================== */
 .info{padding:120px 0;background:var(--paper)}
-.info-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.info-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
 .info-list{display:grid;grid-template-columns:140px 1fr;row-gap:18px}
 .info-list dt{font-family:"Bebas Neue",sans-serif;letter-spacing:.18em;font-size:13px;color:var(--crimson);padding-top:4px}
 .info-list dd{font-family:"Shippori Mincho",serif;font-size:15px;line-height:1.85;border-bottom:1px solid var(--line);padding:0 0 18px}
-.info-stamp{aspect-ratio:1/1;border:4px double var(--crimson);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--crimson);transform:rotate(-6deg);max-width:240px;margin:0 auto}
-.stamp-mark{font-family:"Shippori Mincho",serif;font-weight:800;font-size:80px;line-height:1}
-.stamp-en{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.22em;margin-top:6px}
-.stamp-jp{font-family:"Shippori Mincho",serif;font-size:13px;margin-top:8px}
-@media (max-width:720px){
+
+.map-mock{aspect-ratio:4/3;background:linear-gradient(135deg,#E5DCC9 0%,#D4C9B0 50%,#C9BC9E 100%);border-radius:6px;position:relative;overflow:hidden;animation:kenburns 30s ease-in-out infinite alternate;border:1px solid var(--line)}
+.map-mock::before{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(0deg,transparent 48%,rgba(168,40,28,.18) 48%,rgba(168,40,28,.18) 52%,transparent 52%),
+  linear-gradient(90deg,transparent 48%,rgba(168,40,28,.18) 48%,rgba(168,40,28,.18) 52%,transparent 52%),
+  linear-gradient(0deg,transparent 78%,rgba(14,10,6,.1) 78%,rgba(14,10,6,.1) 79%,transparent 79%),
+  linear-gradient(90deg,transparent 22%,rgba(14,10,6,.1) 22%,rgba(14,10,6,.1) 23%,transparent 23%);
+  opacity:.8}
+.map-mock::after{content:"";position:absolute;left:50%;top:48%;width:22px;height:22px;background:var(--crimson);border-radius:50% 50% 50% 0;transform:translate(-50%,-100%) rotate(-45deg);box-shadow:0 4px 12px rgba(168,40,28,.5)}
+.map-label{position:absolute;left:50%;top:62%;transform:translateX(-50%);font-family:"Shippori Mincho",serif;font-weight:700;font-size:13px;background:#fff;padding:6px 12px;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap}
+
+.info-photo{aspect-ratio:1/1;background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&q=80&auto=format&fit=crop');background-size:cover;background-position:center;border-radius:6px;margin-top:18px;overflow:hidden;position:relative}
+.info-photo::before{content:"";position:absolute;inset:0;background-image:inherit;background-size:cover;background-position:center;animation:kenburns 26s ease-in-out infinite alternate}
+
+.info-stamp{aspect-ratio:1/1;border:4px double var(--crimson);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--crimson);transform:rotate(-6deg);max-width:200px;margin:24px auto 0}
+.stamp-mark{font-family:"Shippori Mincho",serif;font-weight:800;font-size:68px;line-height:1}
+.stamp-en{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.22em;margin-top:6px}
+.stamp-jp{font-family:"Shippori Mincho",serif;font-size:12px;margin-top:6px}
+
+@media (max-width:900px){
   .info-grid{grid-template-columns:1fr;gap:36px}
   .info-list{grid-template-columns:100px 1fr;row-gap:14px}
 }
 
-/* ========= FOOTER ========= */
-.ft{background:var(--soot);color:#F8F1E3;padding:32px 0}
-.ft-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.ft-brand{font-family:"Shippori Mincho",serif;font-weight:700;font-size:16px}
-.ft-meta{font-family:"Bebas Neue",sans-serif;letter-spacing:.18em;font-size:11px;color:rgba(248,241,227,.5)}
+/* =====================================================
+   追従CTA (右下フローティング / モバイル下端固定)
+   研究指針 Level 1-D
+   ===================================================== */
+.fab-cta{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(20px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.fab-cta.is-visible{opacity:1;transform:none}
+.fab-cta a{display:flex;align-items:center;gap:10px;padding:14px 22px;font-family:"Shippori Mincho",serif;font-weight:700;font-size:14px;letter-spacing:.06em;box-shadow:0 8px 24px rgba(14,10,6,0.18);transition:transform .25s var(--ease),box-shadow .25s var(--ease);border-radius:4px}
+.fab-cta a:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(14,10,6,0.25)}
+.fab-call{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.fab-book{background:var(--crimson);color:#fff}
+.fab-cta .ic{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;font-size:13px;opacity:.7}
 
-/* reveal */
-.in-view{animation:rise .9s cubic-bezier(.2,.8,.2,1) backwards}
+@media (max-width:720px){
+  .fab-cta{bottom:0;right:0;left:0;flex-direction:row;gap:0;border-radius:0;box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+  .fab-cta a{flex:1;justify-content:center;border-radius:0;padding:14px 8px;font-size:13px;box-shadow:none}
+  .fab-cta a:hover{transform:none}
+  body{padding-bottom:60px} /* 下端CTA分の余白 */
+}
+
+/* =====================================================
+   FOOTER (共通)
+   ===================================================== */
+.ft{background:var(--soot);color:#F8F1E3;padding:48px 0 40px}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:28px}
+.ft-brand-block .ft-brand{font-family:"Shippori Mincho",serif;font-weight:800;font-size:22px;margin-bottom:8px;display:block}
+.ft-brand-block .ft-tag{font-family:"Bebas Neue",sans-serif;letter-spacing:.22em;font-size:11px;color:rgba(248,241,227,.55)}
+.ft-col h5{font-family:"Bebas Neue",sans-serif;letter-spacing:.22em;font-size:12px;color:var(--gold);margin-bottom:14px}
+.ft-col a,.ft-col p,.ft-col li{display:block;font-size:13px;line-height:2;color:rgba(248,241,227,.75);font-family:"Shippori Mincho",serif}
+.ft-col a:hover{color:var(--gold)}
+.ft-col ul{list-style:none}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:20px;border-top:1px solid rgba(248,241,227,.12)}
+.ft-meta{font-family:"Bebas Neue",sans-serif;letter-spacing:.18em;font-size:11px;color:rgba(248,241,227,.5)}
+@media (max-width:720px){
+  .ft-grid{grid-template-columns:1fr;gap:28px}
+}
+
+/* =====================================================
+   スクロール連動フェード (data-reveal)
+   研究指針 Level 1-A
+   ===================================================== */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* 旧 .in-view (script.js 後方互換) */
+.in-view{animation:rise .9s var(--ease) backwards}
 @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.in-view{animation:none}}
+
+/* =====================================================
+   prefers-reduced-motion 対応 (全アニメ無効化)
+   ===================================================== */
+@media (prefers-reduced-motion:reduce){
+  .hero-img,.feature::before,.map-mock,.info-photo::before{animation:none!important}
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  .hero-h [data-split] > span{opacity:1!important;transform:none!important}
+  .hero-eyebrow,.hero-sub,.hero-meta,.hero-scrollhint,.hd nav a{animation:none!important;opacity:1!important;transform:none!important}
+  .in-view{animation:none!important}
+  *{transition-duration:.01ms!important}
+}

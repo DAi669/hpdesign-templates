@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>麺屋 たけし｜煮干し中華そば専門</title>
+<title>麺屋 たけし｜煮干し中華そば専門・福岡博多</title>
 <meta name="description" content="煮干し中華そば専門店「麺屋 たけし」。福岡・博多。創業より15年、店主が一杯ずつ仕込む特製スープと自家製麺。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,10 @@
 </head>
 <body>
 
+<!-- ========== HEADER (共通) ========== -->
 <header class="hd">
   <div class="hd-in">
-    <a href="#top" class="brand">
+    <a href="index.html" class="brand">
       <span class="brand-mark">麺</span>
       <span class="brand-w">
         <span class="brand-en">MENYA TAKESHI</span>
@@ -24,16 +25,29 @@
       </span>
     </a>
     <nav>
-      <a href="#menu">献立</a>
-      <a href="#story">物語</a>
-      <a href="#info">店舗情報</a>
+      <a href="index.html" class="is-current" style="--i:0">本店</a>
+      <a href="menu.html" style="--i:1">お品書き</a>
+      <a href="story.html" style="--i:2">店主の物語</a>
+      <a href="#info" style="--i:3">店舗情報</a>
     </nav>
+    <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
+<!-- ハンバーガー展開ドロワー -->
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">本店</a>
+  <a href="menu.html">お品書き</a>
+  <a href="story.html">店主の物語</a>
+  <a href="#info">店舗情報</a>
+  <a href="tel:092XXXXXXX" class="drawer-cta">電話で予約</a>
+</nav>
+
 <main id="top">
 
-<!-- HERO -->
+<!-- ========== HERO (Ken Burns + キネティックタイポ) ========== -->
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-grain"></div>
@@ -41,8 +55,8 @@
   <div class="hero-in">
     <span class="hero-eyebrow">EST. 2010 · HAKATA</span>
     <h1 class="hero-h">
-      <span class="hh-1">煮干し</span>
-      <span class="hh-2">中華そば</span>
+      <span class="hh-1" data-split>煮干し</span>
+      <span class="hh-2" data-split>中華そば</span>
       <span class="hh-3">専門</span>
     </h1>
     <p class="hero-sub">店主が、一杯ずつ仕込む。<br>創業より15年、変わらない味。</p>
@@ -55,16 +69,88 @@
   <div class="hero-vert">
     <span>本日も、煮干しの香り。</span>
   </div>
+  <div class="hero-scrollhint">SCROLL</div>
 </section>
 
-<!-- MENU -->
+<!-- ========== 本日のおすすめ (横スクロールカルーセル) ========== -->
+<section class="today" data-reveal>
+  <div class="cont">
+    <div class="today-head">
+      <div>
+        <span class="eb">— 本日のおすすめ · TODAY —</span>
+        <h2>店主が、今日推す一杯。</h2>
+      </div>
+      <span class="small">2026.05.12 UPDATE</span>
+    </div>
+  </div>
+  <div class="carousel">
+    <article class="c-card">
+      <div class="c-img" style="background-image:url('https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="c-body">
+        <h3>煮干し中華そば</h3>
+        <p>瀬戸内の煮干しが今が旬。澄んだスープと自家製中太麺。</p>
+        <span class="c-price">¥980</span>
+      </div>
+    </article>
+    <article class="c-card">
+      <div class="c-img" style="background-image:url('https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="c-body">
+        <h3>煮干し白湯【限定】</h3>
+        <p>5月の月替り限定。煮干しの旨味を白湯仕立てで濃厚に。</p>
+        <span class="c-price">¥1,200</span>
+      </div>
+    </article>
+    <article class="c-card">
+      <div class="c-img" style="background-image:url('https://images.unsplash.com/photo-1632709810780-b5a4343ce46e?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="c-body">
+        <h3>つけ麺・あつもり</h3>
+        <p>煮干しと魚粉のWスープ。〆まで濃いめ、麺は太ストレート。</p>
+        <span class="c-price">¥1,180</span>
+      </div>
+    </article>
+    <article class="c-card">
+      <div class="c-img" style="background-image:url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="c-body">
+        <h3>濃厚煮干し</h3>
+        <p>煮干しの旨味を倍量。脂多め、〆まで濃い一杯。</p>
+        <span class="c-price">¥1,080</span>
+      </div>
+    </article>
+    <article class="c-card">
+      <div class="c-img" style="background-image:url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="c-body">
+        <h3>味玉中華そば</h3>
+        <p>看板の一杯に、店主が漬けた半熟味玉をひとつ。</p>
+        <span class="c-price">¥1,100</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== 看板の一杯 (パララックス背景 + フィーチャー) ========== -->
+<section class="feature">
+  <div class="cont">
+    <div class="feature-grid">
+      <div class="feature-img" data-reveal></div>
+      <div class="feature-text" data-reveal data-reveal-delay="200">
+        <span class="eb">— 看板の一杯 · SIGNATURE —</span>
+        <h2>瀬戸内の<em>煮干し</em>。<br>澄んだ一杯。</h2>
+        <p>瀬戸内産の片口いわしを、店主自ら港で目利き。低温でじっくり時間をかけ、雑味を出さずに旨味だけを引き出します。</p>
+        <p>合わせる麺は、毎朝仕込む自家製の中太ストレート。スープに負けない歯切れと、最後の一口まで伸びない強さ。</p>
+        <span class="feature-price">¥980 · 看板</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MENU 抜粋 (top3 + 全メニューCTA) ========== -->
 <section class="menu" id="menu">
   <div class="cont">
     <span class="eb">— 献 立 · MENU —</span>
     <h2 class="sec-h">店主の<em>一杯</em>。</h2>
 
     <div class="menu-grid">
-      <article class="m-card m-feature">
+      <article class="m-card m-feature" data-reveal>
         <div class="m-img m-img-1"></div>
         <div class="m-info">
           <span class="m-no">壱</span>
@@ -77,7 +163,7 @@
         </div>
       </article>
 
-      <article class="m-card">
+      <article class="m-card" data-reveal data-reveal-delay="100">
         <div class="m-img m-img-2"></div>
         <div class="m-info">
           <span class="m-no">弐</span>
@@ -87,7 +173,7 @@
         </div>
       </article>
 
-      <article class="m-card">
+      <article class="m-card" data-reveal data-reveal-delay="200">
         <div class="m-img m-img-3"></div>
         <div class="m-info">
           <span class="m-no">参</span>
@@ -97,7 +183,7 @@
         </div>
       </article>
 
-      <article class="m-card">
+      <article class="m-card" data-reveal data-reveal-delay="300">
         <div class="m-img m-img-4"></div>
         <div class="m-info">
           <span class="m-no">肆</span>
@@ -108,52 +194,54 @@
       </article>
     </div>
 
-    <div class="topping">
-      <h4>トッピング</h4>
-      <ul>
-        <li>味玉<span>¥120</span></li>
-        <li>のり<span>¥80</span></li>
-        <li>チャーシュー2枚<span>¥250</span></li>
-        <li>メンマ大盛<span>¥150</span></li>
-        <li>替玉（細麺）<span>¥150</span></li>
-      </ul>
+    <div class="menu-cta" data-reveal>
+      <a href="menu.html">全メニュー・トッピング・アレルゲン情報を見る</a>
     </div>
   </div>
 </section>
 
-<!-- STORY -->
+<!-- ========== STORY 抜粋 (物語ページへのリンク) ========== -->
 <section class="story" id="story">
   <div class="cont story-grid">
-    <div class="story-img"></div>
-    <div class="story-text">
+    <div class="story-img" data-reveal></div>
+    <div class="story-text" data-reveal data-reveal-delay="200">
       <span class="eb">— 店主の物語 —</span>
       <h2 class="sec-h">煮干しに、<em>賭けて</em> 15年。</h2>
       <p>東京の老舗で7年、独立して8年。煮干しの香りに惚れ込み、瀬戸内の港町を毎月歩いて仕入れています。</p>
       <p>派手じゃなくていい。ただ、毎日この一杯のために通ってくれる人がいる。それで充分です。</p>
+      <a href="story.html" class="story-cta">物語の続きを読む</a>
       <p class="signature">店主 ／ 中村 武</p>
     </div>
   </div>
 </section>
 
-<!-- INFO -->
+<!-- ========== INFO (アクセス・地図・営業時間) ========== -->
 <section class="info" id="info">
   <div class="cont">
-    <span class="eb">— 店舗情報 —</span>
+    <span class="eb">— 店舗情報 · ACCESS —</span>
     <h2 class="sec-h">麺屋 たけし。</h2>
 
     <div class="info-grid">
-      <dl class="info-list">
-        <dt>所在地</dt><dd>福岡県福岡市博多区博多駅前X-X-X 麺屋ビル1F</dd>
-        <dt>電話</dt><dd>092-XXX-XXXX</dd>
-        <dt>営業時間</dt><dd>11:30 — 14:30 / 18:00 — 22:00</dd>
-        <dt>定休日</dt><dd>毎週水曜日 / 第3火曜日</dd>
-        <dt>席数</dt><dd>カウンター8席 / テーブル4卓</dd>
-        <dt>支払い</dt><dd>現金のみ（PayPayは導入予定）</dd>
-      </dl>
-      <div class="info-stamp">
-        <span class="stamp-mark">麺</span>
-        <span class="stamp-en">SINCE 2010</span>
-        <span class="stamp-jp">店主 中村 武</span>
+      <div data-reveal>
+        <dl class="info-list">
+          <dt>所在地</dt><dd>福岡県福岡市博多区博多駅前X-X-X 麺屋ビル1F</dd>
+          <dt>電話</dt><dd>092-XXX-XXXX</dd>
+          <dt>営業時間</dt><dd>11:30 — 14:30 / 18:00 — 22:00</dd>
+          <dt>定休日</dt><dd>毎週水曜日 / 第3火曜日</dd>
+          <dt>席数</dt><dd>カウンター8席 / テーブル4卓</dd>
+          <dt>支払い</dt><dd>現金のみ（PayPayは導入予定）</dd>
+        </dl>
+        <div class="info-stamp">
+          <span class="stamp-mark">麺</span>
+          <span class="stamp-en">SINCE 2010</span>
+          <span class="stamp-jp">店主 中村 武</span>
+        </div>
+      </div>
+      <div data-reveal data-reveal-delay="200">
+        <div class="map-mock">
+          <span class="map-label">麺屋 たけし</span>
+        </div>
+        <div class="info-photo"></div>
       </div>
     </div>
   </div>
@@ -161,12 +249,42 @@
 
 </main>
 
+<!-- ========== FOOTER (共通) ========== -->
 <footer class="ft">
-  <div class="cont ft-in">
-    <span class="ft-brand">麺屋 たけし</span>
-    <span class="ft-meta">© 2026 Menya Takeshi · Hakata</span>
+  <div class="cont">
+    <div class="ft-grid">
+      <div class="ft-brand-block">
+        <span class="ft-brand">麺屋 たけし</span>
+        <span class="ft-tag">MENYA TAKESHI · SINCE 2010 · HAKATA</span>
+        <p style="margin-top:14px;font-family:'Shippori Mincho',serif;font-size:13px;line-height:1.9;color:rgba(248,241,227,.7)">煮干し中華そば専門。<br>店主が、一杯ずつ仕込む。</p>
+      </div>
+      <div class="ft-col">
+        <h5>MENU</h5>
+        <ul>
+          <li><a href="index.html">本店</a></li>
+          <li><a href="menu.html">お品書き</a></li>
+          <li><a href="story.html">店主の物語</a></li>
+          <li><a href="#info">店舗情報</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>CONTACT</h5>
+        <p>福岡県福岡市博多区<br>博多駅前X-X-X 麺屋ビル1F</p>
+        <p style="margin-top:8px">TEL 092-XXX-XXXX</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-meta">© 2026 Menya Takeshi · Hakata</span>
+      <span class="ft-meta">PROPOSAL PREVIEW · NOINDEX</span>
+    </div>
   </div>
 </footer>
+
+<!-- ========== 追従CTA ========== -->
+<div class="fab-cta">
+  <a href="tel:092XXXXXXX" class="fab-call"><span class="ic">TEL</span>電話で問合せ</a>
+  <a href="#info" class="fab-book"><span class="ic">RESERVE</span>席を予約</a>
+</div>
 
 </body>
 </html>

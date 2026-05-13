@@ -145,3 +145,113 @@ h2{font-family:"RocknRoll One","Noto Serif JP",serif;font-weight:400;font-size:c
   .l1-kenburns{animation:none!important}
   .l1-fab{transition:none!important}
 }
+
+/* =====================================================
+   マルチページ拡張 (course / menu / story)
+   2026-05-13 追加: 共通ヘッダ + ハンバーガー + サブページ
+   ===================================================== */
+
+/* ハンバーガー */
+.burger{display:none;width:42px;height:42px;border:none;background:transparent;cursor:pointer;position:relative;z-index:201;padding:0}
+.burger span{display:block;width:22px;height:2px;background:var(--paper);margin:5px auto;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s,background .25s}
+.burger.is-open span{background:var(--paper)!important}
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:720px){
+  .hd nav{display:none}
+  .burger{display:block}
+}
+
+/* ドロワー */
+.drawer{position:fixed;inset:0;background:var(--night);z-index:200;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.2rem;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.2,.8,.2,1),visibility .35s}
+.drawer.is-open{opacity:1;visibility:visible}
+.drawer a{font-family:"RocknRoll One",serif;font-size:24px;color:var(--paper);letter-spacing:.06em;opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)}
+.drawer.is-open a{opacity:1;transform:none}
+.drawer.is-open a:nth-child(1){transition-delay:.08s}
+.drawer.is-open a:nth-child(2){transition-delay:.14s}
+.drawer.is-open a:nth-child(3){transition-delay:.2s}
+.drawer.is-open a:nth-child(4){transition-delay:.26s}
+.drawer.is-open a:nth-child(5){transition-delay:.32s}
+.drawer-cta{margin-top:1rem;padding:12px 32px;background:var(--crimson);color:var(--paper);font-family:"Major Mono Display",monospace!important;letter-spacing:.18em;font-size:14px!important;border:1px solid var(--neon)}
+body.is-locked{overflow:hidden}
+
+/* current ページ表示 */
+.hd nav a.is-current{color:var(--yellow)}
+.hd nav a.is-current::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:var(--yellow)}
+.hd nav a{position:relative}
+
+/* サブページ用ヒーロー */
+.sub-hero{position:relative;min-height:48vh;padding:160px 32px 80px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--soot)}
+.sub-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(8,7,13,0.6) 50%,rgba(8,7,13,0.95) 100%);pointer-events:none}
+.sub-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.7) brightness(.4)}
+.sub-hero-in{position:relative;z-index:5;max-width:1240px;margin:0 auto;width:100%}
+.sub-hero h1{font-family:"RocknRoll One","Noto Serif JP",serif;font-weight:400;font-size:clamp(40px,7.5vw,108px);line-height:1.0;letter-spacing:-.005em;color:var(--paper);margin-bottom:14px}
+.sub-hero h1 em{font-style:normal;color:var(--yellow);text-shadow:0 0 8px rgba(255,204,79,.5)}
+.sub-hero .sub-lead{font-family:"Yusei Magic",serif;font-size:clamp(14px,1.6vw,17px);line-height:1.95;color:rgba(244,229,200,0.78);max-width:48ch}
+@media (max-width:720px){.sub-hero{padding:120px 18px 60px;min-height:36vh}}
+
+/* コースセクション */
+.course-section{padding:140px 0;background:var(--night);position:relative}
+.course-list{display:grid;grid-template-columns:1fr;gap:36px;margin-top:36px}
+.course-card{display:grid;grid-template-columns:1fr 280px;gap:48px;padding:40px;background:rgba(244,229,200,0.04);border:1px solid var(--line);border-left:3px solid var(--yellow);transition:border-color .3s,transform .3s}
+.course-card:hover{border-left-color:var(--neon);transform:translateY(-4px)}
+.course-card.feat{border-left-color:var(--neon);background:rgba(255,79,140,0.06)}
+.course-card .cc-name{font-family:"RocknRoll One",serif;font-size:32px;color:var(--paper);margin-bottom:8px;line-height:1.2}
+.course-card .cc-name em{font-style:normal;color:var(--yellow)}
+.course-card .cc-eb{font-family:"Major Mono Display",monospace;font-size:11px;letter-spacing:.32em;color:var(--neon);margin-bottom:14px;display:block;text-transform:uppercase}
+.course-card .cc-desc{font-family:"Yusei Magic",serif;font-size:14px;line-height:1.95;color:rgba(244,229,200,0.78);margin-bottom:20px}
+.course-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.course-card ul li{font-family:"Yusei Magic",serif;font-size:13px;color:rgba(244,229,200,0.82);padding-left:18px;position:relative}
+.course-card ul li::before{content:"·";color:var(--yellow);font-weight:700;position:absolute;left:6px}
+.course-side{display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:14px;border-left:1px dotted var(--line);padding-left:36px}
+.cc-price{font-family:"Major Mono Display",monospace;font-size:42px;color:var(--neon);letter-spacing:.02em;line-height:1}
+.cc-price-sub{font-family:"Yusei Magic",serif;font-size:11px;color:rgba(244,229,200,0.55);letter-spacing:.06em}
+.cc-meta{font-family:"Yusei Magic",serif;font-size:12px;color:rgba(244,229,200,0.65);text-align:right;line-height:1.7}
+.cc-badge{display:inline-block;padding:4px 12px;background:var(--crimson);color:var(--paper);font-family:"Major Mono Display",monospace;font-size:10px;letter-spacing:.22em;border-radius:2px;margin-bottom:14px}
+@media (max-width:900px){.course-card{grid-template-columns:1fr;gap:24px;padding:28px}.course-side{border-left:0;border-top:1px dotted var(--line);padding-left:0;padding-top:20px;align-items:flex-start}.cc-meta{text-align:left}}
+
+/* メニュー（料理/酒）拡張グリッド */
+.menu-block{padding:120px 0;background:var(--night)}
+.menu-block.alt{background:var(--soot)}
+.menu-block .mb-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:32px}
+.mb-head h2{margin-bottom:0}
+.mb-head .mb-note{font-family:"Yusei Magic",serif;font-size:12px;color:rgba(244,229,200,0.6);max-width:36ch;line-height:1.7}
+.dish-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+@media (max-width:720px){.dish-grid{grid-template-columns:1fr}}
+.dish-grid li{list-style:none;display:flex;align-items:baseline;gap:8px;padding:14px 18px;background:rgba(244,229,200,0.03);border-bottom:1px solid var(--line);transition:border-bottom-color .3s,padding-left .3s}
+.dish-grid li:hover{border-bottom-color:var(--neon);padding-left:24px}
+.dish-grid li span:first-child{font-family:"Yusei Magic",serif;font-size:14px;color:var(--paper)}
+.dish-grid li .dots{flex:1;border-bottom:1px dotted rgba(244,229,200,0.25);min-width:0;align-self:end;margin-bottom:5px}
+.dish-grid li .pp{font-family:"Major Mono Display",monospace;font-size:14px;color:var(--neon);letter-spacing:.04em;flex-shrink:0}
+
+/* 物語ページ */
+.story-hero{padding:160px 0 80px;background:var(--soot)}
+.story-section{padding:100px 0;background:var(--night)}
+.story-section.alt{background:var(--soot)}
+.story-block{max-width:780px;margin:0 auto}
+.story-block p{font-family:"Yusei Magic",serif;font-size:16px;line-height:2.1;color:rgba(244,229,200,0.85);margin-bottom:24px}
+.story-block p em{font-style:normal;color:var(--neon);text-shadow:0 0 6px rgba(255,79,140,.3)}
+.story-block h3{font-family:"RocknRoll One",serif;font-size:32px;color:var(--yellow);margin:48px 0 24px;letter-spacing:-.005em}
+.story-quote{padding:36px 40px;border-left:4px solid var(--neon);background:rgba(255,79,140,0.05);margin:32px 0;font-family:"RocknRoll One",serif;font-size:22px;line-height:1.7;color:var(--paper)}
+.story-quote::before{content:"「";color:var(--neon);font-size:38px;margin-right:6px}
+.story-quote::after{content:"」";color:var(--neon);font-size:38px;margin-left:6px}
+.story-timeline{display:flex;flex-direction:column;gap:32px;margin-top:32px}
+.story-row{display:grid;grid-template-columns:120px 1fr;gap:32px;padding-bottom:32px;border-bottom:1px dotted var(--line)}
+.story-row .yr{font-family:"Major Mono Display",monospace;font-size:32px;color:var(--yellow);letter-spacing:.04em;line-height:1}
+.story-row .ev{font-family:"Yusei Magic",serif;font-size:15px;line-height:1.95;color:rgba(244,229,200,0.85)}
+.story-row .ev strong{color:var(--paper);font-weight:700;display:block;margin-bottom:6px}
+@media (max-width:720px){.story-row{grid-template-columns:1fr;gap:8px}.story-row .yr{font-size:24px}}
+
+/* フッター拡張 */
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding:48px 0 28px}
+.ft-brand-block .ft-brand-jp{font-family:"RocknRoll One",serif;font-size:22px;color:var(--yellow);display:block;margin-bottom:6px}
+.ft-brand-block .ft-brand-en{font-family:"Major Mono Display",monospace;font-size:11px;letter-spacing:.22em;color:rgba(244,229,200,0.55)}
+.ft-col h5{font-family:"Major Mono Display",monospace;font-size:11px;letter-spacing:.32em;color:var(--neon);margin-bottom:18px;text-transform:uppercase}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ft-col ul li a{font-family:"Yusei Magic",serif;font-size:13px;color:rgba(244,229,200,0.75);transition:color .3s}
+.ft-col ul li a:hover{color:var(--yellow)}
+.ft-col p{font-family:"Yusei Magic",serif;font-size:13px;line-height:1.85;color:rgba(244,229,200,0.7)}
+.ft-bottom{padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.ft-meta{font-family:"Major Mono Display",monospace;font-size:10px;letter-spacing:.22em;color:rgba(244,229,200,0.45)}
+@media (max-width:900px){.ft-grid{grid-template-columns:1fr;gap:32px}}

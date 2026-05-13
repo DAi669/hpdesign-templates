@@ -159,3 +159,123 @@ h2 em{color:var(--rose);font-family:"Cormorant Garamond",serif;font-weight:500}
 
 .in-view{animation:rise 1s cubic-bezier(.2,.8,.2,1) backwards}
 @media (prefers-reduced-motion:reduce){.in-view,.hero-h .line{animation:none}}
+
+/* =====================================================
+   マルチページ拡張 (menu / stylists / story)
+   2026-05-13 追加: 共通ヘッダ + ハンバーガー + サブページ
+   ===================================================== */
+
+/* バーガー */
+.burger{display:none;width:42px;height:42px;border:none;background:transparent;cursor:pointer;position:relative;z-index:201;padding:0}
+.burger span{display:block;width:22px;height:2px;background:var(--espresso);margin:5px auto;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s}
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:720px){
+  .hd nav{display:none}
+  .burger{display:block}
+}
+
+/* ドロワー */
+.drawer{position:fixed;inset:0;background:var(--paper);z-index:200;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.2rem;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.2,.8,.2,1),visibility .35s}
+.drawer.is-open{opacity:1;visibility:visible}
+.drawer a{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:var(--espresso);letter-spacing:.04em;opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)}
+.drawer a em{font-style:italic;color:var(--rose);font-weight:500}
+.drawer.is-open a{opacity:1;transform:none}
+.drawer.is-open a:nth-child(1){transition-delay:.08s}
+.drawer.is-open a:nth-child(2){transition-delay:.14s}
+.drawer.is-open a:nth-child(3){transition-delay:.2s}
+.drawer.is-open a:nth-child(4){transition-delay:.26s}
+.drawer.is-open a:nth-child(5){transition-delay:.32s}
+.drawer-cta{margin-top:1rem;padding:14px 36px;background:var(--rose);color:var(--paper)!important;font-family:"Cormorant Garamond",serif!important;font-style:italic!important;font-size:18px!important;border-radius:999px}
+body.is-locked{overflow:hidden}
+
+/* current ページ表示 */
+.hd nav a.is-current{color:var(--rose);position:relative}
+.hd nav a.is-current::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--rose)}
+
+/* サブページ用ヒーロー */
+.sub-hero{position:relative;padding:160px 32px 80px;background:linear-gradient(180deg,var(--paper) 0%,var(--cream) 100%);min-height:48vh;display:flex;align-items:center;z-index:2}
+.sub-hero-in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.sub-hero-eb{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;color:var(--champagne);text-transform:uppercase;display:block;margin-bottom:18px}
+.sub-hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(48px,8vw,116px);line-height:1.0;letter-spacing:-.02em;color:var(--espresso);margin-bottom:24px}
+.sub-hero h1 em{font-style:italic;color:var(--rose);font-weight:400}
+.sub-hero .sub-lead{font-family:"Hina Mincho",serif;font-size:clamp(14px,1.5vw,16px);line-height:2.05;color:rgba(58,42,42,0.78);max-width:42ch}
+.sub-hero-img{aspect-ratio:1/1.15;border-radius:8px;background-size:cover;background-position:center;box-shadow:0 24px 48px -16px rgba(58,42,42,0.22);transform:rotate(-1deg)}
+@media (max-width:900px){.sub-hero-in{grid-template-columns:1fr;gap:36px}.sub-hero{padding:120px 18px 56px}.sub-hero-img{aspect-ratio:4/3}}
+
+/* メニュー詳細表（料金ページ用） */
+.menu-detail{padding:140px 0;background:var(--paper);position:relative;z-index:2}
+.menu-detail.alt{background:var(--cream)}
+.md-head{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start;margin-bottom:48px}
+.md-head .md-l{position:sticky;top:120px}
+.md-head .md-r p{font-family:"Hina Mincho",serif;font-size:15px;line-height:2.05;color:rgba(58,42,42,0.78);margin-top:8px}
+.md-rows{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.md-row{display:grid;grid-template-columns:160px 1fr auto;gap:32px;padding:24px 8px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,padding-left .3s}
+.md-row:hover{background:rgba(196,110,92,0.04);padding-left:18px}
+.md-row .md-cat{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.28em;color:var(--rose);text-transform:uppercase;padding-top:4px}
+.md-row .md-body .md-name{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:22px;color:var(--espresso);margin-bottom:6px;line-height:1.2}
+.md-row .md-body .md-name em{font-style:normal;font-family:"Hina Mincho",serif;font-size:14px;color:rgba(58,42,42,0.7);margin-left:8px}
+.md-row .md-body .md-desc{font-family:"Hina Mincho",serif;font-size:13px;line-height:1.85;color:rgba(58,42,42,0.7);margin-top:4px}
+.md-row .md-body .md-time{display:inline-block;margin-top:6px;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--champagne);background:var(--paper);padding:3px 10px;border-radius:999px;border:1px solid var(--line)}
+.md-row .md-pp{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:28px;color:var(--rose);text-align:right;line-height:1}
+.md-row .md-pp em{display:block;font-family:"DM Mono",monospace;font-size:10px;font-style:normal;color:var(--champagne);letter-spacing:.18em;margin-top:4px}
+@media (max-width:900px){.md-head{grid-template-columns:1fr;gap:24px}.md-head .md-l{position:static}.md-row{grid-template-columns:90px 1fr auto;gap:18px}}
+@media (max-width:560px){.md-row{grid-template-columns:1fr auto;gap:14px}.md-row .md-cat{grid-column:1/-1;padding-top:0;margin-bottom:4px}}
+
+/* スタイリスト詳細ページ */
+.stylist-detail{padding:140px 0;background:var(--paper);position:relative;z-index:2}
+.stylist-detail.alt{background:var(--cream)}
+.sd-card{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center;margin-bottom:80px}
+.sd-card:last-child{margin-bottom:0}
+.sd-card.reverse{grid-template-columns:1.2fr 1fr;direction:rtl}
+.sd-card.reverse > *{direction:ltr}
+.sd-img{aspect-ratio:3/4;background-size:cover;background-position:center;border-radius:8px;box-shadow:0 24px 48px -18px rgba(196,110,92,0.4);overflow:hidden;position:relative;transform:rotate(-1.5deg)}
+.sd-card.reverse .sd-img{transform:rotate(1.5deg)}
+.sd-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(58,42,42,0.18) 100%)}
+.sd-text .sd-role{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;color:var(--rose);text-transform:uppercase;display:block;margin-bottom:14px}
+.sd-text h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(36px,5.5vw,56px);line-height:1.1;color:var(--espresso);margin-bottom:18px}
+.sd-text h3 em{font-style:italic;color:var(--rose);font-weight:400}
+.sd-text .sd-jp{font-family:"Hina Mincho",serif;font-size:15px;line-height:2.05;color:rgba(58,42,42,0.78);margin-bottom:18px}
+.sd-text .sd-quote{padding:20px 24px;border-left:3px solid var(--rose);background:rgba(232,196,176,0.18);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;line-height:1.7;color:var(--espresso);margin-bottom:24px}
+.sd-text dl{display:grid;grid-template-columns:90px 1fr;row-gap:10px;font-family:"Hina Mincho",serif;font-size:13px;line-height:1.85}
+.sd-text dt{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.22em;color:var(--rose);text-transform:uppercase;padding-top:3px}
+.sd-text dd{color:rgba(58,42,42,0.78)}
+@media (max-width:900px){.sd-card,.sd-card.reverse{grid-template-columns:1fr;gap:32px;direction:ltr}}
+
+/* ストーリーページ */
+.story-section{padding:140px 0;background:var(--paper);position:relative;z-index:2}
+.story-section.alt{background:var(--cream)}
+.story-block{max-width:780px;margin:0 auto}
+.story-block p{font-family:"Hina Mincho",serif;font-size:16px;line-height:2.15;color:rgba(58,42,42,0.85);margin-bottom:24px}
+.story-block p em{font-style:italic;color:var(--rose);font-family:"Cormorant Garamond",serif;font-size:1.08em}
+.story-block h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:32px;color:var(--rose);margin:48px 0 24px;letter-spacing:-.01em}
+.story-quote{padding:36px 40px;border-left:3px solid var(--rose);background:linear-gradient(135deg,var(--cream) 0%,rgba(232,196,176,0.4) 100%);margin:32px 0;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.7;color:var(--espresso);border-radius:0 8px 8px 0}
+.story-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.pillar{background:var(--paper);padding:32px 28px;border-radius:8px;border:1px solid var(--line);transition:transform .35s,box-shadow .35s}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 18px 40px -16px rgba(196,110,92,0.25)}
+.pillar .p-no{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;color:var(--rose);display:block;margin-bottom:10px}
+.pillar h4{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:22px;color:var(--espresso);margin-bottom:8px}
+.pillar p{font-family:"Hina Mincho",serif;font-size:13px;line-height:1.9;color:rgba(58,42,42,0.7);margin-bottom:0}
+@media (max-width:900px){.story-pillars{grid-template-columns:1fr;gap:18px}}
+
+.story-timeline{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.tl-row{display:grid;grid-template-columns:120px 1fr;gap:32px;padding:24px 0;border-bottom:1px dotted var(--line)}
+.tl-row .yr{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:36px;color:var(--rose);line-height:1;font-weight:400}
+.tl-row .ev{font-family:"Hina Mincho",serif;font-size:15px;line-height:1.95;color:rgba(58,42,42,0.82)}
+.tl-row .ev strong{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:20px;color:var(--espresso);display:block;margin-bottom:6px}
+@media (max-width:560px){.tl-row{grid-template-columns:1fr;gap:6px}.tl-row .yr{font-size:28px}}
+
+/* フッター拡張 */
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding:48px 0 28px}
+.ft-brand-block .ft-brand-jp{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:24px;color:var(--paper);display:block;margin-bottom:6px}
+.ft-brand-block .ft-brand-jp em{color:var(--champagne)}
+.ft-brand-block .ft-brand-en{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.22em;color:rgba(250,241,235,0.55)}
+.ft-col h5{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.32em;color:var(--champagne);margin-bottom:18px;text-transform:uppercase}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ft-col ul li a{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:15px;color:rgba(250,241,235,0.85);transition:color .3s}
+.ft-col ul li a:hover{color:var(--champagne)}
+.ft-col p{font-family:"Hina Mincho",serif;font-size:13px;line-height:1.85;color:rgba(250,241,235,0.7)}
+.ft-bottom{padding-top:24px;border-top:1px solid rgba(250,241,235,0.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.ft-meta{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.22em;color:rgba(250,241,235,0.5);font-style:normal}
+@media (max-width:900px){.ft-grid{grid-template-columns:1fr;gap:32px}}

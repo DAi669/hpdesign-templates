@@ -15,7 +15,7 @@
 <body>
 
 <header class="hd">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <span class="b-stamp">PG</span>
     <span class="b-w">
       <span class="b-en">PAIN GRENIER</span>
@@ -23,11 +23,23 @@
     </span>
   </a>
   <nav>
-    <a href="#bread">パンの種類</a>
-    <a href="#process">焼き方</a>
+    <a href="index.html" class="is-current">home</a>
+    <a href="menu.html">パンの種類</a>
+    <a href="story.html">焼き手の話</a>
     <a href="#info">店舗</a>
   </nav>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">home</a>
+  <a href="menu.html">パンの種類</a>
+  <a href="story.html">焼き手の話</a>
+  <a href="#info">店舗</a>
+  <a href="#info" class="drawer-cta">店舗情報を見る</a>
+</nav>
 
 <main id="top">
 
@@ -56,11 +68,11 @@
   </div>
 </section>
 
-<!-- BREAD -->
+<!-- BREAD（抜粋） -->
 <section class="bread" id="bread" data-l1-reveal>
   <div class="cont">
     <div class="sec-head">
-      <span class="eb" data-l1-split>— Notre Pain · 16種類 —</span>
+      <span class="eb" data-l1-split>— Notre Pain · 抜粋 —</span>
       <h2>その日の<em>気分</em>で、<br>その日の粉で。</h2>
       <p>毎日18種類前後を焼いていますが、その日の小麦の状態と気温で焼き色を判断します。同じパンでも、毎日少しずつ違うはずです。</p>
     </div>
@@ -96,15 +108,6 @@
       </article>
       <article class="br">
         <span class="br-no">№ 04</span>
-        <div class="br-img br-i4"></div>
-        <div class="br-info">
-          <h3>季節のフォカッチャ</h3>
-          <p class="br-desc">5月はトマトとローズマリー、シチリア産オリーブオイルで。</p>
-          <span class="br-price">¥520<small>／ 1枚</small></span>
-        </div>
-      </article>
-      <article class="br">
-        <span class="br-no">№ 05</span>
         <div class="br-img br-i5"></div>
         <div class="br-info">
           <h3>あんバター</h3>
@@ -112,18 +115,13 @@
           <span class="br-price">¥420<small>／ 1個</small></span>
         </div>
       </article>
-      <article class="br">
-        <span class="br-no">№ 06</span>
-        <div class="br-img br-i6"></div>
-        <div class="br-info">
-          <h3>明太フランス</h3>
-          <p class="br-desc">福岡「やまや」の明太子と発酵バター。揚げず焼き上げる軽さ。</p>
-          <span class="br-price">¥380<small>／ 1本</small></span>
-        </div>
-      </article>
     </div>
 
-    <p class="bread-note">他、食パン・あんパン・カレーパン・抹茶ホワイトチョコ・季節限定など、合計18種類前後を毎日焼いています。</p>
+    <p class="bread-note">この他、ハード系・バター系・惣菜・甘いパン・サイドメニューを合計18種類前後。</p>
+
+    <div class="menu-more">
+      <a href="menu.html" class="menu-more-link">全種類・アレルゲン情報を見る →</a>
+    </div>
   </div>
 </section>
 
@@ -133,7 +131,8 @@
     <div class="proc-text">
       <span class="eb">— 1日の仕事 —</span>
       <h2>04:00 から、<br><em>16:00</em> まで。</h2>
-      <p class="quote">“Bread is patience.”<br><cite>— PAIN GRENIER, 5月</cite></p>
+      <p class="quote">"Bread is patience."<br><cite>— PAIN GRENIER, 5月</cite></p>
+      <a href="story.html" class="proc-link">焼き手の話を読む →</a>
     </div>
     <ol class="proc-list">
       <li><span class="ph">04:00</span><div><h4>石窯に火を入れる</h4><p>薪をくべて、石窯を300℃まで温めます。火の音と煙のにおいで、店主の目が覚めます。</p></div></li>
@@ -167,8 +166,8 @@
 </main>
 
 <div class="l1-fab" aria-hidden="false">
-  <a class="l1-fab-tel" href="#info">電話で問合せ</a>
-  <a class="l1-fab-book" href="#info">予約・来店</a>
+  <a class="l1-fab-tel" href="menu.html">パンの種類</a>
+  <a class="l1-fab-book" href="#info">店舗情報</a>
 </div>
 
 <footer class="ft">

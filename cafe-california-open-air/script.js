@@ -112,4 +112,20 @@
     onFabScroll();
     window.addEventListener('scroll',onFabScroll,{passive:true});
   }
+
+  // M6: Burger drawer (multi-page)
+  const burger=document.querySelector('.burger');
+  const drawer=document.querySelector('.drawer');
+  if(burger && drawer){
+    const close=()=>{burger.classList.remove('is-open');drawer.classList.remove('is-open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''};
+    burger.addEventListener('click',()=>{
+      const open=!burger.classList.contains('is-open');
+      burger.classList.toggle('is-open',open);
+      drawer.classList.toggle('is-open',open);
+      burger.setAttribute('aria-expanded',open?'true':'false');
+      document.body.style.overflow=open?'hidden':'';
+    });
+    drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+  }
 })();

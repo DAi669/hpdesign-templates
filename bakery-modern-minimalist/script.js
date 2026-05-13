@@ -99,3 +99,28 @@
     window.addEventListener('scroll',onFabScroll,{passive:true});
   }
 })();
+
+/* Burger drawer (multi-page header) — 2026-05-13 */
+(()=>{
+  'use strict';
+  const burger=document.querySelector('.burger');
+  const drawer=document.getElementById('drawer');
+  if(!burger||!drawer)return;
+  let backdrop=document.querySelector('.drawer-backdrop');
+  if(!backdrop){
+    backdrop=document.createElement('div');
+    backdrop.className='drawer-backdrop';
+    document.body.appendChild(backdrop);
+  }
+  const setOpen=(open)=>{
+    burger.classList.toggle('is-open',open);
+    drawer.classList.toggle('is-open',open);
+    backdrop.classList.toggle('is-open',open);
+    burger.setAttribute('aria-expanded',String(open));
+    document.body.style.overflow=open?'hidden':'';
+  };
+  burger.addEventListener('click',()=>setOpen(!drawer.classList.contains('is-open')));
+  backdrop.addEventListener('click',()=>setOpen(false));
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});
+})();

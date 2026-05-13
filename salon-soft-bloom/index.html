@@ -22,7 +22,7 @@
 </div>
 
 <header class="hd">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <span class="b-logo">L<em>—</em></span>
     <span class="b-w">
       <span class="b1"><em>Salon</em> Lumière</span>
@@ -30,12 +30,23 @@
     </span>
   </a>
   <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#stylist">Stylist</a>
-    <a href="#reserve">Reserve</a>
+    <a href="index.html" class="is-current">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="stylists.html">Stylists</a>
+    <a href="story.html">Story</a>
   </nav>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">Home<em> — トップ</em></a>
+  <a href="menu.html">Menu<em> — メニュー＆料金</em></a>
+  <a href="stylists.html">Stylists<em> — スタイリスト</em></a>
+  <a href="story.html">Story<em> — お店の由来</em></a>
+  <a href="index.html#reserve" class="drawer-cta">WEB予約 →</a>
+</nav>
 
 <main id="top">
 

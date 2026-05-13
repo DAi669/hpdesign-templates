@@ -47,8 +47,30 @@
     });
   }
 
+  // Hamburger drawer (multi-page header)
+  const burger=document.querySelector('.burger');
+  const drawer=document.querySelector('.drawer');
+  if(burger && drawer){
+    const close=()=>{
+      burger.classList.remove('is-open');
+      drawer.classList.remove('is-open');
+      document.body.classList.remove('is-locked');
+      burger.setAttribute('aria-expanded','false');
+    };
+    burger.addEventListener('click',()=>{
+      const open=burger.classList.toggle('is-open');
+      drawer.classList.toggle('is-open',open);
+      document.body.classList.toggle('is-locked',open);
+      burger.setAttribute('aria-expanded',String(open));
+    });
+    drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape' && drawer.classList.contains('is-open')) close();
+    });
+  }
+
   if('IntersectionObserver' in window && !reduced){
-    const ts=document.querySelectorAll('.wow-item,.cr,.book-card,.menu-tbl tr,.info-grid > *,.i-card');
+    const ts=document.querySelectorAll('.wow-item,.cr,.book-card,.menu-tbl tr,.info-grid > *,.i-card,.menu-detail tr,.sd-grid,.sp-chap');
     ts.forEach(el=>el.style.opacity='0');
     const io=new IntersectionObserver(es=>{
       es.forEach((e,i)=>{

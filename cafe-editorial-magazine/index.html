@@ -19,7 +19,7 @@
 
 <header class="hd">
   <div class="hd-in">
-    <a href="#top" class="brand">
+    <a href="index.html" class="brand">
       <span class="brand-stamp">月</span>
       <div class="brand-w">
         <span class="brand-name"><em>Atelier</em> Tsukiyomi</span>
@@ -27,14 +27,24 @@
       </div>
     </a>
     <nav>
-      <a href="#ch01">01 Issue</a>
-      <a href="#ch02">02 Brew</a>
-      <a href="#ch03">03 Sweets</a>
-      <a href="#ch04">04 Books</a>
-      <a href="#ch05">05 Visit</a>
+      <a href="index.html" class="is-current">01 Issue</a>
+      <a href="menu.html">02 Brew</a>
+      <a href="story.html">03 Story</a>
+      <a href="#ch05">04 Visit</a>
     </nav>
+    <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html"><span class="drawer-no">01</span>Issue</a>
+  <a href="menu.html"><span class="drawer-no">02</span><em>Brew</em></a>
+  <a href="story.html"><span class="drawer-no">03</span><em>Story</em></a>
+  <a href="#ch05"><span class="drawer-no">04</span>Visit</a>
+  <a href="tel:075XXXXXXX" class="drawer-cta">電話で問合せ</a>
+</nav>
 
 <aside class="side-rail" aria-hidden="true">
   <span class="srail-label">VOL.07 / SS 2026</span>
@@ -79,7 +89,7 @@
   </div>
 </section>
 
-<!-- CHAPTER 01 -->
+<!-- CHAPTER 01 — Issue (intro / kept on Home) -->
 <section class="chap" id="ch01" data-l1-reveal>
   <div class="chap-sticky">
     <span class="chap-no">CHAPTER ／ 01</span>
@@ -91,78 +101,41 @@
     <p>2019年、明治期の長屋を改装してこのアトリエを開きました。窓辺に7席、ソファに4席。それだけの小さな店です。コーヒーは1杯ずつネルドリップで。古書の棚には、京都の古本市で見つけた本を並べています。</p>
     <blockquote>“Quiet hours are the most expensive luxury of the modern age.”<br><cite>— Café Editorial Notes</cite></blockquote>
     <p>長居をしてください。本を1冊持ってきてください。Wi-Fi はありません。スマートフォンの音は消してください。── 月を読むように、自分の時間に戻ってきてほしいから。</p>
+    <p style="margin-top:32px"><a href="story.html" style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:2px;font-size:18px">Story の続きを読む →</a></p>
   </div>
 </section>
 
-<!-- CHAPTER 02 -->
-<section class="chap chap-alt" id="ch02" data-l1-reveal>
+<!-- Two-column quick links to Brew & Story -->
+<section class="chap chap-alt" data-l1-reveal>
   <div class="chap-sticky">
-    <span class="chap-no">CHAPTER ／ 02</span>
-    <h2 class="chap-h">Brew.</h2>
-    <p class="chap-tag">珈琲のお品書き。</p>
+    <span class="chap-no">INDEX ／ Pick</span>
+    <h2 class="chap-h">In&nbsp;this issue.</h2>
+    <p class="chap-tag">今号の主な誌面構成。</p>
   </div>
   <div class="chap-body">
-    <p class="lead-p"><span class="dropcap">珈</span>琲は、すべて店主がネルドリップで一杯ずつ淹れます。豆は、京都・新門前の老舗焙煎所「直珈琲」のもの。</p>
+    <p class="lead-p"><span class="dropcap">本</span>誌は、Atelier Tsukiyomi の今号 (Vol.07) を 1冊のエディトリアルに見立てて構成しています。各章は独立した誌面として、お好きな順番でお読みいただけます。</p>
 
-    <table class="ed-table">
-      <tr><td>本日の月読ブレンド</td><td>深煎り</td><td>¥620</td></tr>
-      <tr><td>ネルドリップ／コロンビア</td><td>中深煎り</td><td>¥720</td></tr>
-      <tr><td>ネルドリップ／エチオピア</td><td>中浅煎り</td><td>¥720</td></tr>
-      <tr><td>カフェ・オ・レ</td><td>ミルク 京都・京北</td><td>¥720</td></tr>
-      <tr><td>抹茶ラテ</td><td>宇治・伊藤久右衛門</td><td>¥820</td></tr>
-      <tr><td>季節の和紅茶</td><td>5月：和歌山新茶</td><td>¥620</td></tr>
-    </table>
-
-    <p class="footnote">※ おかわり半額。コーヒー豆 100g からの量り売りもございます（House Blend ¥1,200〜）。</p>
-  </div>
-</section>
-
-<!-- CHAPTER 03 -->
-<section class="chap" id="ch03" data-l1-reveal>
-  <div class="chap-sticky">
-    <span class="chap-no">CHAPTER ／ 03</span>
-    <h2 class="chap-h">Sweets.</h2>
-    <p class="chap-tag">季節の和菓子と、焼き菓子。</p>
-  </div>
-  <div class="chap-body">
-    <div class="dual-img">
-      <div class="di di-1"></div>
-      <div class="di di-2"></div>
-    </div>
-    <p class="lead-p"><span class="dropcap">和</span>菓子は、西陣の老舗「鶴屋吉信」と京都の若い菓子職人から、季節ごとに仕入れています。焼き菓子は店主の手作り。</p>
-
-    <ul class="sweets-list">
-      <li><div><h4>季節の上生菓子</h4><p>5月は「青楓」「卯の花」「菖蒲」の3種から選んでいただけます。</p></div><span>¥520</span></li>
-      <li><div><h4>抹茶テリーヌ</h4><p>宇治抹茶を贅沢に。コーヒーにも、抹茶ラテにも。</p></div><span>¥620</span></li>
-      <li><div><h4>季節のフィナンシェ</h4><p>5月は柚子と山椒。月替わり。</p></div><span>¥380</span></li>
-      <li><div><h4>葛餅セット</h4><p>抹茶 or きな粉、お好きな方をお選びください。</p></div><span>¥720</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- CHAPTER 04 -->
-<section class="chap chap-alt" id="ch04" data-l1-reveal>
-  <div class="chap-sticky">
-    <span class="chap-no">CHAPTER ／ 04</span>
-    <h2 class="chap-h">Books.</h2>
-    <p class="chap-tag">店内の古書、すべて販売しています。</p>
-  </div>
-  <div class="chap-body">
-    <p class="lead-p"><span class="dropcap">店</span>内の本棚に並んでいる古書は、すべて販売対象です。京都の古本市・百万遍・寺町通の古書店から、店主が一冊ずつ選んでいます。</p>
-
-    <div class="book-grid">
-      <div class="book"><h5>『月を見て、月を語る』</h5><span>白洲正子 / 講談社</span><b>¥1,200</b></div>
-      <div class="book"><h5>『京都の路地、暮らし続ける』</h5><span>藤本壮介 / 筑摩書房</span><b>¥1,500</b></div>
-      <div class="book"><h5>『コーヒーと、本と、私』</h5><span>島尾敏雄 / 河出書房</span><b>¥980</b></div>
-      <div class="book"><h5>『朝の珈琲、夜の紅茶』</h5><span>稲垣足穂 / 中央公論</span><b>¥1,400</b></div>
+    <div class="book-grid" style="margin-top:24px">
+      <a href="menu.html" class="book" style="text-decoration:none;display:block">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase">Chapter ／ 02</span>
+        <h5 style="margin-top:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:24px;color:var(--ink)">Brew &amp; Sweets.</h5>
+        <span style="display:block;margin-top:8px;font-family:'Shippori Mincho',serif;font-size:13px;color:rgba(14,13,11,0.65);line-height:1.85">本日の月読ブレンドと、季節の上生菓子。お品書きの全頁はこちら。</span>
+        <b style="display:block;margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--red)">Read → menu.html</b>
+      </a>
+      <a href="story.html" class="book" style="text-decoration:none;display:block">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase">Chapter ／ 03</span>
+        <h5 style="margin-top:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:24px;color:var(--ink)">Story &amp; Books.</h5>
+        <span style="display:block;margin-top:8px;font-family:'Shippori Mincho',serif;font-size:13px;color:rgba(14,13,11,0.65);line-height:1.85">店主・藤村響子の7年と、店内古書のすべて。誌面ロングインタビュー収録。</span>
+        <b style="display:block;margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--red)">Read → story.html</b>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- CHAPTER 05 -->
+<!-- CHAPTER 05 — Visit (kept on Home) -->
 <section class="chap" id="ch05" data-l1-reveal>
   <div class="chap-sticky">
-    <span class="chap-no">CHAPTER ／ 05</span>
+    <span class="chap-no">CHAPTER ／ 04</span>
     <h2 class="chap-h">Visit.</h2>
     <p class="chap-tag">店舗のご案内。</p>
   </div>

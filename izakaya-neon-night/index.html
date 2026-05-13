@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>居酒屋 とり伊｜東京・新橋の焼鳥と日本酒</title>
-<meta name="description" content="新橋ガード下の焼鳥屋「とり伊」。創業34年、店主が一本ずつ焼く。日本酒は常時25種類。">
+<meta name="description" content="新橋ガード下の焼鳥屋「とり伊」。創業34年、店主が一本ずつ焼く。日本酒は常時25種類。コース・宴会プランあり。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 <div class="lantern" aria-hidden="true"></div>
 
 <header class="hd">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <span class="b-mark">伊</span>
     <span class="b-w">
       <span class="b1">居酒屋 とり伊</span>
@@ -25,11 +25,23 @@
     </span>
   </a>
   <nav>
-    <a href="#menu">献立</a>
-    <a href="#sake">酒</a>
-    <a href="#info">店</a>
+    <a href="index.html" class="is-current">本店</a>
+    <a href="course.html">コース</a>
+    <a href="menu.html">献立・酒</a>
+    <a href="story.html">店主の物語</a>
   </nav>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">本店</a>
+  <a href="course.html">コース</a>
+  <a href="menu.html">献立・酒</a>
+  <a href="story.html">店主の物語</a>
+  <a href="index.html#info" class="drawer-cta">電話で予約</a>
+</nav>
 
 <main id="top">
 
@@ -56,62 +68,45 @@
   </div>
 </section>
 
-<section class="menu" id="menu" data-l1-reveal>
+<section class="menu-block" data-l1-reveal>
   <div class="cont">
-    <span class="eb">— お品書き · 焼鳥 —</span>
-    <h2><em class="neon-pink">焼鳥</em>、ぜんぶ手仕事。</h2>
-    <div class="menu-grid">
-      <div class="mn-col">
-        <h3 class="mn-cat">塩</h3>
-        <ul>
-          <li><span>ねぎま</span><span class="dots"></span><span class="pp">¥220</span></li>
-          <li><span>もも</span><span class="dots"></span><span class="pp">¥220</span></li>
-          <li><span>ささみ（梅 or わさび）</span><span class="dots"></span><span class="pp">¥260</span></li>
-          <li><span>つくね</span><span class="dots"></span><span class="pp">¥240</span></li>
-          <li><span>ぼんじり</span><span class="dots"></span><span class="pp">¥260</span></li>
-          <li><span>かわ（カリカリ焼き）</span><span class="dots"></span><span class="pp">¥220</span></li>
-        </ul>
+    <div class="mb-head">
+      <div>
+        <span class="eb">— Index · お店をみる —</span>
+        <h2><em class="neon-pink">3</em>つの、入り口。</h2>
       </div>
-      <div class="mn-col">
-        <h3 class="mn-cat">タレ</h3>
-        <ul>
-          <li><span>もも</span><span class="dots"></span><span class="pp">¥220</span></li>
-          <li><span>レバー</span><span class="dots"></span><span class="pp">¥240</span></li>
-          <li><span>ハツ</span><span class="dots"></span><span class="pp">¥240</span></li>
-          <li><span>砂肝</span><span class="dots"></span><span class="pp">¥240</span></li>
-          <li><span>手羽先（甘ダレ）</span><span class="dots"></span><span class="pp">¥320</span></li>
-          <li><span>つくね</span><span class="dots"></span><span class="pp">¥260</span></li>
-        </ul>
-      </div>
-      <div class="mn-col">
-        <h3 class="mn-cat">逸品</h3>
-        <ul>
-          <li><span>白レバー</span><span class="dots"></span><span class="pp">¥420</span></li>
-          <li><span>大山どり 鶏刺し</span><span class="dots"></span><span class="pp">¥780</span></li>
-          <li><span>店主おまかせ盛り（5本）</span><span class="dots"></span><span class="pp">¥1,300</span></li>
-          <li><span>焼きおにぎり</span><span class="dots"></span><span class="pp">¥320</span></li>
-          <li><span>鶏スープ</span><span class="dots"></span><span class="pp">¥420</span></li>
-        </ul>
-      </div>
+      <p class="mb-note">コースで宴会、お一人なら席で焼鳥を一本ずつ、<br>もっと知りたい方は店主の物語へ。</p>
     </div>
-  </div>
-</section>
 
-<section class="sake" id="sake" data-l1-reveal>
-  <div class="cont">
-    <span class="eb">— 日本酒 / SAKE · 25種 —</span>
-    <h2>店主<em class="neon-yellow">厳選</em>の25本。</h2>
-    <ul class="sake-grid">
-      <li><span class="sk-prefex">山形</span><span class="sk-name">十四代 / 本丸</span><span class="sk-price">¥1,200</span></li>
-      <li><span class="sk-prefex">福島</span><span class="sk-name">飛露喜 / 特別純米</span><span class="sk-price">¥980</span></li>
-      <li><span class="sk-prefex">三重</span><span class="sk-name">而今 / 純米</span><span class="sk-price">¥1,080</span></li>
-      <li><span class="sk-prefex">秋田</span><span class="sk-name">新政 / Colors</span><span class="sk-price">¥1,300</span></li>
-      <li><span class="sk-prefex">山口</span><span class="sk-name">獺祭 / 三割九分</span><span class="sk-price">¥1,400</span></li>
-      <li><span class="sk-prefex">愛知</span><span class="sk-name">醸し人九平次</span><span class="sk-price">¥1,200</span></li>
-      <li><span class="sk-prefex">栃木</span><span class="sk-name">仙禽 / 雪だるま</span><span class="sk-price">¥1,100</span></li>
-      <li><span class="sk-prefex">佐賀</span><span class="sk-name">鍋島 / 純米吟醸</span><span class="sk-price">¥1,000</span></li>
-    </ul>
-    <p class="sake-note">他、季節限定 17 種を日替わりでご用意しています。お声がけください。</p>
+    <div class="menu-grid">
+      <a href="course.html" class="mn-col" style="text-decoration:none">
+        <h3 class="mn-cat">コース</h3>
+        <ul>
+          <li><span>3つの宴会プラン</span><span class="dots"></span><span class="pp">¥4,500〜</span></li>
+          <li><span>飲み放題 90分</span><span class="dots"></span><span class="pp">+¥1,800</span></li>
+          <li><span>大山どり 焼き比べ</span><span class="dots"></span><span class="pp">特選</span></li>
+          <li><span>貸切可（10名様〜）</span><span class="dots"></span><span class="pp">応相談</span></li>
+        </ul>
+      </a>
+      <a href="menu.html" class="mn-col" style="text-decoration:none">
+        <h3 class="mn-cat">献立・酒</h3>
+        <ul>
+          <li><span>焼鳥（塩・タレ・逸品）</span><span class="dots"></span><span class="pp">¥220〜</span></li>
+          <li><span>季節の肴・一品料理</span><span class="dots"></span><span class="pp">単品</span></li>
+          <li><span>日本酒 常時 25種</span><span class="dots"></span><span class="pp">¥980〜</span></li>
+          <li><span>焼酎・サワー・ビール</span><span class="dots"></span><span class="pp">¥500〜</span></li>
+        </ul>
+      </a>
+      <a href="story.html" class="mn-col" style="text-decoration:none">
+        <h3 class="mn-cat">物語</h3>
+        <ul>
+          <li><span>創業 1992 年</span><span class="dots"></span><span class="pp">34年目</span></li>
+          <li><span>店主 鳥居 伊知郎</span><span class="dots"></span><span class="pp">二代目</span></li>
+          <li><span>毎朝の仕入れ</span><span class="dots"></span><span class="pp">朝5時</span></li>
+          <li><span>新橋ガード下</span><span class="dots"></span><span class="pp">読む</span></li>
+        </ul>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -159,13 +154,36 @@
 
 <div class="l1-fab" aria-hidden="false">
   <a class="l1-fab-tel" href="#info">電話で予約</a>
-  <a class="l1-fab-book" href="#info">来店・問合せ</a>
+  <a class="l1-fab-book" href="course.html">コースを見る</a>
 </div>
 
 <footer class="ft">
-  <div class="ft-in">
-    <span><em>居酒屋 とり伊</em> · TORI-I</span>
-    <span>© 1992—2026 · SHIMBASHI</span>
+  <div class="cont">
+    <div class="ft-grid">
+      <div class="ft-brand-block">
+        <span class="ft-brand-jp">居酒屋 とり伊</span>
+        <span class="ft-brand-en">TORI-I · SHIMBASHI · SINCE 1992</span>
+        <p style="margin-top:14px;font-family:'Yusei Magic',serif;font-size:13px;line-height:1.9;color:rgba(244,229,200,.7)">店主が、一本ずつ焼きます。<br>日本酒は、常時25種類。</p>
+      </div>
+      <div class="ft-col">
+        <h5>MENU</h5>
+        <ul>
+          <li><a href="index.html">本店</a></li>
+          <li><a href="course.html">コース・宴会</a></li>
+          <li><a href="menu.html">献立・お酒</a></li>
+          <li><a href="story.html">店主の物語</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5>ACCESS</h5>
+        <p>東京都港区新橋X-X-X<br>新橋ガード下</p>
+        <p style="margin-top:8px">TEL 03-XXXX-XXXX<br>17:00 — 23:30 ／ 日祝定休</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-meta">© 1992—2026 TORI-I · SHIMBASHI</span>
+      <span class="ft-meta">PROPOSAL PREVIEW · NOINDEX</span>
+    </div>
   </div>
 </footer>
 

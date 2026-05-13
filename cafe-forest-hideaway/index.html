@@ -20,7 +20,7 @@
 </div>
 
 <header class="hd">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <svg class="brand-tree" viewBox="0 0 32 36" fill="none" stroke="currentColor" stroke-width="1.6">
       <path d="M16 4l-8 12h5l-7 12h20l-7-12h5z" fill="currentColor" opacity=".15"/>
       <path d="M16 4l-8 12h5l-7 12h20l-7-12h5z"/>
@@ -32,11 +32,23 @@
     </span>
   </a>
   <nav>
-    <a href="#about">about</a>
-    <a href="#menu">menu</a>
+    <a href="index.html" class="is-current">home</a>
+    <a href="menu.html">menu</a>
+    <a href="story.html">story</a>
     <a href="#visit">visit</a>
   </nav>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">home</a>
+  <a href="menu.html">menu</a>
+  <a href="story.html">story</a>
+  <a href="#visit">visit</a>
+  <a href="#visit" class="drawer-cta">店舗情報を見る</a>
+</nav>
 
 <main id="top">
 
@@ -71,6 +83,7 @@
         <p>蓼科の白樺林を抜けた先、苔むした石垣の上に小さなコーヒースタンドを建てました。冬は薪ストーブで暖をとり、夏は窓を全開にして鳥の声を聞きながら、コーヒーを淹れています。</p>
         <p>都会の音から離れて、ただ、コーヒーを飲む時間を。</p>
         <p class="sig">店主 ／ 木下 蒼</p>
+        <a href="story.html" class="ab-link">店主の物語を読む →</a>
       </div>
       <div class="ab-img" data-tilt>
         <div class="ab-img-inner l1-kenburns"></div>
@@ -84,7 +97,7 @@
 
 <section class="menu" id="menu" data-l1-reveal>
   <div class="cont">
-    <span class="eb">— Menu —</span>
+    <span class="eb">— Menu · 抜粋 —</span>
     <h2>森の<em>一杯</em>。</h2>
     <div class="bento">
       <article class="b b-1">
@@ -103,6 +116,9 @@
         <div class="b-img b-i4"></div>
         <div class="b-info"><h3>蓼科ブレンド豆<br>100g</h3><p>店内焙煎の豆、お持ち帰り用。</p><span class="pp">¥1,400</span></div>
       </article>
+    </div>
+    <div class="menu-more">
+      <a href="menu.html" class="menu-more-link">全メニュー・アレルゲン情報を見る →</a>
     </div>
   </div>
 </section>
@@ -140,8 +156,8 @@
 </main>
 
 <div class="l1-fab" aria-hidden="false">
-  <a class="l1-fab-tel" href="#visit">電話で問合せ</a>
-  <a class="l1-fab-book" href="#visit">予約・来店</a>
+  <a class="l1-fab-tel" href="menu.html">menu を見る</a>
+  <a class="l1-fab-book" href="#visit">visit を見る</a>
 </div>
 
 <footer class="ft">

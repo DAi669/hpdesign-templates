@@ -104,3 +104,27 @@
     window.addEventListener('scroll',onFabScroll,{passive:true});
   }
 })();
+
+/* Hamburger drawer (2026-05-13 multi-page) */
+(()=>{
+  'use strict';
+  const burger=document.querySelector('.burger');
+  const drawer=document.querySelector('.drawer');
+  if(!burger||!drawer)return;
+  const close=()=>{
+    burger.classList.remove('is-open');
+    drawer.classList.remove('is-open');
+    document.body.classList.remove('is-locked');
+    burger.setAttribute('aria-expanded','false');
+  };
+  burger.addEventListener('click',()=>{
+    const open=burger.classList.toggle('is-open');
+    drawer.classList.toggle('is-open',open);
+    document.body.classList.toggle('is-locked',open);
+    burger.setAttribute('aria-expanded',String(open));
+  });
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&drawer.classList.contains('is-open'))close();
+  });
+})();

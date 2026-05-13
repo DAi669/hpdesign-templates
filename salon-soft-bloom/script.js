@@ -45,3 +45,21 @@
     ts.forEach(el=>io.observe(el));
   }
 })();
+
+/* マルチページ拡張: バーガー + ドロワー (2026-05-13) */
+(()=>{
+  'use strict';
+  const burger=document.querySelector('.burger');
+  const drawer=document.querySelector('.drawer');
+  if(!burger||!drawer)return;
+  const toggle=(open)=>{
+    const isOpen=open===undefined?!drawer.classList.contains('is-open'):open;
+    drawer.classList.toggle('is-open',isOpen);
+    burger.classList.toggle('is-open',isOpen);
+    document.body.classList.toggle('is-locked',isOpen);
+    burger.setAttribute('aria-expanded',String(isOpen));
+  };
+  burger.addEventListener('click',()=>toggle());
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)});
+})();

@@ -18,8 +18,9 @@
   <span class="prog-fill" id="progFill"></span>
 </div>
 
+<!-- ========== HEADER (共通) ========== -->
 <header class="hd">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <span class="b-mark">参</span>
     <span class="b-w">
       <span class="b1">ベーカリー 三代屋</span>
@@ -27,11 +28,24 @@
     </span>
   </a>
   <nav>
-    <a href="#chronicle">沿革</a>
-    <a href="#bread">パン</a>
+    <a href="index.html" class="is-current">本店</a>
+    <a href="menu.html">パン一覧</a>
+    <a href="story.html">三代の物語</a>
     <a href="#info">店舗</a>
   </nav>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- ハンバーガー展開ドロワー -->
+<nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+  <a href="index.html">本店</a>
+  <a href="menu.html">パン一覧</a>
+  <a href="story.html">三代の物語</a>
+  <a href="#info">店舗</a>
+  <a href="tel:0797XXXXXX" class="drawer-cta">電話で問合せ</a>
+</nav>
 
 <main id="top">
 
@@ -55,11 +69,11 @@
   </div>
 </section>
 
-<!-- CHRONICLE (vertical timeline) -->
+<!-- CHRONICLE 抜粋（3代の見出しのみ・続きはstory.html） -->
 <section class="chronicle" id="chronicle" data-l1-reveal>
   <div class="cont chr-grid">
     <aside class="chr-side">
-      <span class="eb">— Chronicle —</span>
+      <span class="eb">— Chronicle · 沿革 —</span>
       <h2>三代の<br><em>沿革</em>。</h2>
       <p class="chr-tag">70年の物語を、ページの<br>横にスクロールしながら。</p>
     </aside>
@@ -83,14 +97,6 @@
         </div>
       </li>
       <li class="chr-item" data-chapter>
-        <div class="chr-year">1995</div>
-        <div class="chr-body">
-          <span class="chr-gen">出来事</span>
-          <h3>阪神・淡路大震災</h3>
-          <p>店舗が半壊。営業再開まで4ヶ月。地域の方からの応援で立て直す。「あの時、毎日パンを作りに来てくれたお客さんの顔は忘れられません」（二代目談）</p>
-        </div>
-      </li>
-      <li class="chr-item" data-chapter>
         <div class="chr-year">2014</div>
         <div class="chr-body">
           <span class="chr-gen">三代目</span>
@@ -99,27 +105,15 @@
           <div class="chr-img chr-i2"></div>
         </div>
       </li>
-      <li class="chr-item" data-chapter>
-        <div class="chr-year">2024</div>
-        <div class="chr-body">
-          <span class="chr-gen">受賞</span>
-          <h3>兵庫県知事賞 受賞</h3>
-          <p>看板の山型食パンが「ひょうごの逸品100選」に選定。「変わらない味を続けている」点を評価いただきました。</p>
-        </div>
-      </li>
-      <li class="chr-item" data-chapter>
-        <div class="chr-year">2026</div>
-        <div class="chr-body">
-          <span class="chr-gen">いま</span>
-          <h3>3世代、4代目を見据えて</h3>
-          <p>現在、初代の孫である4代目候補（小学5年生）が、土曜日に店を手伝っています。70年続いた店を、次の世代へ。</p>
-        </div>
-      </li>
     </ol>
+
+    <div class="chr-cta-row">
+      <a href="story.html" class="cta-ink">全7章のものがたりを読む<span class="cta-arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
-<!-- BREAD -->
+<!-- BREAD（看板の3本柱・続きは menu.html） -->
 <section class="bread" id="bread" data-l1-reveal>
   <div class="cont">
     <span class="eb">— Our Bread · 創業から変わらない3本柱 —</span>
@@ -154,6 +148,10 @@
         </div>
       </article>
     </div>
+
+    <div class="bread-cta-row">
+      <a href="menu.html" class="cta-gold">全パン一覧・季節限定・価格表を見る<span class="cta-arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -161,7 +159,7 @@
 <section class="info" id="info" data-l1-reveal>
   <div class="cont info-grid">
     <div>
-      <span class="eb">— Visit —</span>
+      <span class="eb">— Visit · 店舗 —</span>
       <h2>芦屋川沿い、<br><em>三代屋</em>。</h2>
       <dl>
         <dt>住所</dt><dd>兵庫県芦屋市西山町X-X-X 芦屋川沿い</dd>
@@ -191,8 +189,11 @@
 
 <footer class="ft">
   <div class="ft-in">
-    <span><em>三代屋</em> · SANDAI-YA</span>
-    <span>© 1956—2026 · ASHIYA, HYOGO</span>
+    <span class="ft-l"><em>三代屋</em> · SANDAI-YA</span>
+    <span class="ft-c">
+      <a href="index.html">本店</a> ／ <a href="menu.html">パン一覧</a> ／ <a href="story.html">三代の物語</a> ／ <a href="#info">店舗</a>
+    </span>
+    <span class="ft-r">© 1956—2026 · ASHIYA, HYOGO</span>
   </div>
 </footer>
 
